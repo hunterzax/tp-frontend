@@ -208,86 +208,86 @@ const ClientPage: React.FC = () => {
 
   return (
     <section
-        className="h-[100vh] overflow-y-hidden bg-cover bg-center"
-        style={{
-          // backgroundImage:"url('/assets/image/bg_menu_02.png')",
-          backgroundImage: bgUrl ? `url('${bgUrl}')` : "url('/assets/image/bg_menu_02.png')",
-        }}
-      >
-        <div className="h-full w-full">
-          {/* <div className="h-[40px] sm:h-[50px] md:h-[80px] lg:h-[10vh] flex px-5 mb-1 md:mb-3 lg:mb-5"> */}
-          <div className="h-[10%] flex px-5">
-            <LayoutHeader />
-          </div>
-          {/* <div id='time_count' className="h-[20px] sm:h-[40px] md:h-[60px] lg:h-[60px] xl:h-[100px]"> */}
-          <div id='time_count' className="h-[13%] flex items-center justify-center">
-            <section className="text-center grid justify-center items-center text-[#1B1464]">
-              <TimeCount
-                modeShow={`out`}
-                className={`flex items-center justify-center font-bold text-[#2B2A87]`}
-                onSplit={false}
-              />
-              <h1 className=" font-bold text-[12px] sm:text-[16px] md:text-[1.4rem] lg:text-[2.1rem] pt-1 sm:pt-2 md:pt-3 lg:pt-4">{`Please select menu`}</h1>
-            </section>
-          </div>
-          <div className=" h-[70%] overflow-y-auto py-3">
-            <aside className="px-5 overflow-y-auto h-auto">
-              <section className="grid 2xl:grid-cols-6 xl:grid-cols-5 lg:grid-cols-4md:grid-cols-5 sm:grid-cols-5  gap-4 transition duration-300 ease-in-out">
-                {menuItems.map((item) => {
-                  const menuUrl = item.url;
-                  const linkHref =
-                    menuUrl === "pmis.pipeline.pttplc.com/smartTSO/login.php"
-                      ? "#"
-                      : `/en/authorization/${menuUrl}`;
-
-                  return (
-                    // <Link
-                    //   href={`/${lng}/authorization/${item?.url}`}
-                    //   prefetch={true}
-                    //   key={ix}
-                    //   className="row-span-1 noisy01 hover:bg-[#4F83B7] duration-200 ease-in-out text-white py-6 px-2 rounded-md grid justify-center items-center h-[240px] bg-[#3A699373]"
-                    // >
-                    //   <div className=" grid justify-center items-center h-[80px]">
-                    //     {item?.iconSize}
-                    //   </div>
-                    //   <div className="grid justify-center items-end text-[24px] h-[35px] -mt-[50px] text-center">{item?.name}</div>
-                    // </Link>
-                    <Link
-                      href={linkHref}
-                      onClick={() => handleLinkClick(menuUrl)}
-                      prefetch={true}
-                      key={menuUrl}
-                      className="row-span-1 noisy01 hover:bg-[#4F83B7] text-white py-6 sm:py-1 md:py-6 px-2 rounded-[20px] grid justify-center items-center h-[240px] sm:h-[100px] md:h-[25vh] lg:h-[10rem] xl:h-[240px] 1xl:h-[500px] bg-[#3A699373] duration-200 ease-in-out"
-                    >
-                      <div className="grid justify-center items-center h-[80px] sm:h-[50px] md:h-[50px] lg:h-[80px] duration-200 ease-in-out">
-                        {item?.iconSize}
-                      </div>
-                      <div className="grid justify-center items-end text-[24px] sm:text-[1.5vw] md:text-[1.5vw] lg:text-[1.5vw] h-[35px] -mt-[50px] text-center">{item?.name}</div>
-                    </Link>
-                  );
-                })}
-              </section>
-            </aside>
-          </div>
-          <div className="h-[7%] flex items-end relative z-50">
-            {announcement.length > 0 && (
-              // <footer className="fixed bottom-0 left-0 w-full bg-[#0D539A80] text-white h-[20px] sm:h-[30px] md:h-[40px] lg:h-[50px] flex items-center">
-              <footer className="w-full bg-[#0D539A80] text-white h-[20px] sm:h-[30px] md:h-[40px] lg:h-[50px] flex items-center">
-                <Marquee className="w-full">
-                  <aside className="w-full flex items-center justify-center">
-                    {announcement.map((item) => (
-                      <section key={item.id} className="flex items-center gap-2 py-2">
-                        <CampaignIcon className="!text-[14px] sm:!text-[16px] md:!text-[18px] lg:!text-[20px]" />
-                        <span className="font-semibold text-[14px] sm:text-[12px] md:text-[16px] lg:text-[20px]">{`${item.topic}`}</span><span className="text-[14px] sm:text-[12px] md:text-[16px] lg:text-[20px]">{`: ${item.detail}`}{` `}</span>&nbsp;&nbsp;&nbsp;
-                      </section>
-                    ))}
-                  </aside>
-                </Marquee>
-              </footer>
-            )}
-          </div>
+      className="h-[100vh] overflow-y-hidden bg-cover bg-center"
+      style={{
+        // backgroundImage:"url('/assets/image/bg_menu_02.png')",
+        backgroundImage: bgUrl ? `url('${bgUrl}')` : "url('/assets/image/bg_menu_02.png')",
+      }}
+    >
+      <div className="h-full w-full">
+        {/* <div className="h-[40px] sm:h-[50px] md:h-[80px] lg:h-[10vh] flex px-5 mb-1 md:mb-3 lg:mb-5"> */}
+        <div className="h-[10%] flex px-5">
+          <LayoutHeader />
         </div>
-      </section>
+        {/* <div id='time_count' className="h-[20px] sm:h-[40px] md:h-[60px] lg:h-[60px] xl:h-[100px]"> */}
+        <div id='time_count' className="h-[13%] flex items-center justify-center">
+          <section className="text-center grid justify-center items-center text-[#1B1464]">
+            <TimeCount
+              modeShow={`out`}
+              className={`flex items-center justify-center font-bold text-[#2B2A87]`}
+              onSplit={false}
+            />
+            <h1 className=" font-bold text-[12px] sm:text-[16px] md:text-[1.4rem] lg:text-[2.1rem] pt-1 sm:pt-2 md:pt-3 lg:pt-4">{`Please select menu`}</h1>
+          </section>
+        </div>
+        <div className=" h-[70%] overflow-y-auto py-3">
+          <aside className="px-5 overflow-y-auto h-auto">
+            <section className="grid 2xl:grid-cols-6 xl:grid-cols-5 lg:grid-cols-4md:grid-cols-5 sm:grid-cols-5  gap-4 transition duration-300 ease-in-out">
+              {menuItems.map((item) => {
+                const menuUrl = item.url;
+                const linkHref =
+                  menuUrl === "pmis.pipeline.pttplc.com/smartTSO/login.php"
+                    ? "#"
+                    : `/en/authorization/${menuUrl}`;
+
+                return (
+                  // <Link
+                  //   href={`/${lng}/authorization/${item?.url}`}
+                  //   prefetch={true}
+                  //   key={ix}
+                  //   className="row-span-1 noisy01 hover:bg-[#4F83B7] duration-200 ease-in-out text-white py-6 px-2 rounded-md grid justify-center items-center h-[240px] bg-[#3A699373]"
+                  // >
+                  //   <div className=" grid justify-center items-center h-[80px]">
+                  //     {item?.iconSize}
+                  //   </div>
+                  //   <div className="grid justify-center items-end text-[24px] h-[35px] -mt-[50px] text-center">{item?.name}</div>
+                  // </Link>
+                  <Link
+                    href={linkHref}
+                    onClick={() => handleLinkClick(menuUrl)}
+                    prefetch={true}
+                    key={menuUrl}
+                    className="row-span-1 noisy01 hover:bg-[#4F83B7] text-white py-6 sm:py-1 md:py-6 px-2 rounded-[20px] grid justify-center items-center h-[240px] sm:h-[100px] md:h-[25vh] lg:h-[10rem] xl:h-[240px] 1xl:h-[500px] bg-[#3A699373] duration-200 ease-in-out"
+                  >
+                    <div className="grid justify-center items-center h-[80px] sm:h-[50px] md:h-[50px] lg:h-[80px] duration-200 ease-in-out">
+                      {item?.iconSize}
+                    </div>
+                    <div className="grid justify-center items-end text-[24px] sm:text-[1.5vw] md:text-[1.5vw] lg:text-[1.5vw] h-[35px] -mt-[50px] text-center">{item?.name}</div>
+                  </Link>
+                );
+              })}
+            </section>
+          </aside>
+        </div>
+        <div className="h-[7%] flex items-end relative z-50">
+          {announcement.length > 0 && (
+            // <footer className="fixed bottom-0 left-0 w-full bg-[#0D539A80] text-white h-[20px] sm:h-[30px] md:h-[40px] lg:h-[50px] flex items-center">
+            <footer className="w-full bg-[#0D539A80] text-white h-[20px] sm:h-[30px] md:h-[40px] lg:h-[50px] flex items-center">
+              <Marquee className="w-full">
+                <aside className="w-full flex items-center justify-center">
+                  {announcement.map((item) => (
+                    <section key={item.id} className="flex items-center gap-2 py-2">
+                      <CampaignIcon className="!text-[14px] sm:!text-[16px] md:!text-[18px] lg:!text-[20px]" />
+                      <span className="font-semibold text-[14px] sm:text-[12px] md:text-[16px] lg:text-[20px]">{`${item.topic}`}</span><span className="text-[14px] sm:text-[12px] md:text-[16px] lg:text-[20px]">{`: ${item.detail}`}{` `}</span>&nbsp;&nbsp;&nbsp;
+                    </section>
+                  ))}
+                </aside>
+              </Marquee>
+            </footer>
+          )}
+        </div>
+      </div>
+    </section>
   );
 };
 
