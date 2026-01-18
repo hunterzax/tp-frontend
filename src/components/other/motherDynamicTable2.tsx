@@ -48,7 +48,8 @@ const MotherTable2: React.FC<any> = ({ columnVisibility, setcolumnVisibility, in
     const generateColumnVisibility = (columns: any) => Object.fromEntries(columns.map(({ key, visible }: any) => [key, visible]));
 
     const renderDateColumnMenu = async (key: any, label: any, parent?: any) => {
-        let newData: any = initialColumnsDynamic;
+        if (!initialColumnsDynamic || !Array.isArray(initialColumnsDynamic)) return;
+        let newData: any = [...initialColumnsDynamic];
         if (parent) {
             let findObject: any = newData?.find((item: any) => item?.label == parent);
             let findIDX: any = newData?.findIndex((item: any) => item?.label == parent);

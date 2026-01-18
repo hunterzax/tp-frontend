@@ -383,6 +383,42 @@ const ClientPage: React.FC<ClientProps> = () => {
         }
     };
 
+
+
+    const togglePopover = (id: any, anchor: any) => {
+        if (openPopoverId === id) {
+            setOpenPopoverId(null); // close popover
+            setAnchorPopover(null)
+        } else {
+            setOpenPopoverId(id); // Open the popover for the clicked row
+            if (anchor) {
+                setAnchorPopover(anchor)
+            }
+            else {
+                setAnchorPopover(null)
+            }
+        }
+
+        settk(!tk)
+    };
+
+    const [tk, settk] = useState(false);
+    const [openPopoverId, setOpenPopoverId] = useState(null);
+    const popoverRef = useRef<HTMLDivElement>(null);
+    const [anchorPopover, setAnchorPopover] = useState<null | HTMLElement>(null);
+
+    const renderPermission: any = () => {
+        let permission: any = undefined;
+        try {
+            const updatedUserPermission = generateUserPermission(user_permission);
+            permission = updatedUserPermission;
+        } catch (error) {
+            // Failed to parse user_permission:
+        }
+
+        return permission
+    }
+
     const columns = useMemo<ColumnDef<any>[]>(
         () => [
             {
@@ -498,42 +534,8 @@ const ClientPage: React.FC<ClientProps> = () => {
                 }
             },
         ],
-        []
+        [renderPermission, togglePopover]
     )
-
-    const togglePopover = (id: any, anchor: any) => {
-        if (openPopoverId === id) {
-            setOpenPopoverId(null); // close popover
-            setAnchorPopover(null)
-        } else {
-            setOpenPopoverId(id); // Open the popover for the clicked row
-            if (anchor) {
-                setAnchorPopover(anchor)
-            }
-            else {
-                setAnchorPopover(null)
-            }
-        }
-
-        settk(!tk)
-    };
-
-    const [tk, settk] = useState(false);
-    const [openPopoverId, setOpenPopoverId] = useState(null);
-    const popoverRef = useRef<HTMLDivElement>(null);
-    const [anchorPopover, setAnchorPopover] = useState<null | HTMLElement>(null);
-
-    const renderPermission: any = () => {
-        let permission: any = undefined;
-        try {
-            const updatedUserPermission = generateUserPermission(user_permission);
-            permission = updatedUserPermission;
-        } catch (error) {
-            // Failed to parse user_permission:
-        }
-
-        return permission
-    }
 
     const handleClickOutside = (event: MouseEvent) => {
         if (popoverRef.current && !popoverRef.current.contains(event.target as Node)) {
@@ -574,7 +576,8 @@ const ClientPage: React.FC<ClientProps> = () => {
             const validUrl = url.startsWith('http://') || url.startsWith('https://')
                 ? url : `https://${url}`;
 
-            window.open(validUrl, '_blank');
+            const newWindow = window.open(validUrl, '_blank');
+            if (newWindow) newWindow.opener = null;
         } else {
             // The file URL is not valid or unavailable.
         }
@@ -592,7 +595,7 @@ const ClientPage: React.FC<ClientProps> = () => {
             return true;
         });
     }
-    
+
     return (
         <div className=" space-y-2">
             <div className="border-[#DFE4EA] border-[1px] p-4 rounded-xl flex flex-col sm:flex-row gap-2">
@@ -769,9 +772,9 @@ const ClientPage: React.FC<ClientProps> = () => {
                             modalErrorMsg?.split('<br/>').length > 1 ?
                                 <ul className="text-start list-disc">
                                     {
-                                        modalErrorMsg.split('<br/>').map(item => {
+                                        modalErrorMsg.split('<br/>').map((item, index) => {
                                             return (
-                                                <li>{item}</li>
+                                                <li key={index}>{item}</li>
                                             )
                                         })
                                     }

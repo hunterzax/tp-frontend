@@ -118,8 +118,7 @@ const ModalPassword: React.FC<FormExampleProps> = ({
                                         type={isPasswordVisible ? 'text' : 'password'}
                                         className={`${inputClass} !bg-[#00ADEF1A] !border-[#00ADEF1A] !text-[#0E688B] !text-[18px] font-bold text-center !w-[282px] !h-[50px] pointer-events-none user-select-none`}
                                         placeholder=""
-                                        // value={data.password_gen_flag ? data.password_gen_origin : '************'}
-                                        // value={data?.password_gen_flag ? passwordValue : '************'}
+
                                         value={data?.password_gen_flag || isGenerate ? passwordValue : '************'}
                                         readOnly={true}
                                     />

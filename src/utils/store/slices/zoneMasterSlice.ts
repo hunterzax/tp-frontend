@@ -28,12 +28,12 @@ export const fetchZoneMasterSlice = createAsyncThunk(
                 throw new Error('Failed to construct safe URL');
             }
 
-            const response:any = await axios.get(safeUrl, {
+            const response: any = await axios.get(safeUrl, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${token}`,
-                    timeout: 600000
                 },
+                timeout: 600000
             });
             return response.data;
         } catch (error: any) {

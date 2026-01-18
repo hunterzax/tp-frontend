@@ -473,7 +473,7 @@ export const exportToExcelDailyAdjustReport = (data_current: any, data_filter: a
             // ต้องแปลง timeShow แยก array
             let grouppppp = separateTimeShow(data_filter)
 
-            let exportData1: any = exportDataCurrent?.length > 0 ? transformDailyAdjust(exportDataCurrent, column) : [];
+            let exportData1: any = (exportDataCurrent && exportDataCurrent.length > 0) ? transformDailyAdjust(exportDataCurrent, column) : [];
             exportData1 = transformKeys(exportData1);
             exportData1 = exportData1?.map(({ ["Nomination Value"]: point, ...rest }: any) => ({
                 ...rest,
@@ -2161,13 +2161,13 @@ export const exportCyberpunk = (data_to_export?: any) => {
     data_to_export?.forEach((entry: any) => {
         entry?.nomPoint?.forEach((point: any) => {
             if (point && point.point) {
-            const pointName = point.point;
-            if (!allPoints[pointName]) allPoints[pointName] = new Set();
-            point?.data?.forEach((shipper: any) => {
+                const pointName = point.point;
+                if (!allPoints[pointName]) allPoints[pointName] = new Set();
+                point?.data?.forEach((shipper: any) => {
                     if (pointName && allPoints[pointName] && shipper?.shipper_name) {
-                allPoints[pointName].add(shipper.shipper_name);
+                        allPoints[pointName].add(shipper.shipper_name);
                     }
-            });
+                });
             }
         });
     });
@@ -2175,23 +2175,23 @@ export const exportCyberpunk = (data_to_export?: any) => {
     // Build header row
     const pointHeaders: any = [];
     if (allPoints && typeof allPoints === 'object') {
-    Object.keys(allPoints).forEach(point => {
+        Object.keys(allPoints).forEach(point => {
             if (point && allPoints[point]) {
-        allPoints[point] = Array.from(allPoints[point]);
+                allPoints[point] = Array.from(allPoints[point]);
                 if (Array.isArray(allPoints[point])) {
-        allPoints[point].forEach((shipper: any) => {
+                    allPoints[point].forEach((shipper: any) => {
                         if (shipper) {
-            header.push(`${point} - ${shipper}`);
-            pointHeaders.push({ point, shipper });
+                            header.push(`${point} - ${shipper}`);
+                            pointHeaders.push({ point, shipper });
                         }
-        });
+                    });
                 }
-        header.push(`${point} - Total`);
-        pointHeaders.push({ point, type: 'total' });
-        header.push(`${point} - Metering`);
-        pointHeaders.push({ point, type: 'meter' });
+                header.push(`${point} - Total`);
+                pointHeaders.push({ point, type: 'total' });
+                header.push(`${point} - Metering`);
+                pointHeaders.push({ point, type: 'meter' });
             }
-    });
+        });
     }
 
     // Fill data rows
@@ -2199,22 +2199,22 @@ export const exportCyberpunk = (data_to_export?: any) => {
     data_to_export.forEach((entry: any) => {
         const row = [entry.gas_day];
         if (pointHeaders && Array.isArray(pointHeaders)) {
-        pointHeaders.forEach(({ point, shipper, type }: any) => {
+            pointHeaders.forEach(({ point, shipper, type }: any) => {
                 const foundPoint = entry?.nomPoint && Array.isArray(entry.nomPoint) ? entry.nomPoint.find((p: any) => p?.point === point) : null;
-            if (!foundPoint) {
-                row.push('');
-                return;
-            }
+                if (!foundPoint) {
+                    row.push('');
+                    return;
+                }
 
-            if (type === 'total') {
-                row.push(foundPoint.total || 0);
-            } else if (type === 'meter') {
-                row.push(foundPoint.meterValue || 0);
-            } else {
-                const shipperData = foundPoint?.data && Array.isArray(foundPoint.data) ? foundPoint.data.find((d: any) => d?.shipper_name === shipper) : null;
-                row.push(shipperData ? shipperData.allocatedValue : 0);
-            }
-        });
+                if (type === 'total') {
+                    row.push(foundPoint.total || 0);
+                } else if (type === 'meter') {
+                    row.push(foundPoint.meterValue || 0);
+                } else {
+                    const shipperData = foundPoint?.data && Array.isArray(foundPoint.data) ? foundPoint.data.find((d: any) => d?.shipper_name === shipper) : null;
+                    row.push(shipperData ? shipperData.allocatedValue : 0);
+                }
+            });
         }
         rows.push(row);
     });
@@ -2277,7 +2277,7 @@ export const exportCyberpunk2 = (data?: any) => {
     // Build data rows
     data?.forEach((entry: any) => {
         if (!entry) return;
-        
+
         const row = [entry?.gas_day];
         let rowTotal = 0;
 
@@ -2324,7 +2324,7 @@ export const exportCyberpunk3 = (data?: any) => {
     data?.forEach((entry: any) => {
         entry?.nomPoint?.forEach((point: any) => {
             if (point && point.point) {
-            if (!points[point.point]) points[point.point] = new Set();
+                if (!points[point.point]) points[point.point] = new Set();
                 point?.data?.forEach((d: any) => {
                     if (point.point && points[point.point] && d?.shipper_name) {
                         points[point.point].add(d.shipper_name);
@@ -2563,7 +2563,7 @@ export const exportCyberpunk4 = (data?: any) => {
     data?.forEach((entry: any) => {
         entry?.nomPoint?.forEach((point: any) => {
             if (point && point.point) {
-            if (!points[point.point]) points[point.point] = new Set();
+                if (!points[point.point]) points[point.point] = new Set();
                 point?.data?.forEach((d: any) => {
                     if (point.point && points[point.point] && d?.shipper_name) {
                         points[point.point].add(d.shipper_name);
@@ -2618,7 +2618,7 @@ export const exportCyberpunk4 = (data?: any) => {
     // Data rows
     data?.forEach((entry: any) => {
         if (!entry) return;
-        
+
         // const row = [entry.gas_day];
         const gasDay = entry?.gas_day ? toDayjs(entry.gas_day, "YYYY-MM-DD") : null;
         const row = [gasDay?.isValid?.() ? gasDay.format("DD/MM/YYYY") : ''];
@@ -2664,7 +2664,7 @@ export const exportALLOShipperREPORT = (data?: any) => {
     original_data?.forEach((entry: any) => {
         entry?.nomPoint?.forEach((point: any) => {
             if (point && point.point) {
-            if (!points[point.point]) points[point.point] = new Set();
+                if (!points[point.point]) points[point.point] = new Set();
                 point?.data?.forEach((d: any) => {
                     if (points[point.point] && d?.shipper_name) {
                         points[point.point].add(d.shipper_name);
@@ -2722,13 +2722,13 @@ export const exportALLOShipperREPORT = (data?: any) => {
 
         // 1. เพิ่มชื่อ shippers ลงทั้ง 2 แถว
         if (pointShippers[point] && Array.isArray(pointShippers[point])) {
-        pointShippers[point].forEach((shipper: any) => {
+            pointShippers[point].forEach((shipper: any) => {
                 if (shipper) {
-            headerRow1.push(point);          // แถวบนใส่ชื่อ point
-            headerRow2.push(shipper);        // แถวล่างใส่ชื่อ shipper
-            colIndex++;
+                    headerRow1.push(point);          // แถวบนใส่ชื่อ point
+                    headerRow2.push(shipper);        // แถวล่างใส่ชื่อ shipper
+                    colIndex++;
                 }
-        });
+            });
         }
 
         // 2. ถ้ามี Total
@@ -3356,7 +3356,7 @@ export const validatePhoneNumber = (value: any) => {
 export const getNestedValue = (obj: any, path: any) => {
     if (!path || typeof path !== 'string') return "";
     if (!obj || obj === null || obj === undefined) return "";
-    
+
     const value = path.split('.').reduce((acc: any, part: string) => {
         if (!acc) return undefined;
 
@@ -4212,7 +4212,7 @@ export const handleInputNumberChange = (e: { target: { value: any; }; }, setValu
 export const groupDataCapacityPublication = (data: any) => {
     return data?.map((entry: any) => {
         if (!entry) return null;
-        
+
         const yearly: any = {};
         const monthly: any = {};
 
@@ -4220,7 +4220,7 @@ export const groupDataCapacityPublication = (data: any) => {
             if (!item) return;
             const entries = Object.entries(item);
             if (!entries || entries.length === 0) return;
-            
+
             const [date, { area_nominal_capacity }]: any = entries[0];
             const [day, month, year] = date.split("/");
 
@@ -4610,7 +4610,7 @@ const adjustNodePositions = (nodes: any) => {
 
 export const findDateRanges = (data: any) => {
     if (!data || !Array.isArray(data) || data.length === 0) return {};
-    
+
     const firstItem = data[0];
     if (!firstItem || !firstItem.release_start_date || !firstItem.release_end_date) {
         return {};
@@ -4765,7 +4765,7 @@ export const sumValuesByArea = (dataLong: any) => {
                 let existing = areaMap.get(areaId);
                 if (existing && existing.value && Array.isArray(existing.value) && item.value && Array.isArray(item.value)) {
                     existing.value = existing.value.map((val: any, index: any) => val + (item.value[index] ?? 0));
-                areaMap.set(areaId, existing);
+                    areaMap.set(areaId, existing);
                 }
             }
         });
@@ -4850,11 +4850,11 @@ export const sumDataByAreaAndGroup = (dataLong: any[]) => {
             if (!entry) return;
 
             if (entry && item?.value && Array.isArray(item.value) && entry.sumValues && Array.isArray(entry.sumValues)) {
-            item.value.forEach((val: number | null, index: number) => {
+                item.value.forEach((val: number | null, index: number) => {
                     if (index < entry.sumValues.length) {
-                entry.sumValues[index] += val ?? 0; // Sum up values, handle nulls
+                        entry.sumValues[index] += val ?? 0; // Sum up values, handle nulls
                     }
-            });
+                });
             }
 
             areaGroupMap.set(key, entry);
@@ -5904,10 +5904,10 @@ export const formatMonthX = (dates: any) => {
     if (dates?.length > 0) {
         const firstDate = dates?.[0];
         if (!firstDate) return [];
-        
+
         const base = toDayjs(firstDate, 'DD/MM/YYYY');
         if (!base?.isValid?.()) return [];
-        
+
         const baseSubtracted = base.subtract(1, 'month');
 
         let formatter: any = Array.from({ length: 24 }, (_: any, i: any) =>
@@ -6439,7 +6439,7 @@ export const getDateRangeForApi = (start: any, end: any) => {
 export const flattenWeeklyDay = (data: any[]) => {
     return data?.map(item => {
         if (!item) return null;
-        
+
         const flattened: any = { ...item }; // ข้อมูลเดิม
 
         const weeklyDay = item?.weeklyDay;
@@ -6599,11 +6599,11 @@ export const sumDataNomShipperReport = (data_for_sum: any[]) => {
 
         // sum เฉพาะคีย์ 14..38
         if (existing && existing.data_temp) {
-        for (const key of keysToSum) {
+            for (const key of keysToSum) {
                 const sumVal = toNumber(existing.data_temp[key]) + toNumber(dt?.[key]);
-            existing.data_temp[key] = fmt3(sumVal);
-        }
-        grouped.set(groupKey, existing);
+                existing.data_temp[key] = fmt3(sumVal);
+            }
+            grouped.set(groupKey, existing);
         }
     }
 
@@ -6648,11 +6648,11 @@ export const sumDataNomShipperReportConcept = (data_for_sum: any[]) => {
 
         // sum เฉพาะคีย์ 14..38
         if (existing && existing.data_temp) {
-        for (const key of keysToSum) {
+            for (const key of keysToSum) {
                 const sumVal = toNumber(existing.data_temp[key]) + toNumber(dt?.[key]);
-            existing.data_temp[key] = fmt3(sumVal);
-        }
-        grouped.set(groupKey, existing);
+                existing.data_temp[key] = fmt3(sumVal);
+            }
+            grouped.set(groupKey, existing);
         }
     }
 
@@ -6901,18 +6901,18 @@ export const extractGroupedByWeeklyByGroup = (original_data?: any) => {
         const groupedMap = new Map();
 
         if (zoneEntry?.groupedByWeekly && Array.isArray(zoneEntry.groupedByWeekly)) {
-        for (const entry of zoneEntry.groupedByWeekly) {
+            for (const entry of zoneEntry.groupedByWeekly) {
                 if (!entry) continue;
-            const key = `${entry.nomination_code}|${entry.gas_day_main}|${entry.group}|${entry.contract_code}`;
-            if (!groupedMap.has(key)) {
-                groupedMap.set(key, {
-                    nomination_code: entry.nomination_code,
-                    gas_day_main: entry.gas_day_main,
-                    group: entry.group,
-                    contract_code: entry.contract_code,
-                    data: []
-                });
-            }
+                const key = `${entry.nomination_code}|${entry.gas_day_main}|${entry.group}|${entry.contract_code}`;
+                if (!groupedMap.has(key)) {
+                    groupedMap.set(key, {
+                        nomination_code: entry.nomination_code,
+                        gas_day_main: entry.gas_day_main,
+                        group: entry.group,
+                        contract_code: entry.contract_code,
+                        data: []
+                    });
+                }
                 const mapEntry = groupedMap.get(key);
                 if (mapEntry && entry.data && Array.isArray(entry.data)) {
                     mapEntry.data.push(...entry.data);
@@ -6991,10 +6991,12 @@ export const separateTimeShow = (data_origin?: any) => {
     if (!data_origin || !Array.isArray(data_origin)) return output;
 
     for (const entry of data_origin) {
+        if (!entry) continue;
         // const groupMap: any = {};
-        const groupMap: any = [];
+        const groupMap: any = {};
         if (Array.isArray(entry?.timeShow)) {
             for (const item of entry?.timeShow) {
+                if (!item) continue;
 
                 if (!groupMap[item.time]) {
                     groupMap[item.time] = [];
@@ -7038,9 +7040,11 @@ export const separateTimeShow = (data_origin?: any) => {
 // หน้า intraday balance report
 // ใช้กับฟิลเตอร์ filter_last_daily_version 
 export const getLatestPerShipper = (data: any[]): any[] => {
+    if (!data || !Array.isArray(data)) return [];
     const shipperMap: any = new Map<string, { entry: any; shipperGroup: any }>();
 
     for (const entry of data) {
+        if (!entry) continue;
         const timestamp = entry.execute_timestamp;
 
         for (const shipperGroup of entry.shipperData) {
@@ -9204,7 +9208,7 @@ export const getAcknowledgeStatus = (docArray: any) => {
     if (!docArray || !Array.isArray(docArray)) {
         return "0/0";
     }
-    
+
     // จัดกลุ่มตาม group_id
     const groups: any = docArray.reduce((acc: any, item: any) => {
         if (!item) return acc;
@@ -9396,7 +9400,7 @@ export const mapShipperData = (data_post: any, data_post_real: any) => {
 
     const mappedShipper = data_post.shipperData.reduce((acc: any[], s: any) => {
         if (!s || s === null || s === undefined) return acc;
-        
+
         // ถ้า energyAdjust ไม่ใช่ null และ sign ไม่ตรง -> ข้าม
         if (s.energyAdjust !== null && s.energyAdjust !== undefined && Math.sign(s.energyAdjust) !== signCheck) {
             return acc;
@@ -10372,12 +10376,12 @@ export function keepMaxSeqByVersion<T extends { version_text: any; seq: any }>(r
     if (!rows || !Array.isArray(rows)) {
         return [];
     }
-    
+
     const byVer = new Map<string, T>();
 
     for (const r of rows) {
         if (!r) continue;
-        
+
         const ver = String(r?.version_text ?? '');
         const prev = byVer.get(ver);
         // เก็บตัวที่ seq มากกว่าเสมอ (ถ้าเท่ากันจะคงตัวเดิมไว้)

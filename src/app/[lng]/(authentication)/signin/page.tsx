@@ -25,14 +25,17 @@ import { clearCookiesAndLocalStorage } from "@/utils/generalFormatter";
 // CWE-922 Fix: Use secure storage for sensitive data
 import { secureSessionStorage } from "@/utils/secureStorage";
 
+import { use } from "react";
+
 interface HomeProps {
-  params: {
+  params: Promise<{
     lng: string;
-  };
+  }>;
 }
 
 const SignInPage: React.FC<HomeProps> = (props) => {
-  const { params: { lng }, } = props;
+  const params = use(props.params);
+  const { lng } = params;
   // const { t } = useTranslation(lng);
   const { mutateLogout } = useLogout();
   const [mode, setmode] = useState("mode1");
@@ -116,31 +119,31 @@ const SignInPage: React.FC<HomeProps> = (props) => {
         title: "", // module
       };
 
-    // CWE-918 Fix: Validate notification domain
-    const notificationDomain = process.env.NEXT_PUBLIC_NOTI_IN_APP_DOMAIN;
-    if (!notificationDomain) {
-      throw new Error('Notification domain not configured');
-    }
+      // CWE-918 Fix: Validate notification domain
+      const notificationDomain = process.env.NEXT_PUBLIC_NOTI_IN_APP_DOMAIN;
+      if (!notificationDomain) {
+        throw new Error('Notification domain not configured');
+      }
 
-    // Validate the domain URL
-    const domainUrl = new URL(notificationDomain);
-    const allowedDomains = ['gotify.i24.dev', 'localhost', '127.0.0.1'];
-    if (!allowedDomains.includes(domainUrl.hostname)) {
-      throw new Error('Invalid notification service domain');
-    }
+      // Validate the domain URL
+      const domainUrl = new URL(notificationDomain);
+      const allowedDomains = ['gotify.i24.dev', 'localhost', '127.0.0.1'];
+      if (!allowedDomains.includes(domainUrl.hostname)) {
+        throw new Error('Invalid notification service domain');
+      }
 
-    const config = {
-      method: "post",
-      maxBodyLength: Infinity,
-      url: `${notificationDomain}/message`,
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${process.env.NEXT_PUBLIC_GOTIFY_SENDER_TOKEN}`,
-      },
-      data,
-    };
+      const config = {
+        method: "post",
+        maxBodyLength: Infinity,
+        url: `${notificationDomain}/message`,
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_GOTIFY_SENDER_TOKEN}`,
+        },
+        data,
+      };
 
-    const response = await axios.request(config);
+      const response = await axios.request(config);
       return response.data; // ส่งต่อข้อมูลที่ response กลับมา
     } catch (error: any) {
       // handleSendNotification error:
@@ -460,7 +463,7 @@ const SignInPage: React.FC<HomeProps> = (props) => {
 
       const apiPath = '/master/account-manage/account-local-tandc';
       const { buildSafeApiUrl, isValidApiPath } = await import('@/utils/urlValidator');
-      
+
       if (!isValidApiPath(apiPath)) {
         throw new Error('Invalid API path detected');
       }
