@@ -130,6 +130,7 @@ const TimePickaForm: React.FC<DatePickerSectionProps> = ({
             )}
         </div>
     ));
+    CustomInput.displayName = 'CustomInput';
 
     return (
         <DatePicker
@@ -151,4 +152,5 @@ const TimePickaForm: React.FC<DatePickerSectionProps> = ({
     );
 };
 
+TimePickaForm.displayName = 'TimePickaForm';
 export default TimePickaForm;

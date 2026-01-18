@@ -98,7 +98,7 @@ function LayoutMenuContents({ children }: any) {
 
   return (
     // เดิมคลุมด้วย element <></>
-    <div className="no-scrollbar overflow-y-auto scrollbar-hide h-screen"> 
+    <div className="no-scrollbar overflow-y-auto scrollbar-hide h-screen">
       <header>
         <section className=" flex justify-between items-center h-[70px] px-2">
           <Image
@@ -232,7 +232,7 @@ function LayoutMenu({ children }: any) {
               </KBarAnimator>
             </KBarPositioner>
           </KBarPortal>
-          <LayoutMenuContents children={children} />
+          <LayoutMenuContents>{children}</LayoutMenuContents>
         </KBarProvider>
       )}
     </>
@@ -283,6 +283,8 @@ const ResultItem = React.forwardRef(function ResultItem(
     </div>
   );
 });
+ResultItem.displayName = "ResultItem";
+
 
 const RenderResults = () => {
   const { results } = useMatches();

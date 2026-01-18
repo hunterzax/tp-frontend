@@ -7,13 +7,11 @@ function ThemeMode() {
   const { systemTheme, theme, setTheme } = useTheme();
 
   function onSelectChangeTogle() {
-    // theme === "dark" ? setTheme("light") : setTheme("dark");
-    // theme === "dark" ? setTheme("light") : setTheme("light");
     setTheme("light")
   }
 
   return (
-    <div className=' cursor-pointer' onClick={()=>{onSelectChangeTogle()}}>Switch Theme</div>
+    <div className=' cursor-pointer' onClick={() => { onSelectChangeTogle() }}>Switch Theme</div>
   )
 }
 

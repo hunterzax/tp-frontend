@@ -1173,7 +1173,7 @@ const ClientPage: React.FC<ClientProps> = () => {
 
             {/* {dataFile && dataFile?.book_capacity_request_management?.map((item: any, index: number) => ( */}
             {dataFile && dataFile?.booking_version?.map((item: any, index: number) => (
-                <div className="pb-2">
+                <div key={index} className="pb-2">
                     <div
                         className={`w-full h-[64px] border border-[#DFE4EA] rounded-[8px] cursor-pointer flex items-center justify-between gap-2 px-2 ${index === 0 ? 'bg-[#9EE4FF]' : 'bg-[#F3F4F7]'}`}
                         onClick={() => handleExpand(item.id)}

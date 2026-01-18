@@ -78,6 +78,7 @@ const YearPickaSearch: React.FC<DatePickerSectionProps> = ({
       }
     </div>
   ));
+  CustomInput.displayName = 'CustomInput';
 
   return (
     <section className="relative z-20">
@@ -102,4 +103,5 @@ const YearPickaSearch: React.FC<DatePickerSectionProps> = ({
   );
 };
 
+YearPickaSearch.displayName = 'YearPickaSearch';
 export default YearPickaSearch;

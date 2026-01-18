@@ -116,8 +116,6 @@ const FatherTable: React.FC<any> = ({
     useEffect(() => {
         if (forceRefetch) {
             dispatch(fetchContractPoint());
-        }
-        if (forceRefetch) {
             setForceRefetch(false);
         }
     }, [dispatch, contractPointData, forceRefetch]);

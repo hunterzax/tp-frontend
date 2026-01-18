@@ -693,7 +693,7 @@ const ModalHistory: React.FC<ModalHistoryProps> = ({ open, handleClose, title, d
 
     if (gnrData) {
       const lastElement = gnrData?.length - 1;
-      if (!gnrData[lastElement]?.update_by_account && gnrData?.length >= 2) {
+      if (gnrData[lastElement] && !gnrData[lastElement]?.update_by_account && gnrData?.length >= 2) {
         gnrData[lastElement].update_by_account = gnrData[lastElement]?.create_by_account
         gnrData[lastElement].update_date = gnrData[lastElement]?.create_date
       }

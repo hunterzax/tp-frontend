@@ -51,7 +51,7 @@ const ModalPathMgnHistory: React.FC<FormExampleProps> = ({
     setResetForm,
 }) => {
     const { control, register, handleSubmit, setValue, reset, formState: { errors }, watch, } = useForm<any>({ defaultValues: data });
-     
+
     const [dataMaster, setDataMaster] = useState<any>([]);
     const [filteredDataTable, setFilteredDataTable] = useState<any>([]);
     // const [reRenderByBank, setReRenderByBank] = useState(false)
@@ -281,10 +281,10 @@ const ModalPathMgnHistory: React.FC<FormExampleProps> = ({
                                         {/* TABLE BODY */}
                                         <tbody>
                                             {
-                                                sortedData && sortedData?.map((item: any) => {
+                                                sortedData && sortedData?.map((item: any, index: number) => {
 
                                                     return (
-                                                        <tr
+                                                        <tr key={index}
                                                             className={`${table_row_style}`}
                                                         >
                                                             {columnVisibility.exit && (

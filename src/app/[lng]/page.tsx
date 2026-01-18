@@ -1,15 +1,13 @@
 import { getTranslation } from "@/app/i18n";
 
 interface HomeProps {
-  params: {
+  params: Promise<{
     lng: string;
-  };
+  }>;
 }
 
 const HomePage: React.FC<HomeProps> = async (props) => {
-  const {
-    params: { lng },
-  } = props;
+  const { lng } = await props.params;
   const { t } = await getTranslation(lng);
 
   return (

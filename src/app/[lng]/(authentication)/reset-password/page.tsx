@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 // import { useTranslation } from "@/app/i18n";
-import { useEffect, useState } from "react";
+import { useEffect, useState, use } from "react";
 import { useTranslation } from "react-i18next";
 import { useRouter } from "next/navigation";
 import { getNoTokenService, getService, postService, postServiceNoAuth } from "@/utils/postService";
@@ -11,7 +11,8 @@ import { clearCookiesAndLocalStorage } from "@/utils/generalFormatter";
 import { useLogout } from "@/utils/logoutFunc";
 
 const ResetPwdPage: React.FC<any> = (props) => {
-  const { params: { lng }, } = props;
+  const { params } = props;
+  const { lng } = use<{ lng: string }>(params);
   const { t } = useTranslation(lng);
   const [isModalOpen, setisModalOpen] = useState<boolean>(false);
   const [modalErrorMsg, setModalErrorMsg] = useState('');
@@ -47,17 +48,17 @@ const ResetPwdPage: React.FC<any> = (props) => {
   const fetchData = async () => {
     try {
       const response: any = await getNoTokenService(`/master/parameter/setup-background`);
-      if(response && Array.isArray(response) && response.length > 0){
+      if (response && Array.isArray(response) && response.length > 0) {
         const activeBgList = response.filter((item: any) => item && item.active == true && item.url).sort(
           (a: any, b: any) => (b?.id || 0) - (a.id || 1)
         )
-        if(activeBgList && activeBgList.length > 0 && activeBgList[0]?.url){
+        if (activeBgList && activeBgList.length > 0 && activeBgList[0]?.url) {
           setBgUrl(activeBgList[0].url)
         }
       }
     } catch (err) {
       // setError(err.message);
-    } 
+    }
   };
 
   useEffect(() => {

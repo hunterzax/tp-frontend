@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Handle, NodeProps, Position } from 'reactflow';
 
-const exitNode = ({ data, id }: NodeProps) => {
+const ExitNode = ({ data, id }: NodeProps) => {
     const [isHovered, setIsHovered] = useState(false);
     const handle_style = { // style ตุ่มดำ ๆ ระหว่าง node
         width: 10,
@@ -37,11 +37,11 @@ const exitNode = ({ data, id }: NodeProps) => {
                 <div
                     className="absolute top-0 right-0 bg-[#58585A] text-white w-[18px] h-[18px] rounded-full flex justify-center items-center cursor-pointer"
                     onClick={() => data.onDelete(id, 'exit')}
-                    // onClick={(e) => {
-                    //     // e.stopPropagation(); // Prevent click event from reaching the parent
-                    //     data.onDelete(id, 'exit');
-                    //     // alert(`Delete clicked for ID: ${data.id}`);
-                    // }}
+                // onClick={(e) => {
+                //     // e.stopPropagation(); // Prevent click event from reaching the parent
+                //     data.onDelete(id, 'exit');
+                //     // alert(`Delete clicked for ID: ${data.id}`);
+                // }}
                 >
                     <span className="text-[7px] font-bold">X</span>
                 </div>
@@ -64,4 +64,4 @@ const exitNode = ({ data, id }: NodeProps) => {
     );
 };
 
-export default exitNode;
+export default ExitNode;

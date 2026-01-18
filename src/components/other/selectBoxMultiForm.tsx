@@ -70,7 +70,6 @@ const CustomSelectMulti: React.FC<any> = ({
                     <Select
                         {...field}
                         // id="nomination_point"
-                        {...register(name, { required: errorMsg })}
                         id={name}
                         IconComponent={(props) => <ExpandMoreIcon {...props} fontSize="medium" />}
                         multiple

@@ -1,0 +1,105 @@
+
+> web-main@0.1.0 lint
+> next lint --quiet
+
+`next lint` is deprecated and will be removed in Next.js 16.
+For new projects, use create-next-app to choose your preferred linter.
+For existing projects, migrate to the ESLint CLI:
+npx @next/codemod@canary next-lint-to-eslint-cli .
+
+
+./src/app/[lng]/authorization/(menu)/allocation/(menu)/allocationReview/page.tsx
+1123:37  Error: Missing "key" prop for element in iterator  react/jsx-key
+
+./src/app/[lng]/authorization/(menu)/balancing/(menu)/balIntraAccImbDashboard/form/chart.tsx
+580:29  Error: Missing "key" prop for element in iterator  react/jsx-key
+
+./src/app/[lng]/authorization/(menu)/balancing/(menu)/intraBaseInventoryShipper/page.tsx
+739:49  Error: Missing "key" prop for element in iterator  react/jsx-key
+
+./src/app/[lng]/authorization/(menu)/balancing/(menu)/intradayBaseInventory/page.tsx
+808:49  Error: Missing "key" prop for element in iterator  react/jsx-key
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/capacity/(menu)/CapContractList/page.tsx
+1176:17  Error: Missing "key" prop for element in iterator  react/jsx-key
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/capacity/(menu)/CapReqMgn/page.tsx
+3349:37  Error: Missing "key" prop for element in iterator  react/jsx-key
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/pathManagement/form/modalHistory.tsx
+287:57  Error: Missing "key" prop for element in iterator  react/jsx-key
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/masterData/(menu)/configMasterPath/form/nodeEntry.tsx
+7:39  Error: React Hook "useState" is called in function "entryNode" that is neither a React function component nor a custom React Hook function. React component names must start with an uppercase letter. React Hook names must start with the word "use".  react-hooks/rules-of-hooks
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/masterData/(menu)/configMasterPath/form/nodeExit.tsx
+6:39  Error: React Hook "useState" is called in function "exitNode" that is neither a React function component nor a custom React Hook function. React component names must start with an uppercase letter. React Hook names must start with the word "use".  react-hooks/rules-of-hooks
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/masterData/(menu)/configMasterPath/form/renderNode.tsx
+31:9  Error: Missing "key" prop for element in iterator  react/jsx-key
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/masterData/(menu)/contractPoint/form/modalAction.tsx
+1129:49  Error: Missing "key" prop for element in iterator  react/jsx-key
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/masterData/(menu)/contractPoint/page.tsx
+892:25  Error: Missing "key" prop for element in iterator  react/jsx-key
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/masterData/(menu)/meteredPoint/page.tsx
+1060:25  Error: Missing "key" prop for element in iterator  react/jsx-key
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/masterData/(menu)/nominationPoint/page.tsx
+1067:25  Error: Missing "key" prop for element in iterator  react/jsx-key
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/masterData/(menu)/zone/page.tsx
+935:25  Error: Missing "key" prop for element in iterator  react/jsx-key
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/userManagement/(menu)/group/(menu)/other/page.tsx
+950:49  Error: Missing "key" prop for element in iterator  react/jsx-key
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/userManagement/(menu)/group/(menu)/shippers/page.tsx
+1048:49  Error: Missing "key" prop for element in iterator  react/jsx-key
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/userManagement/(menu)/group/(menu)/tso/page.tsx
+920:49  Error: Missing "key" prop for element in iterator  react/jsx-key
+
+./src/app/[lng]/authorization/(menu)/dashboardandreport/(menu)/waitinglist/page.tsx
+720:45  Error: Missing "key" prop for element in iterator  react/jsx-key
+
+./src/app/[lng]/authorization/(menu)/layout.tsx
+10:21  Error: Do not pass children as props. Instead, nest children between the opening and closing tags.  react/no-children-prop
+
+./src/components/layout/LayoutMenu.tsx
+235:31  Error: Do not pass children as props. Instead, nest children between the opening and closing tags.  react/no-children-prop
+
+./src/components/library/dateRang/DateRangOnce.tsx
+11:21  Error: Component definition is missing display name  react/display-name
+
+./src/components/library/dateRang/backup/dateSelectForm_20250730.tsx
+112:30  Error: Component definition is missing display name  react/display-name
+
+./src/components/library/dateRang/backup/dateSelectForm_clean.tsx
+109:30  Error: Component definition is missing display name  react/display-name
+
+./src/components/library/dateRang/dateSearch.tsx
+155:23  Error: Component definition is missing display name  react/display-name
+
+./src/components/library/dateRang/dateSelectForm.tsx
+127:30  Error: Component definition is missing display name  react/display-name
+
+./src/components/library/dateRang/dateSelectFormThai.tsx
+105:30  Error: Component definition is missing display name  react/display-name
+
+./src/components/library/dateRang/monthYearPicker.tsx
+93:23  Error: Component definition is missing display name  react/display-name
+
+./src/components/library/dateRang/timePickerForm.tsx
+92:25  Error: Component definition is missing display name  react/display-name
+
+./src/components/library/dateRang/yearPicker.tsx
+46:23  Error: Component definition is missing display name  react/display-name
+
+./src/components/other/renderPdf2.tsx
+52:47  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+52:54  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules

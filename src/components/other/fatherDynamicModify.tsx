@@ -916,7 +916,7 @@ const FatherTableModify: React.FC<Props> = ({
                                             className="px-4 py-2 border-b border-gray-300 text-center text-[#464255]"
                                         >
                                             {(() => {
-                                                const filter_contract_point = contractPointData?.data?.find((item: any) => item.contract_point === row["0"].trim());
+                                                const filter_contract_point = contractPointData?.data?.find((item: any) => item.contract_point === row["0"]?.trim());
 
                                                 return filter_contract_point ? (
                                                     <div
@@ -938,7 +938,7 @@ const FatherTableModify: React.FC<Props> = ({
                                             className="px-4 py-2 border-b border-gray-300 text-center text-[#464255]"
                                         >
                                             {(() => {
-                                                const filter_contract_point = contractPointData?.data?.find((item: any) => item.contract_point === row["0"].trim());
+                                                const filter_contract_point = contractPointData?.data?.find((item: any) => item.contract_point === row["0"]?.trim());
 
                                                 return filter_contract_point ? (
                                                     <div
@@ -1156,7 +1156,7 @@ const FatherTableModify: React.FC<Props> = ({
                                             className="px-4 py-2 border-b border-gray-300 text-center text-[#464255]"
                                         >
                                             {(() => {
-                                                const filter_contract_point = contractPointData?.data?.find((item: any) => item.contract_point === row["0"].trim());
+                                                const filter_contract_point = contractPointData?.data?.find((item: any) => item.contract_point === row["0"]?.trim());
 
                                                 return filter_contract_point ? (
                                                     <div

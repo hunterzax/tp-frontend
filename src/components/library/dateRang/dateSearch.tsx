@@ -152,7 +152,7 @@ const DatePickaSearch: React.FC<DatePickerSectionProps> = ({
     }
   }, [isToday]);
 
-  const CustomInput = forwardRef(({ value, onClick }: any, ref: any) => {
+  const CustomInput = forwardRef(function CustomInput({ value, onClick }: any, ref: any) {
     return (
       <div>
         <button
@@ -196,6 +196,8 @@ const DatePickaSearch: React.FC<DatePickerSectionProps> = ({
     )
   }
   );
+  CustomInput.displayName = "CustomInput";
+
 
   const [currentMonthX, setCurrentMonthX] = useState(dayjs().month() + 1); // Initialize with the current month
 

@@ -133,6 +133,7 @@ const MonthYearPickaSearch: React.FC<DatePickerSectionProps> = ({
       )}
     </div>
   ));
+  CustomInput.displayName = 'CustomInput';
 
   return (
     <section className="relative z-20">
@@ -183,4 +184,5 @@ const MonthYearPickaSearch: React.FC<DatePickerSectionProps> = ({
   );
 };
 
+MonthYearPickaSearch.displayName = 'MonthYearPickaSearch';
 export default MonthYearPickaSearch;

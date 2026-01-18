@@ -73,7 +73,7 @@ const ClientPage: React.FC<ClientProps> = () => {
     // Configuration object for menu data mapping
     const MENU_CONFIG = {
         'CAPACITY MANAGEMENT': {
-            keys: ['CAPACITY CONTRACT LIST', 'CAPACITY CONTRACT MANAGEMENT',  'RELEASE CAPACITY MANAGEMENT'],
+            keys: ['CAPACITY CONTRACT LIST', 'CAPACITY CONTRACT MANAGEMENT', 'RELEASE CAPACITY MANAGEMENT'],
             endpoints: [
                 { path: 'contract', key: null },
                 { path: 'release-capacity-management', key: 'Release Capacity Management' }
@@ -119,7 +119,7 @@ const ClientPage: React.FC<ClientProps> = () => {
     function getSubMenu() {
         let userData: any = localStorage?.getItem("x9f3w1m8q2y0u5d7v1z");
         userData = userData ? decryptData(userData) : null;
-      
+
         let account_manage;
         try {
             const parsedUserData = userData ? JSON.parse(userData) : null;
@@ -128,36 +128,36 @@ const ClientPage: React.FC<ClientProps> = () => {
             // Failed to parse userData
             account_manage = null;
         }
-      
+
         const menus_config = account_manage?.[0]?.account_role?.[0]?.role?.menus_config ?? []
 
-        if(Array.isArray(menus_config) && menus_config.length > 0){
+        if (Array.isArray(menus_config) && menus_config.length > 0) {
             const waitingListMenuConfig = menus_config.filter((item: any) => item.menus?.name?.trim()?.toUpperCase()?.includes("WAITING LIST")
                 && item.menus?.name?.trim()?.toUpperCase() != "WAITING LIST"
-                && item.b_manage === true 
+                && item.b_manage === true
                 && item.f_view === 1
             )
-            .sort((a: any, b: any) => a.seq - b.seq)
-            .map((item: any) => {
-                const menuName =
-                    item.menus?.name
-                        ?.trim()
-                        ?.split(" ")
-                        ?.filter(
-                        (word: string) =>
-                            word.toUpperCase() !== "WAITING" &&
-                            word.toUpperCase() !== "LIST"
-                        )
-                        .join(" ")
-                        ?.trim() ?? "";
-                return {
-                    id: item.menus?.id,
-                    name: menuName,
-                }
-            })
-    
+                .sort((a: any, b: any) => a.seq - b.seq)
+                .map((item: any) => {
+                    const menuName =
+                        item.menus?.name
+                            ?.trim()
+                            ?.split(" ")
+                            ?.filter(
+                                (word: string) =>
+                                    word.toUpperCase() !== "WAITING" &&
+                                    word.toUpperCase() !== "LIST"
+                            )
+                            .join(" ")
+                            ?.trim() ?? "";
+                    return {
+                        id: item.menus?.id,
+                        name: menuName,
+                    }
+                })
+
             setSubMenu(waitingListMenuConfig)
-            if(waitingListMenuConfig.length > 0){
+            if (waitingListMenuConfig.length > 0) {
                 handleClick(waitingListMenuConfig[0].id)
             }
         }
@@ -168,7 +168,7 @@ const ClientPage: React.FC<ClientProps> = () => {
         newData,
         menuName,
         query
-    }: {isFetchData?: boolean, newData?: any, menuName: string , query?: string }) {
+    }: { isFetchData?: boolean, newData?: any, menuName: string, query?: string }) {
         const menuConfig = MENU_CONFIG[menuName as keyof typeof MENU_CONFIG];
         if (!menuConfig) {
             return;
@@ -178,23 +178,23 @@ const ClientPage: React.FC<ClientProps> = () => {
         const updateData = newData ?? waitingListData;
 
         let keys = Object.keys(waitingListData)
-        if(newData){
+        if (newData) {
             const newskeys = Object.keys(newData)
             keys.push(...newskeys)
             keys = Array.from(new Set(keys))
         }
-        
+
         // Filter and map data based on configuration
         menuConfig.keys.map((key: string) => {
             const targetKey = keys.find((k: string) => k.trim().toUpperCase() === key)
-            if(targetKey){
+            if (targetKey) {
                 const value = updateData[targetKey] ?? waitingListData[targetKey]
-                if(query){
-                    if(key.includes(query.trim().toUpperCase()) || (value?.remainingTasks && `${value.remainingTasks}`.includes(query))){
+                if (query) {
+                    if (key.includes(query.trim().toUpperCase()) || (value?.remainingTasks && `${value.remainingTasks}`.includes(query))) {
                         data[targetKey] = value;
                     }
                 }
-                else{
+                else {
                     data[targetKey] = value;
                 }
             }
@@ -206,7 +206,7 @@ const ClientPage: React.FC<ClientProps> = () => {
                 fetchSubMenuData(path, menuName, query);
             });
         }
-        
+
         setActiveButtonData(data);
         setWaitingListData((prev: any) => ({
             ...prev,
@@ -245,7 +245,7 @@ const ClientPage: React.FC<ClientProps> = () => {
     useEffect(() => {
         handleFieldSearch()
     }, [srchGroup, srchType])
-    
+
     // #endregion FIELD SEARCH
 
 
@@ -254,7 +254,7 @@ const ClientPage: React.FC<ClientProps> = () => {
     // ############### LIKE SEARCH ###############
     const [smartquery, setsmartquery] = useState<string>('');
     const [clearSmartQuery, setClearSmartQuery] = useState<boolean>(false);
-    
+
     useEffect(() => {
         const menuName = subMenu?.find((item: any) => item.id === activeButton)?.name?.trim()?.toUpperCase() ?? ''
         handleUpdateActiveButtonData({
@@ -263,7 +263,7 @@ const ClientPage: React.FC<ClientProps> = () => {
             query: smartquery
         })
     }, [smartquery])
-    
+
     // #endregion LIKE SEARCH
 
 
@@ -344,8 +344,8 @@ const ClientPage: React.FC<ClientProps> = () => {
             if (!endpointConfig) return;
 
             const res = await getService(`/master/waiting-list/${path}`);
-            
-            if(JSON.stringify(res).includes('remainingTasks')){
+
+            if (JSON.stringify(res).includes('remainingTasks')) {
                 let newData: any;
                 if (endpointConfig.key) {
                     // If there's a specific key, wrap the response
@@ -354,7 +354,7 @@ const ClientPage: React.FC<ClientProps> = () => {
                     // Otherwise, use the response directly
                     newData = res;
                 }
-                
+
                 // Update the data
                 handleUpdateActiveButtonData({
                     isFetchData: false,
@@ -363,7 +363,7 @@ const ClientPage: React.FC<ClientProps> = () => {
                     query
                 });
             }
-            
+
 
         } catch (err) {
             // setError(err.message);
@@ -400,20 +400,20 @@ const ClientPage: React.FC<ClientProps> = () => {
 
     const getLastLoginDuration = (row: any) => {
         let text = ''
-        if(row?.login_logs?.length > 0){
+        if (row?.login_logs?.length > 0) {
             const lastLogin = toDayjs(row?.login_logs[0]?.create_date)
             const now = toDayjs()
             let duration = now.diff(lastLogin, 'month')
-            if(duration > 0){
-                if(duration >= 12){
+            if (duration > 0) {
+                if (duration >= 12) {
                     duration = now.diff(lastLogin, 'year')
                     text = `${duration} ${duration == 1 ? 'year' : 'years'}`
                 }
-                else{
+                else {
                     text = `${duration} ${duration == 1 ? 'month' : 'months'}`
                 }
             }
-            else{
+            else {
                 duration = now.diff(lastLogin, 'day')
                 text = `${duration} ${duration == 1 ? 'day' : 'days'}`
             }
@@ -547,7 +547,7 @@ const ClientPage: React.FC<ClientProps> = () => {
                 cell: (info) => {
                     const row: any = info?.row?.original
                     const duration = getLastLoginDuration(row)
-                    
+
                     return (
                         <div className={`${row?.status ? "text-[#464255]" : "text-[#9CA3AF]"}`}>
                             {duration}
@@ -568,7 +568,7 @@ const ClientPage: React.FC<ClientProps> = () => {
                 <div className="font-bold text-lg text-[#58585A] mb-8">
                     Menu list
                 </div>
-                {subMenu?.map(({ id , name}) => (
+                {subMenu?.map(({ id, name }) => (
                     <div key={id} className="pb-2">
                         <div
                             onClick={() => handleClick(id)}
@@ -591,151 +591,150 @@ const ClientPage: React.FC<ClientProps> = () => {
                     <div className="space-y-2 ">
                         {
                             subMenu?.find((item: any) => item.id === activeButton)?.name?.trim()?.toUpperCase() === "LOGIN" ?
-                            <>
-                                <div className="border-[#DFE4EA] border-[1px] p-4 rounded-xl flex flex-col sm:flex-row gap-2">
-                                    {/* <button type="button" onClick={() => testrenderMail()}>test</button> */}
+                                <>
+                                    <div className="border-[#DFE4EA] border-[1px] p-4 rounded-xl flex flex-col sm:flex-row gap-2">
+                                        {/* <button type="button" onClick={() => testrenderMail()}>test</button> */}
 
-                                    <aside className="flex flex-wrap sm:flex-row gap-2 w-full">
-                                        <InputSearch
-                                            id="searchGroup"
-                                            label="Company/Group Name"
-                                            type="select-multi-checkbox"
-                                            value={srchGroup}
-                                            onChange={(e) => setSrchGroup(e.target.value)}
-                                            options={Array.from(new Map(
-                                                (dataTable ?? []).map((item: any) => [item.company_name, item])
-                                            ).values()).map((item: any) => ({
-                                                value: item.company_name, 
-                                                label: item.company_name 
-                                            }))}
-                                            placeholder="Select Company/Group Name"
-                                        />
+                                        <aside className="flex flex-wrap sm:flex-row gap-2 w-full">
+                                            <InputSearch
+                                                id="searchGroup"
+                                                label="Company/Group Name"
+                                                type="select-multi-checkbox"
+                                                value={srchGroup}
+                                                onChange={(e) => setSrchGroup(e.target.value)}
+                                                options={Array.from(new Map(
+                                                    (dataTable ?? []).map((item: any) => [item.company_name, item])
+                                                ).values()).map((item: any) => ({
+                                                    value: item.company_name,
+                                                    label: item.company_name
+                                                }))}
+                                                placeholder="Select Company/Group Name"
+                                            />
 
-                                        <InputSearch
-                                            id="searchType"
-                                            label="Type"
-                                            type="select-multi-checkbox"
-                                            value={srchType}
-                                            onChange={(e) => setSrchType(e.target.value)}
-                                            options={[
-                                                { value: "Manual", label: "Manual" },
-                                                { value: "PTT", label: "PTT" },
-                                                { value: "TPA Website", label: "TPA Website" },
-                                            ]}
-                                            placeholder="Select Type"
-                                        />
+                                            <InputSearch
+                                                id="searchType"
+                                                label="Type"
+                                                type="select-multi-checkbox"
+                                                value={srchType}
+                                                onChange={(e) => setSrchType(e.target.value)}
+                                                options={[
+                                                    { value: "Manual", label: "Manual" },
+                                                    { value: "PTT", label: "PTT" },
+                                                    { value: "TPA Website", label: "TPA Website" },
+                                                ]}
+                                                placeholder="Select Type"
+                                            />
 
-                                        {/* <BtnSearch handleFieldSearch={handleFieldSearch} />
+                                            {/* <BtnSearch handleFieldSearch={handleFieldSearch} />
                                         <BtnReset handleReset={handleReset} /> */}
 
-                                    </aside>
-                                </div>
+                                        </aside>
+                                    </div>
 
 
-                                <AppTable
-                                    data={filteredDataTable}
-                                    columns={columns}
-                                    isLoading={isLoading}
-                                    exportBtn={
-                                        <BtnExport
-                                            textRender={"Export"}
-                                            data={dataExport}
-                                            path="dam/users"
-                                            can_export={userPermission ? userPermission?.f_export : false}
-                                            columnVisibility={columnVisibility}
-                                            initialColumns={initialColumns}
-                                            fileName="waitinglist_login"
-                                        />
-                                    }
-                                    initialColumns={Object.fromEntries(initialColumns.map((column: any) => [column.key, column.visible]))}
-                                    onColumnVisibilityChange={(columnKey: any) => handleColumnToggle(columnKey)}
-                                    onFilteredDataChange={(filteredData: any) => {
-                                        const newData = filteredData || [];
-                                        // Check if the filtered data is different from current dataExport
-                                        if (JSON.stringify(dataExport) !== JSON.stringify(newData)) {
-                                            setDataExport(newData);
+                                    <AppTable
+                                        data={filteredDataTable}
+                                        columns={columns}
+                                        isLoading={isLoading}
+                                        exportBtn={
+                                            <BtnExport
+                                                textRender={"Export"}
+                                                data={dataExport}
+                                                path="dam/users"
+                                                can_export={userPermission ? userPermission?.f_export : false}
+                                                columnVisibility={columnVisibility}
+                                                initialColumns={initialColumns}
+                                                fileName="waitinglist_login"
+                                            />
                                         }
-                                    }}
-                                />
-                            </>
-                            :
-                            <div className="p-4">
-                                <div className="text-sm flex flex-column sm:flex-row flex-wrap space-y-4 sm:space-y-0 items-center justify-between pb-4">
-                                    <div className="flex items-center space-x-2 font-bold text-lg text-[#1473A1]">
-                                        Today, {toDayjs().format("DD/MM/YYYY")}
-                                    </div>
-
-                                    <div className="flex flex-wrap gap-2 justify-end">
-                                        <SearchInput
-                                            onSearch={setsmartquery}
-                                            clear={clearSmartQuery}
-                                            onClear={() => {
-                                                setClearSmartQuery(false)
-                                                setsmartquery('')
-                                            }}
-                                        />
-
-                                        <BtnGeneral
-                                            bgcolor={"#24AB6A"}
-                                            modeIcon={'export'}
-                                            textRender={"Export"}
-                                            width={100}
-                                            generalFunc={
-                                                () => {
-                                                    const menuName =
-                                                      subMenu
-                                                        ?.find((item: any) => item.id === activeButton)
-                                                        ?.name?.trim()
-                                                        ?.toLowerCase()
-                                                        ?.replaceAll(" ", "_") ?? "";
-
-                                                        
-                                                    exportToExcel(
-                                                        Object.keys(activeButtonData).map((key: any) => {
-                                                            return {
-                                                                'Name': key,
-                                                                'Remaining tasks': activeButtonData[key]?.remainingTasks,
-                                                            }
-                                                        }),
-                                                        `waitinglist_${menuName}`
-                                                    )
-                                                }
+                                        initialColumns={Object.fromEntries(initialColumns.map((column: any) => [column.key, column.visible]))}
+                                        onColumnVisibilityChange={(columnKey: any) => handleColumnToggle(columnKey)}
+                                        onFilteredDataChange={(filteredData: any) => {
+                                            const newData = filteredData || [];
+                                            // Check if the filtered data is different from current dataExport
+                                            if (JSON.stringify(dataExport) !== JSON.stringify(newData)) {
+                                                setDataExport(newData);
                                             }
-                                            can_export={userPermission ? userPermission?.f_export : false}
-                                        />
+                                        }}
+                                    />
+                                </>
+                                :
+                                <div className="p-4">
+                                    <div className="text-sm flex flex-column sm:flex-row flex-wrap space-y-4 sm:space-y-0 items-center justify-between pb-4">
+                                        <div className="flex items-center space-x-2 font-bold text-lg text-[#1473A1]">
+                                            Today, {toDayjs().format("DD/MM/YYYY")}
+                                        </div>
+
+                                        <div className="flex flex-wrap gap-2 justify-end">
+                                            <SearchInput
+                                                onSearch={setsmartquery}
+                                                clear={clearSmartQuery}
+                                                onClear={() => {
+                                                    setClearSmartQuery(false)
+                                                    setsmartquery('')
+                                                }}
+                                            />
+
+                                            <BtnGeneral
+                                                bgcolor={"#24AB6A"}
+                                                modeIcon={'export'}
+                                                textRender={"Export"}
+                                                width={100}
+                                                generalFunc={
+                                                    () => {
+                                                        const menuName =
+                                                            subMenu
+                                                                ?.find((item: any) => item.id === activeButton)
+                                                                ?.name?.trim()
+                                                                ?.toLowerCase()
+                                                                ?.replaceAll(" ", "_") ?? "";
+
+
+                                                        exportToExcel(
+                                                            Object.keys(activeButtonData).map((key: any) => {
+                                                                return {
+                                                                    'Name': key,
+                                                                    'Remaining tasks': activeButtonData[key]?.remainingTasks,
+                                                                }
+                                                            }),
+                                                            `waitinglist_${menuName}`
+                                                        )
+                                                    }
+                                                }
+                                                can_export={userPermission ? userPermission?.f_export : false}
+                                            />
+                                        </div>
                                     </div>
-                                </div>
 
 
-                                {isLoading && Object.keys(activeButtonData).length == 0 && <NodataTable />}
-                                
-                                <div className={`grid gap-4 ${
-                                    Object.keys(activeButtonData).length === 1 ? 'grid-cols-1' :
-                                    Object.keys(activeButtonData).length === 2 ? 'grid-cols-1 lg:grid-cols-2' :
-                                    Object.keys(activeButtonData).length === 3 ? 'grid-cols-1 lg:grid-cols-2 xl:grid-cols-3' :
-                                    'grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4'
-                                }`}>
-                                    {
-                                        Object.keys(activeButtonData).map((key: any) => (
-                                            <div className="border-[#1C1D220F] border-[2px] rounded-xl p-6 overflow-x-scroll">
-                                                <p className="font-bold text-md text-[#58585A] mb-8 min-h-11 line-clamp-2">
-                                                    {key}
-                                                </p>
-                                                <div className="flex flex-column sm:flex-row flex-wrap items-center justify-between">
-                                                    <div className="flex items-center space-x-2">
-                                                        <FormatListBulletedIcon style={{ fontSize: "12px" }} />
-                                                        <span className="text-sm text-[#1473A1]">Remaining tasks</span>
-                                                    </div>
+                                    {isLoading && Object.keys(activeButtonData).length == 0 && <NodataTable />}
 
-                                                    <div className="flex flex-wrap justify-end items-center font-bold text-5xl text-[#1473A1]">
-                                                        {activeButtonData[key]?.remainingTasks}
+                                    <div className={`grid gap-4 ${Object.keys(activeButtonData).length === 1 ? 'grid-cols-1' :
+                                            Object.keys(activeButtonData).length === 2 ? 'grid-cols-1 lg:grid-cols-2' :
+                                                Object.keys(activeButtonData).length === 3 ? 'grid-cols-1 lg:grid-cols-2 xl:grid-cols-3' :
+                                                    'grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4'
+                                        }`}>
+                                        {
+                                            Object.keys(activeButtonData).map((key: any) => (
+                                                <div key={key} className="border-[#1C1D220F] border-[2px] rounded-xl p-6 overflow-x-scroll">
+                                                    <p className="font-bold text-md text-[#58585A] mb-8 min-h-11 line-clamp-2">
+                                                        {key}
+                                                    </p>
+                                                    <div className="flex flex-column sm:flex-row flex-wrap items-center justify-between">
+                                                        <div className="flex items-center space-x-2">
+                                                            <FormatListBulletedIcon style={{ fontSize: "12px" }} />
+                                                            <span className="text-sm text-[#1473A1]">Remaining tasks</span>
+                                                        </div>
+
+                                                        <div className="flex flex-wrap justify-end items-center font-bold text-5xl text-[#1473A1]">
+                                                            {activeButtonData[key]?.remainingTasks}
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        ))
-                                    }
+                                            ))
+                                        }
+                                    </div>
                                 </div>
-                            </div>
                         }
                     </div>
                 </div>

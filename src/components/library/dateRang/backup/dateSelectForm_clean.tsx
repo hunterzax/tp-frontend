@@ -106,7 +106,7 @@ const DatePickaForm: React.FC<DatePickerSectionProps> = ({
     const [selectedDate, setSelectedDate] = useState<any>();
     const btnProps = "grid grid-cols-[90%_10%] w-full justify-center rounded-lg h-[44px] bg-white border pl-2 pr-3 border-[#DFE4EA]";
 
-    const CustomInput: any = forwardRef(({ value, onClick }: any, ref: any) => {
+    const CustomInput: any = forwardRef(function CustomInput({ value, onClick }: any, ref: any) {
 
         return (
             <div
@@ -210,10 +210,10 @@ const DatePickaForm: React.FC<DatePickerSectionProps> = ({
                 }
 
             </div>
-        )
-    }
+        );
+    });
+    CustomInput.displayName = "CustomInput";
 
-    );
 
     const [currentMonthX, setCurrentMonthX] = useState(dayjs().month() + 1); // Initialize with the current month
 
@@ -272,7 +272,7 @@ const DatePickaForm: React.FC<DatePickerSectionProps> = ({
                 // // 3. Long term และ medium term เมื่อเลือกแล้ว Start date ต้องเป็นวันที่ 1 ของทุกเดือน และ End date  ต้องเป็นวันสุดท้ายของเดือนเสมอ - done
                 // // 4. ทำให้ปุ่มคำนวณวันที่รองรับเงื่อนไขที่ 2 กับ 3 ด้วย
                 // // 5. ตอน upload จำกัดขนาดของไฟล์ไว้ที่ 5 MB
-            
+
                 // เงื่อนไขหน้า bulletin board ของ start end ใหม่ให้เลือกวันได้ตาม file_start_date_mode
                 if (mode === 'edit-bulletin' && (Number(bookingTemple?.file_start_date_mode) === 2)) {
                     const day = date.getDate();

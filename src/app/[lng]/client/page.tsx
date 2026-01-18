@@ -16,14 +16,14 @@ import React, { lazy } from "react";
 import dynamic from 'next/dynamic';
 
 const LazyClientContent = dynamic(() => import('@/components/clients/ClientContent'), {
-    ssr: false, // Disable server-side rendering for this component
-  });
+  ssr: false, // Disable server-side rendering for this component
+});
 
 
 interface ClientProps {
-    // params: {
-    //     lng: string;
-    // };
+  // params: {
+  //     lng: string;
+  // };
 }
 
 const BarMenu: React.FC<ClientProps> = () => {
@@ -68,7 +68,7 @@ const BarMenu: React.FC<ClientProps> = () => {
             </KBarAnimator>
           </KBarPositioner>
         </KBarPortal>
-          <LazyClientContent />
+        <LazyClientContent />
       </KBarProvider>
     </>
   );
@@ -119,6 +119,8 @@ const ResultItem = React.forwardRef(function ResultItem(
     </div>
   );
 });
+ResultItem.displayName = "ResultItem";
+
 
 const RenderResults = () => {
   const { results } = useMatches();

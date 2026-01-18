@@ -116,7 +116,7 @@ const ModalAction: React.FC<FormExampleProps> = ({
                 setIsLoading(false);
             }
             if (mode === 'edit' || mode === 'view') {
-                 
+
 
                 setZoneMaster(zoneMasterData)
 
@@ -232,7 +232,7 @@ const ModalAction: React.FC<FormExampleProps> = ({
             }
 
             const response: any = await getService(url);
-             
+
             if (response) {
                 setNomSelectData(response)
             }
@@ -1126,7 +1126,7 @@ const ModalAction: React.FC<FormExampleProps> = ({
                                     {
                                         modalErrorMsg.split('<br/>').map((item: string, index: number) => {
                                             return (
-                                                <li>{item}</li>
+                                                <li key={index}>{item}</li>
                                             )
                                         })
                                     }

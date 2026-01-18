@@ -915,9 +915,9 @@ const ClientPage: React.FC<ClientProps> = () => {
                             modalErrorMsg.split('<br/>').length > 1 ?
                                 <ul className="text-start list-disc">
                                     {
-                                        modalErrorMsg.split('<br/>').map(item => {
+                                        modalErrorMsg.split('<br/>').map((item, index) => {
                                             return (
-                                                <li>{item}</li>
+                                                <li key={index}>{item}</li>
                                             )
                                         })
                                     }

@@ -590,10 +590,10 @@ export const exportToExcelDailyAdjustReportTabDetail = (data_current: any, data_
         XLSXStyle.writeFile(workbook, `${name}.xlsx`);
         return;
     }
-    const columnWidths = Object.keys(exportData[0] || {}).map((key) => ({
+    const columnWidths = Object.keys(exportData[0]).map((key) => ({
         wch: Math.max(
             key.length, // Header width
-            ...exportData.map((row?: any) => row[key] ? row[key].toString().length : 0) // Max content width
+            ...exportData.map((row?: any) => row?.[key] ? row[key].toString().length : 0) // Max content width
         )
     }));
     newWorksheet["!cols"] = columnWidths; // Set column widths
@@ -1867,10 +1867,10 @@ const originalExport = (exportData: any[], name = "Export.xlsx") => {
         XLSXStyle.writeFile(workbook, `${name}.xlsx`);
         return;
     }
-    const columnWidths = Object.keys(exportData[0] || {}).map((key) => ({
+    const columnWidths = Object.keys(exportData[0]).map((key) => ({
         wch: Math.max(
             key.length, // Header width
-            ...exportData.map((row?: any) => row[key] ? row[key].toString().length : 0) // Max content width
+            ...exportData.map((row?: any) => row?.[key] ? row[key].toString().length : 0) // Max content width
         )
     }));
     newWorksheet["!cols"] = columnWidths; // Set column widths
@@ -2899,10 +2899,10 @@ const exportChartPlanning = (data_to_export?: any) => {
         XLSXStyle.writeFile(wb, 'filtered_data.xlsx');
         return;
     }
-    const columnWidths = Object.keys(exportData[0] || {}).map((key) => ({
+    const columnWidths = Object.keys(exportData[0]).map((key) => ({
         wch: Math.max(
             key.length, // Header width
-            ...exportData.map((row?: any) => row[key] ? row[key].toString().length : 0) // Max content width
+            ...exportData.map((row?: any) => row?.[key] ? row[key].toString().length : 0) // Max content width
         )
     }));
     ws["!cols"] = columnWidths; // Set column widths
@@ -3009,10 +3009,10 @@ const exportChartPlanningShort = (data_to_export?: any) => {
     const wb = XLSXStyle.utils.book_new();
 
     // auto จัดขนาด width column fit content
-    const columnWidths = Object.keys(exportData[0] || {}).map((key) => ({
+    const columnWidths = Object.keys(exportData[0]).map((key) => ({
         wch: Math.max(
             key.length, // Header width
-            ...exportData.map((row?: any) => row[key] ? row[key].toString().length : 0) // Max content width
+            ...exportData.map((row?: any) => row?.[key] ? row[key].toString().length : 0) // Max content width
         )
     }));
     ws["!cols"] = columnWidths; // Set column widths
@@ -6992,7 +6992,6 @@ export const separateTimeShow = (data_origin?: any) => {
 
     for (const entry of data_origin) {
         if (!entry) continue;
-        // const groupMap: any = {};
         const groupMap: any = {};
         if (Array.isArray(entry?.timeShow)) {
             for (const item of entry?.timeShow) {
@@ -7047,16 +7046,21 @@ export const getLatestPerShipper = (data: any[]): any[] => {
         if (!entry) continue;
         const timestamp = entry.execute_timestamp;
 
-        for (const shipperGroup of entry.shipperData) {
-            for (const contract of shipperGroup.contractData) {
-                const shipper = contract.shipper;
-                const current = shipperMap.get(shipper);
+        if (Array.isArray(entry.shipperData)) {
+            for (const shipperGroup of entry.shipperData) {
+                if (Array.isArray(shipperGroup?.contractData)) {
+                    for (const contract of shipperGroup.contractData) {
+                        const shipper = contract?.shipper;
+                        if (!shipper) continue;
+                        const current = shipperMap.get(shipper);
 
-                if (!current || timestamp > current.entry.execute_timestamp) {
-                    shipperMap.set(shipper, {
-                        entry,
-                        shipperGroup,
-                    });
+                        if (!current || timestamp > current.entry.execute_timestamp) {
+                            shipperMap.set(shipper, {
+                                entry,
+                                shipperGroup,
+                            });
+                        }
+                    }
                 }
             }
         }
@@ -11480,8 +11484,6 @@ export function mapShipperNames(
         byIdName.set(s.id_name.trim().toLowerCase(), (s.name ?? "").trim());
     }
 
-    // สร้างสำเนาใหม่ (ไม่ mutate ของเดิม)
-    if (!data || !Array.isArray(data)) return [];
     return data.map((gd) => ({
         ...gd,
         nomPoint: (gd?.nomPoint ?? []).map((np) => ({

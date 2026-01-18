@@ -1,7 +1,7 @@
 "use client";
 import { useTranslation } from "@/app/i18n/client";
 // import Link from "next/link";
-import * as Sentry from '@sentry/nextjs';
+// import * as Sentry from '@sentry/nextjs';
 import "@/app/globals.css";
 import { useForm } from "react-hook-form";
 import { MenuItem, Select, Typography } from "@mui/material";
@@ -317,7 +317,7 @@ const ClientPage: React.FC<ClientProps> = () => {
 
     const checkIsShipper = (mode?: any) => {
 
-         
+
         setFormMode(mode)
 
         if (userDT?.account_manage?.[0]?.user_type?.id !== 3) {
@@ -343,7 +343,7 @@ const ClientPage: React.FC<ClientProps> = () => {
     const [selMonth, setSelMonth] = useState<any>();
 
     const handleClickUpload = async () => {
-         
+
         if (userDT?.account_manage?.[0]?.user_type?.name == "Shipper") {
             setIsLoading(true);
         } else {

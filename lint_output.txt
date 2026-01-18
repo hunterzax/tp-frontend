@@ -1,0 +1,1382 @@
+
+> web-main@0.1.0 lint
+> next lint
+
+`next lint` is deprecated and will be removed in Next.js 16.
+For new projects, use create-next-app to choose your preferred linter.
+For existing projects, migrate to the ESLint CLI:
+npx @next/codemod@canary next-lint-to-eslint-cli .
+
+
+./src/app/[lng]/(authentication)/signin/page.tsx
+99:6  Warning: React Hook useEffect has a missing dependency: 'setTheme'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/allocation/(menu)/alloManage/form/modalComment.tsx
+52:8  Warning: React Hook useEffect has missing dependencies: 'commentsReason' and 'commentsShipper'. Either include them or remove the dependency array. You can also replace multiple useState variables with useReducer if 'setComments' needs the current value of 'commentsShipper'.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/allocation/(menu)/alloManage/form/modalSendEmail.tsx
+73:8  Warning: React Hook useEffect has a missing dependency: 'setValue'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/allocation/(menu)/alloManage/form/table.tsx
+91:8  Warning: React Hook useEffect has a missing dependency: 'toggleData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/allocation/(menu)/alloManage/page.tsx
+373:8  Warning: React Hook useEffect has missing dependencies: 'fetchData' and 'getPermission'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/allocation/(menu)/alloQuery/page.tsx
+294:8  Warning: React Hook useEffect has a missing dependency: 'setValue'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+429:8  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+468:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+773:8  Warning: React Hook useEffect has a missing dependency: 'setValue'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+870:8  Warning: React Hook useEffect has a missing dependency: 'filterVersion'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+870:9  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+870:33  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+875:8  Warning: React Hook useEffect has missing dependencies: 'handleFilter' and 'handleFilterIntraday'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/allocation/(menu)/alloReport/form/modalView.tsx
+50:8  Warning: React Hook useEffect has missing dependencies: 'dataMain?.contract', 'dataMain?.contract_point', 'dataMain?.entry_exit', 'dataMain?.execute_timestamp', 'dataMain?.gas_day', 'dataMain?.gas_hour', and 'dataMain?.shipper'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+132:8  Warning: React Hook useEffect has missing dependencies: 'dataMain?.contract', 'dataMain?.contract_point', 'dataMain?.entry_exit', 'dataMain?.execute_timestamp', 'dataMain?.gas_day', 'dataMain?.gas_hour', 'dataMain?.group?.name', and 'dataMain?.shipper'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/allocation/(menu)/alloReport/form/table.tsx
+178:8  Warning: React Hook useEffect has a missing dependency: 'setSelectedRoles'. Either include it or remove the dependency array. If 'setSelectedRoles' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/allocation/(menu)/alloReport/form/tableIntraDay.tsx
+180:8  Warning: React Hook useEffect has a missing dependency: 'setSelectedRoles'. Either include it or remove the dependency array. If 'setSelectedRoles' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/allocation/(menu)/alloReport/page.tsx
+69:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+164:8  Warning: React Hook useEffect has a missing dependency: 'gas_day_to_from_somewhere_else'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+370:8  Warning: React Hook useEffect has missing dependencies: 'fetchK', 'handleFilter', and 'tabIndex'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+374:8  Warning: React Hook useEffect has a missing dependency: 'fetchK'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+378:8  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+651:8  Warning: React Hook useEffect has a missing dependency: 'pagination'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+952:12  Warning: React Hook useMemo has a missing dependency: 'togglePopover'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+1186:12  Warning: React Hook useMemo has missing dependencies: 'handleSelectAll', 'handleSelectRow', and 'togglePopover'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+1195:8  Warning: React Hook useEffect has a missing dependency: 'handleFilter'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/allocation/(menu)/allocShipperReport/page.tsx
+85:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+343:8  Warning: React Hook useEffect has missing dependencies: 'fetchData' and 'getPermission'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+568:8  Warning: React Hook useEffect has missing dependencies: 'initialColumnsDownload' and 'initialColumnsReport'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+592:8  Warning: React Hook useEffect has a missing dependency: 'tabIndex'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/allocation/(menu)/allocationMonthlyReport/page.tsx
+86:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+545:8  Warning: React Hook useEffect has a missing dependency: 'filterVersion'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+582:8  Warning: React Hook useEffect has a missing dependency: 'srchVersion'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+594:8  Warning: React Hook useEffect has missing dependencies: 'fetchData' and 'getPermission'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+670:8  Warning: React Hook useEffect has a missing dependency: 'initialColumnsDownload'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+696:8  Warning: React Hook useEffect has missing dependencies: 'dataTabDownload' and 'tabIndex'. Either include them or remove the dependency array. You can also replace multiple useState variables with useReducer if 'setPaginatedDataDownload' needs the current value of 'dataTabDownload'.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/allocation/(menu)/allocationReview/form/modalAcceptReject.tsx
+46:8  Warning: React Hook useEffect has a missing dependency: 'setValue'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/allocation/(menu)/allocationReview/form/modalAction.tsx
+49:8  Warning: React Hook useEffect has a missing dependency: 'dataShipper'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+69:8  Warning: React Hook useEffect has a missing dependency: 'clearErrors'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/allocation/(menu)/allocationReview/form/modalComment.tsx
+53:8  Warning: React Hook useEffect has missing dependencies: 'commentsReason' and 'commentsShipper'. Either include them or remove the dependency array. You can also replace multiple useState variables with useReducer if 'setComments' needs the current value of 'commentsShipper'.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/allocation/(menu)/allocationReview/page.tsx
+105:8  Warning: React Hook useEffect has missing dependencies: 'getPermission' and 'shipperGroupData?.data'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+262:8  Warning: React Hook useEffect has a missing dependency: 'handleFieldSearch'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+457:8  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/allocation/(menu)/curtailmentsAllocation/form/modalAction.tsx
+109:8  Warning: React Hook useEffect has missing dependencies: 'tabIndex' and 'watch'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+109:9  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+109:27  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+109:45  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+109:72  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+109:87  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+132:8  Warning: React Hook useEffect has missing dependencies: 'setValue' and 'userDT?.account_manage'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/allocation/(menu)/curtailmentsAllocation/page.tsx
+88:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+228:8  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+246:8  Warning: React Hook useEffect has a missing dependency: 'isAlreadyFilter'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+250:8  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+362:8  Warning: React Hook useEffect has a missing dependency: 'filteredColumns'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+600:9  Warning: React Hook useMemo has missing dependencies: 'renderPermission' and 'togglePopover'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+753:9  Warning: React Hook useMemo has missing dependencies: 'renderPermission' and 'togglePopover'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/balancing/(menu)/balAdjust/(menu)/adjustAccumulatedImbalance/form/modalComment.tsx
+32:8  Warning: React Hook useEffect has a missing dependency: 'data'. Either include it or remove the dependency array. If 'setComments' needs the current value of 'data', you can also switch to useReducer instead of useState and read 'data' in the reducer.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/balancing/(menu)/balAdjust/(menu)/adjustAccumulatedImbalance/page.tsx
+82:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+262:8  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/balancing/(menu)/balAdjust/(menu)/adjustmentDailyImbalance/form/modalComment.tsx
+36:8  Warning: React Hook useEffect has a missing dependency: 'data'. Either include it or remove the dependency array. If 'setComments' needs the current value of 'data', you can also switch to useReducer instead of useState and read 'data' in the reducer.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/balancing/(menu)/balAdjust/(menu)/adjustmentDailyImbalance/page.tsx
+82:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+297:8  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/balancing/(menu)/balAdjust/(menu)/intradayAccImbalanceInventoryAdjust/form/modalComment.tsx
+36:8  Warning: React Hook useEffect has a missing dependency: 'data'. Either include it or remove the dependency array. If 'setComments' needs the current value of 'data', you can also switch to useReducer instead of useState and read 'data' in the reducer.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/balancing/(menu)/balAdjust/(menu)/intradayAccImbalanceInventoryAdjust/page.tsx
+80:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/balancing/(menu)/balIntraAccImbDashboard/form/chart.tsx
+190:8  Warning: React Hook useEffect has missing dependencies: 'tk' and 'userDT?.account_manage'. Either include them or remove the dependency array. You can also do a functional update 'settk(t => ...)' if you only need 'tk' in the 'settk' call.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/balancing/(menu)/balIntraAccImbDashboard/page.tsx
+80:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+117:8  Warning: React Hook useEffect has missing dependencies: 'fetchData' and 'srchDate'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+264:8  Warning: React Hook useEffect has missing dependencies: 'fetchData' and 'today'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+531:9  Warning: React Hook useMemo has an unnecessary dependency: 'dataforTable'. Either exclude it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/balancing/(menu)/balIntraBalReportForShipper/page.tsx
+113:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+561:8  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+808:8  Warning: React Hook useEffect has a missing dependency: 'filteredColumns'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+875:8  Warning: React Hook useEffect has a missing dependency: 'handleFieldSearch'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+903:8  Warning: React Hook useEffect has a missing dependency: 'dataTimestampMaster'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/balancing/(menu)/balIntraDashboardForShipper/page.tsx
+108:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+441:8  Warning: React Hook useEffect has a missing dependency: 'filteredColumns'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+496:8  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+507:8  Warning: React Hook useEffect has a missing dependency: 'dataShipper'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/balancing/(menu)/balIntradayDashboard/form/modalSendEmail.tsx
+73:8  Warning: React Hook useEffect has a missing dependency: 'setValue'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/balancing/(menu)/balIntradayDashboard/page.tsx
+213:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+647:8  Warning: React Hook useEffect has a missing dependency: 'filteredColumns'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+702:8  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+715:8  Warning: React Hook useEffect has a missing dependency: 'dataShipper'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/balancing/(menu)/balMonthlyReport/page.tsx
+83:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+434:8  Warning: React Hook useEffect has missing dependencies: 'fetchData' and 'getPermission'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+540:8  Warning: React Hook useEffect has missing dependencies: 'initialColumns' and 'initialColumnsDownload'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+577:8  Warning: React Hook useEffect has a missing dependency: 'tabIndex'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+591:8  Warning: React Hook useEffect has a missing dependency: 'dataTabDownloadOriginal'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/balancing/(menu)/balOperateFlowAndInstructedFlow/form/modalAction.tsx
+135:8  Warning: React Hook useEffect has a missing dependency: 'fetchAndSetData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/balancing/(menu)/balOperateFlowAndInstructedFlow/form/modalComment.tsx
+51:8  Warning: React Hook useEffect has missing dependencies: 'dataRow?.shipperName' and 'dataShipperGroup'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/balancing/(menu)/balOperateFlowAndInstructedFlow/form/table.tsx
+144:8  Warning: React Hook useEffect has missing dependencies: 'tk' and 'toggleData'. Either include them or remove the dependency array. You can also do a functional update 'settk(t => ...)' if you only need 'tk' in the 'settk' call.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/balancing/(menu)/balOperateFlowAndInstructedFlow/form/tableForShipper.tsx
+100:8  Warning: React Hook useEffect has missing dependencies: 'tk' and 'toggleData'. Either include them or remove the dependency array. You can also do a functional update 'settk(t => ...)' if you only need 'tk' in the 'settk' call.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/balancing/(menu)/balOperateFlowAndInstructedFlow/page.tsx
+94:8  Warning: React Hook useEffect has a missing dependency: 'handleFieldSearch'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+430:8  Warning: React Hook useEffect has missing dependencies: 'bodyExport', 'fetchData', 'getPermission', and 'handleFieldSearch'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/balancing/(menu)/balReport/page.tsx
+45:8  Warning: React Hook useEffect has a missing dependency: 'setValue'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+88:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+351:8  Warning: React Hook useEffect has a missing dependency: 'gas_day_to_from_somewhere_else'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+435:8  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+678:8  Warning: React Hook useEffect has a missing dependency: 'filteredColumns'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/balancing/(menu)/balSystemAccImbInv/form/chart.tsx
+126:8  Warning: React Hook useEffect has a missing dependency: 'tk'. Either include it or remove the dependency array. You can also do a functional update 'settk(t => ...)' if you only need 'tk' in the 'settk' call.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/balancing/(menu)/balSystemAccImbInv/page.tsx
+81:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+129:8  Warning: React Hook useEffect has a missing dependency: 'today'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/balancing/(menu)/closedBalancingReport/page.tsx
+56:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+128:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/[lng]/authorization/(menu)/balancing/(menu)/intraBaseInventoryShipper/page.tsx
+82:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+374:8  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/balancing/(menu)/intradayAccImbalanceInventory/form/modalAction.tsx
+89:8  Warning: React Hook useEffect has a missing dependency: 'watch'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+89:9  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+89:30  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/balancing/(menu)/intradayAccImbalanceInventory/form/table.tsx
+65:6  Warning: React Hook useEffect has a missing dependency: 'pushBackValidationColors'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/balancing/(menu)/intradayAccImbalanceInventory/page.tsx
+85:8  Warning: React Hook useEffect has missing dependencies: 'getPermission' and 'termTypeMaster?.data'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+107:8  Warning: React Hook useEffect has a missing dependency: 'handleFieldSearch'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+316:8  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+403:8  Warning: React Hook useEffect has a missing dependency: 'filteredColumns'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/balancing/(menu)/intradayBalReport/page.tsx
+85:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+143:8  Warning: React Hook useEffect has a missing dependency: 'dataTimestampMaster'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+660:8  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+913:8  Warning: React Hook useEffect has a missing dependency: 'filteredColumns'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+980:8  Warning: React Hook useEffect has a missing dependency: 'handleFieldSearch'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/balancing/(menu)/intradayBaseInventory/page.tsx
+84:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+285:8  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/balancing/(menu)/ventCommissioningOtherGas/form/modalAction.tsx
+129:8  Warning: React Hook useEffect has a missing dependency: 'zoneMasterData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/balancing/(menu)/ventCommissioningOtherGas/form/table.tsx
+149:6  Warning: React Hook useEffect has a missing dependency: 'sortedData?.length'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/balancing/(menu)/ventCommissioningOtherGas/page.tsx
+82:8  Warning: React Hook useEffect has missing dependencies: 'getPermission' and 'shipperGroupData?.data'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+223:8  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/bulletinBoard/page.tsx
+194:8  Warning: React Hook useEffect has missing dependencies: 'fetchData' and 'getPermission'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+236:8  Warning: React Hook useEffect has missing dependencies: 'conditionDatePicker' and 'resetField'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+378:8  Warning: React Hook useEffect has a missing dependency: 'handleClickOutside'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+666:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/capacity/(menu)/CapContractList/form/modalBookingVersionComment.tsx
+40:8  Warning: React Hook useEffect has missing dependencies: 'data?.booking_version_comment', 'data?.version', and 'dataLog'. Either include them or remove the dependency array. If 'setComments' needs the current value of 'data.booking_version_comment', you can also switch to useReducer instead of useState and read 'data.booking_version_comment' in the reducer.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/capacity/(menu)/CapContractList/form/modalExtend.tsx
+69:8  Warning: React Hook useEffect has missing dependencies: 'modeShow' and 'setValue'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/capacity/(menu)/CapContractList/form/modalUpdateStat.tsx
+69:8  Warning: React Hook useEffect has missing dependencies: 'modeShow' and 'setValue'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/capacity/(menu)/CapContractList/form/tablePathDetail.tsx
+68:8  Warning: React Hook useEffect has a missing dependency: 'fetchPathDetail'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+245:8  Warning: React Hook useEffect has missing dependencies: 'areaMaster' and 'calculateFields'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+285:8  Warning: React Hook useEffect has missing dependencies: 'areaMaster' and 'initialColumns'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+522:33  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/capacity/(menu)/CapContractList/page.tsx
+116:8  Warning: React Hook useEffect has a missing dependency: 'forceRefetch'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+353:8  Warning: React Hook useEffect has missing dependencies: 'fetchData', 'getPermission', and 'userDT?.account_manage'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+484:8  Warning: React Hook useEffect has a missing dependency: 'present_date'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+519:8  Warning: React Hook useEffect has a missing dependency: 'adjustedColumns'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+775:8  Warning: React Hook useEffect has missing dependencies: 'areaMaster?.data', 'contractPointData?.data', and 'zoneMaster?.data'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+1113:12  Warning: React Hook useMemo has missing dependencies: 'openAllFileModal', 'openSubmissionModal', 'pathDetailColumn', 'renderPermission', and 'showPathDetailCol'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/capacity/(menu)/CapPublication/form/modalAction.tsx
+94:8  Warning: React Hook useEffect has a missing dependency: 'clearErrors'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+100:8  Warning: React Hook useEffect has a missing dependency: 'setValue'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/capacity/(menu)/CapPublication/form/table.tsx
+52:23  Warning: Assignments to the 'next10Years' variable from inside React Hook useEffect will be lost after each render. To preserve the value over time, store it in a useRef Hook and keep the mutable value in the '.current' property. Otherwise, you can move this variable directly inside useEffect.  react-hooks/exhaustive-deps
+53:24  Warning: Assignments to the 'next12Months' variable from inside React Hook useEffect will be lost after each render. To preserve the value over time, store it in a useRef Hook and keep the mutable value in the '.current' property. Otherwise, you can move this variable directly inside useEffect.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/capacity/(menu)/CapPublication/page.tsx
+383:6  Warning: React Hook useEffect has a missing dependency: 'tabIndex'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+439:6  Warning: React Hook useEffect has missing dependencies: 'fetchData' and 'getPermission'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+764:22  Warning: Assignments to the 'initialColumns' variable from inside React Hook useEffect will be lost after each render. To preserve the value over time, store it in a useRef Hook and keep the mutable value in the '.current' property. Otherwise, you can move this variable directly inside useEffect.  react-hooks/exhaustive-deps
+785:22  Warning: Assignments to the 'initialColumns' variable from inside React Hook useEffect will be lost after each render. To preserve the value over time, store it in a useRef Hook and keep the mutable value in the '.current' property. Otherwise, you can move this variable directly inside useEffect.  react-hooks/exhaustive-deps
+801:22  Warning: Assignments to the 'initialColumns' variable from inside React Hook useEffect will be lost after each render. To preserve the value over time, store it in a useRef Hook and keep the mutable value in the '.current' property. Otherwise, you can move this variable directly inside useEffect.  react-hooks/exhaustive-deps
+938:6  Warning: React Hook useEffect has a missing dependency: 'handleSelectAllCyberpunk'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+1039:6  Warning: React Hook useEffect has a missing dependency: 'initialColumns'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+1053:6  Warning: React Hook useEffect has missing dependencies: 'filteredDataTableDetail' and 'initialColumns'. Either include them or remove the dependency array. You can also replace multiple useState variables with useReducer if 'setBodyExport' needs the current value of 'filteredDataTableDetail'.  react-hooks/exhaustive-deps
+1078:6  Warning: React Hook useEffect has a missing dependency: 'userDT?.account_manage'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/capacity/(menu)/CapReqMgn/form/modalAmend.tsx
+96:8  Warning: React Hook useEffect has a missing dependency: 'setValue'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/capacity/(menu)/CapReqMgn/form/modalBookingVersionComment.tsx
+36:8  Warning: React Hook useEffect has missing dependencies: 'data?.booking_version_comment', 'data?.version', and 'dataLog'. Either include them or remove the dependency array. If 'setComments' needs the current value of 'data.booking_version_comment', you can also switch to useReducer instead of useState and read 'data.booking_version_comment' in the reducer.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/capacity/(menu)/CapReqMgn/form/modalExtend.tsx
+89:8  Warning: React Hook useEffect has a missing dependency: 'fetchBookingTemplate'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/capacity/(menu)/CapReqMgn/form/modalUpdateStat.tsx
+99:8  Warning: React Hook useEffect has missing dependencies: 'STATUS_MAP', 'clearErrors', 'resetField', 'setValue', and 'setisLoading'. Either include them or remove the dependency array. If 'setisLoading' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/capacity/(menu)/CapReqMgn/form/tableModify.tsx
+154:8  Warning: React Hook useEffect has missing dependencies: 'contractPointData', 'mode', 'originOrSum', 'processingData', 'srchEnddate', 'srchStartdate', 'trickerColumn', 'updateHeadersLastFive', and 'updateHeadersLastTwo'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+737:8  Warning: React Hook useEffect has missing dependencies: 'dataTable', 'handleSave', and 'mode'. Either include them or remove the dependency array. If 'handleSave' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/capacity/(menu)/CapReqMgn/form/tablePathDetail.tsx
+26:8  Warning: React Hook useEffect has a missing dependency: 'dataPeriod'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+82:8  Warning: React Hook useEffect has a missing dependency: 'fetchPathDetail'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+249:8  Warning: React Hook useEffect has missing dependencies: 'areaMaster', 'calculateFields', and 'fillMissingAreas'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+313:8  Warning: React Hook useEffect has missing dependencies: 'areaMaster' and 'initialColumns'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+607:41  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/capacity/(menu)/CapReqMgn/page.tsx
+131:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+585:8  Warning: React Hook useEffect has missing dependencies: 'fetchData' and 'userDT?.account_manage'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+650:8  Warning: React Hook useEffect has a missing dependency: 'handleFieldSearchPathDetail'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+959:8  Warning: React Hook useEffect has missing dependencies: 'fetchBookingTemplate', 'present_date', 'selectedBookingTemplate?.file_period_mode', and 'selectedBookingTemplate?.max'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+1178:8  Warning: React Hook useEffect has missing dependencies: 'dataFile?.id' and 'shouldUpdateMotherTable'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+1456:8  Warning: React Hook useEffect has a missing dependency: 'adjustedColumns'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+1659:8  Warning: React Hook useEffect has missing dependencies: 'areaMaster?.data', 'contractPointData?.data', and 'zoneMaster?.data'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+2026:9  Warning: React Hook useMemo has missing dependencies: 'handlePathDetail', 'openAllFileModal', 'openSubmissionModal', 'renderPermission', and 'togglePopover'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+2084:8  Warning: React Hook React.useMemo has a missing dependency: 'getRowdata'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+2106:8  Warning: React Hook useEffect has a missing dependency: 'dataFile'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/capacity/(menu)/CapacityChart/form/chartArea.tsx
+63:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+127:8  Warning: React Hook useEffect has missing dependencies: 'fetchData' and 'userDT?.account_manage'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+143:8  Warning: React Hook useEffect has a missing dependency: 'dataMain'. Either include it or remove the dependency array. You can also replace multiple useState variables with useReducer if 'setFilteredDataMainGraph' needs the current value of 'dataMain'.  react-hooks/exhaustive-deps
+361:8  Warning: React Hook useEffect has missing dependencies: 'areaName', 'processChartData', and 'srchEntryMain'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/capacity/(menu)/CapacityChart/form/chartEntry.tsx
+167:8  Warning: React Hook useEffect has missing dependencies: 'fetchData', 'getPermission', and 'userDT?.account_manage'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+182:8  Warning: React Hook useEffect has a missing dependency: 'dataMain'. Either include it or remove the dependency array. You can also replace multiple useState variables with useReducer if 'setFilteredDataMainGraph' needs the current value of 'dataMain'.  react-hooks/exhaustive-deps
+464:8  Warning: React Hook useEffect has a missing dependency: 'processChartData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/capacity/(menu)/CapacityChart/form/chartExit.tsx
+176:8  Warning: React Hook useEffect has missing dependencies: 'fetchData' and 'userDT?.account_manage'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+180:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+191:8  Warning: React Hook useEffect has a missing dependency: 'dataMain'. Either include it or remove the dependency array. You can also replace multiple useState variables with useReducer if 'setFilteredDataMainGraph' needs the current value of 'dataMain'.  react-hooks/exhaustive-deps
+505:8  Warning: React Hook useEffect has a missing dependency: 'processChartData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/capacity/(menu)/CapacityChart/form/doughnut.tsx
+76:8  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+503:41  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+526:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/capacity/(menu)/CapacityChart/form/table.tsx
+67:8  Warning: React Hook useEffect has a missing dependency: 'dataMain'. Either include it or remove the dependency array. You can also replace multiple useState variables with useReducer if 'setSortedData' needs the current value of 'dataMain'.  react-hooks/exhaustive-deps
+73:8  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/pathManagement/form/modalAction.tsx
+108:8  Warning: React Hook useEffect has a missing dependency: 'setValue'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+227:8  Warning: React Hook useEffect has a missing dependency: 'setValue'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+288:8  Warning: React Hook useEffect has a missing dependency: 'mode'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+588:8  Warning: React Hook useEffect has missing dependencies: 'IsRadioChange' and 'setIsRadioChange'. Either include them or remove the dependency array. If 'setIsRadioChange' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/pathManagement/page.tsx
+160:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+500:9  Warning: React Hook useMemo has missing dependencies: 'renderPermission' and 'togglePopover'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/release/(menu)/ReleaseCapManagement/form/modalUpdateStat.tsx
+46:8  Warning: React Hook useEffect has a missing dependency: 'setValue'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/release/(menu)/ReleaseCapManagement/form/table.tsx
+86:8  Warning: React Hook useEffect has a missing dependency: 'setIsAllTotalZero'. Either include it or remove the dependency array. If 'setIsAllTotalZero' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+124:8  Warning: React Hook useEffect has missing dependencies: 'dataMaster' and 'watch'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+126:9  Warning: React Hook useEffect has a spread element in its dependency array. This means we can't statically verify whether you've passed the correct dependencies.  react-hooks/exhaustive-deps
+127:9  Warning: React Hook useEffect has a spread element in its dependency array. This means we can't statically verify whether you've passed the correct dependencies.  react-hooks/exhaustive-deps
+139:8  Warning: React Hook useEffect has a missing dependency: 'setDataPost'. Either include it or remove the dependency array. If 'setDataPost' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+411:33  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/release/(menu)/ReleaseCapManagement/page.tsx
+176:8  Warning: React Hook useEffect has missing dependencies: 'fetchData', 'getPermission', and 'userDT?.account_manage'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+239:8  Warning: React Hook useEffect has a missing dependency: 'adjustedColumns'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/release/(menu)/ReleaseCapSubmission/form/modalAddDoc.tsx
+51:8  Warning: React Hook useEffect has missing dependencies: 'fetchData' and 'specificData'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/release/(menu)/ReleaseCapSubmission/form/table.tsx
+72:8  Warning: React Hook useEffect has a missing dependency: 'setIsAllTotalZero'. Either include it or remove the dependency array. If 'setIsAllTotalZero' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+105:8  Warning: React Hook useEffect has missing dependencies: 'dataMaster', 'sortedData', and 'watch'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+106:9  Warning: React Hook useEffect has a spread element in its dependency array. This means we can't statically verify whether you've passed the correct dependencies.  react-hooks/exhaustive-deps
+107:9  Warning: React Hook useEffect has a spread element in its dependency array. This means we can't statically verify whether you've passed the correct dependencies.  react-hooks/exhaustive-deps
+108:9  Warning: React Hook useEffect has a spread element in its dependency array. This means we can't statically verify whether you've passed the correct dependencies.  react-hooks/exhaustive-deps
+109:9  Warning: React Hook useEffect has a spread element in its dependency array. This means we can't statically verify whether you've passed the correct dependencies.  react-hooks/exhaustive-deps
+120:8  Warning: React Hook useEffect has a missing dependency: 'setDataPost'. Either include it or remove the dependency array. If 'setDataPost' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+390:33  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/release/(menu)/ReleaseCapSubmission/form/tableEachMonth.tsx
+75:8  Warning: React Hook useEffect has a missing dependency: 'setValue'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+82:8  Warning: React Hook useEffect has missing dependencies: 'isResetFormCallBack' and 'reset'. Either include them or remove the dependency array. If 'isResetFormCallBack' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+647:33  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/release/(menu)/ReleaseCapSubmission/page.tsx
+1226:8  Warning: React Hook useEffect has missing dependencies: 'dataTable' and 'scheduleHandleUpdaleTable'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+1270:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/release/(menu)/ReleaseSumManagement/form/modalAction.tsx
+142:8  Warning: React Hook useEffect has a missing dependency: 'setValue'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/release/(menu)/ReleaseSumManagement/form/modalComment.tsx
+34:8  Warning: React Hook useEffect has a missing dependency: 'data'. Either include it or remove the dependency array. If 'setComments' needs the current value of 'data', you can also switch to useReducer instead of useState and read 'data' in the reducer.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/release/(menu)/ReleaseSumManagement/page.tsx
+281:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+288:8  Warning: React Hook useEffect has a missing dependency: 'handleFieldSearch'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/reserveBalGasContracts/form/modalAction.tsx
+140:8  Warning: React Hook useEffect has missing dependencies: 'dataShipper?.data' and 'setisModalLoading'. Either include them or remove the dependency array. If 'setisModalLoading' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+1024:57  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/reserveBalGasContracts/form/modalComment.tsx
+35:8  Warning: React Hook useEffect has a missing dependency: 'data'. Either include it or remove the dependency array. If 'setComments' needs the current value of 'data', you can also switch to useReducer instead of useState and read 'data' in the reducer.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/reserveBalGasContracts/form/modalView.tsx
+110:8  Warning: React Hook useEffect has a missing dependency: 'initialColumns'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+364:53  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/reserveBalGasContracts/page.tsx
+160:8  Warning: React Hook useEffect has missing dependencies: 'fetchData' and 'getPermission'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+501:9  Warning: React Hook useMemo has missing dependencies: 'renderPermission' and 'togglePopover'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/useItOrLoseIt/form/modalAction.tsx
+76:8  Warning: React Hook useEffect has a missing dependency: 'processData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+356:8  Warning: React Hook useEffect has missing dependencies: 'data?.data' and 'processData'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/useItOrLoseIt/form/modalHistory.tsx
+101:8  Warning: React Hook useEffect has a missing dependency: 'dataMaster'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/booking/(menu)/useItOrLoseIt/page.tsx
+268:8  Warning: React Hook useEffect has missing dependencies: 'fetchData' and 'getPermission'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+275:8  Warning: React Hook useEffect has missing dependencies: 'handleSearch' and 'srchQuery'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+573:8  Warning: React Hook useEffect has a missing dependency: 'getInitialColumns'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/masterData/(menu)/area/form/modalAction.tsx
+158:6  Warning: React Hook useEffect has a missing dependency: 'setValue'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+162:6  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/masterData/(menu)/area/page.tsx
+88:6  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+628:8  Warning: React Hook useMemo has missing dependencies: 'renderPermission' and 'togglePopover'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/masterData/(menu)/conceptPoint/form/modalAction.tsx
+140:8  Warning: React Hook useEffect has missing dependencies: 'clearErrors', 'limitConceptPointData', and 'setLimitDataPost'. Either include them or remove the dependency array. If 'setLimitDataPost' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/masterData/(menu)/conceptPoint/form/modalLimit.tsx
+112:8  Warning: React Hook useEffect has missing dependencies: 'limitConceptPointData' and 'setLimitDataPost'. Either include them or remove the dependency array. If 'setLimitDataPost' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/masterData/(menu)/conceptPoint/page.tsx
+88:6  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+480:8  Warning: React Hook useMemo has missing dependencies: 'renderPermission' and 'togglePopover'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/masterData/(menu)/configMasterPath/form/flow.tsx
+105:8  Warning: React Hook useEffect has missing dependencies: 'deleteNode' and 'test_xxx'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+156:8  Warning: React Hook useEffect has a missing dependency: 'nodeEditData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+163:8  Warning: React Hook useEffect has a missing dependency: 'setNodeData'. Either include it or remove the dependency array. If 'setNodeData' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+168:8  Warning: React Hook useEffect has a missing dependency: 'setEdgeData'. Either include it or remove the dependency array. If 'setEdgeData' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+299:8  Warning: React Hook useEffect has missing dependencies: 'arrayEntry' and 'arrayExit'. Either include them or remove the dependency array. You can also replace multiple useState variables with useReducer if 'setDataEntry' needs the current value of 'arrayEntry'.  react-hooks/exhaustive-deps
+299:9  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/masterData/(menu)/configMasterPath/form/modalUpdateStat.tsx
+51:8  Warning: React Hook useEffect has missing dependencies: 'setValue' and 'setisLoading'. Either include them or remove the dependency array. If 'setisLoading' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/masterData/(menu)/configMasterPath/page.tsx
+199:8  Warning: React Hook useEffect has missing dependencies: 'fetchData' and 'getPermission'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+604:12  Warning: React Hook useMemo has missing dependencies: 'openStatFunc' and 'togglePopover'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/masterData/(menu)/contractPoint/form/modalAction.tsx
+168:8  Warning: React Hook useEffect has missing dependencies: 'areaMasterData', 'setIsLoading', and 'zoneMasterData'. Either include them or remove the dependency array. If 'setIsLoading' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+251:8  Warning: React Hook useEffect has missing dependencies: 'fetchNomData' and 'open'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+251:9  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+251:47  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+251:83  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/masterData/(menu)/contractPoint/page.tsx
+87:6  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+658:7  Warning: React Hook useMemo has missing dependencies: 'renderPermission' and 'togglePopover'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/masterData/(menu)/customerType/page.tsx
+124:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/masterData/(menu)/meteredPoint/form/modalAction.tsx
+306:8  Warning: React Hook useEffect has missing dependencies: 'resetFormFields' and 'setEditViewModeData'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+346:8  Warning: React Hook useEffect has a missing dependency: 'data'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+424:8  Warning: React Hook useEffect has missing dependencies: 'mode' and 'watch'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+425:9  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+426:9  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+427:9  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+428:9  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+429:9  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+430:9  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+431:9  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+432:9  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+433:9  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+434:9  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+435:9  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/masterData/(menu)/meteredPoint/page.tsx
+88:6  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+176:6  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+587:6  Warning: React Hook useMemo has missing dependencies: 'renderPermission' and 'togglePopover'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/masterData/(menu)/modeZoneBaseInventory/page.tsx
+148:8  Warning: React Hook useEffect has missing dependencies: 'fetchData' and 'getPermission'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/masterData/(menu)/nominationPoint/form/modalAction.tsx
+129:8  Warning: React Hook useEffect has missing dependencies: 'flatArea' and 'watch'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+129:30  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+165:8  Warning: React Hook useEffect has missing dependencies: 'contractPointData' and 'watch'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+165:9  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+241:8  Warning: React Hook useEffect has missing dependencies: 'clearErrors', 'contractPointData', 'errors?.maximum_capacity', 'flatArea', and 'resetField'. Either include them or remove the dependency array. If 'setContractPointData' needs the current value of 'contractPointData', you can also switch to useReducer instead of useState and read 'contractPointData' in the reducer.  react-hooks/exhaustive-deps
+289:9  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+289:36  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+289:58  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+289:82  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+289:100  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+289:118  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+289:146  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+289:173  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+289:200  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+301:8  Warning: React Hook useEffect has a missing dependency: 'dataTable'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+307:8  Warning: React Hook useEffect has missing dependencies: 'mode', 'nomPointText', 'setValue', and 'watch'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/masterData/(menu)/nominationPoint/page.tsx
+108:6  Warning: React Hook useEffect has missing dependencies: 'areaMaster?.data', 'contractPointData?.data', 'entryExitMaster?.data', 'getPermission', and 'zoneMaster?.data'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+794:7  Warning: React Hook useMemo has missing dependencies: 'openContractViewModal' and 'togglePopover'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/masterData/(menu)/nonTpaPoint/form/modalAction.tsx
+107:8  Warning: React Hook useEffect has a missing dependency: 'nominationPointData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/masterData/(menu)/nonTpaPoint/page.tsx
+88:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+556:11  Warning: React Hook useMemo has missing dependencies: 'renderPermission' and 'togglePopover'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/masterData/(menu)/zone/form/modalAction.tsx
+89:8  Warning: React Hook useEffect has an unnecessary dependency: 'isReadOnly'. Either exclude it or remove the dependency array. Outer scope values like 'isReadOnly' aren't valid dependencies because mutating them doesn't re-render the component.  react-hooks/exhaustive-deps
+263:8  Warning: React Hook useEffect has missing dependencies: 'reset' and 'setResetForm'. Either include them or remove the dependency array. If 'setResetForm' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/masterData/(menu)/zone/page.tsx
+85:6  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+655:8  Warning: React Hook useMemo has missing dependencies: 'renderPermission' and 'togglePopover'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/systemConfiguration/(menu)/allocationMode/page.tsx
+143:8  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/systemConfiguration/(menu)/capacityRightTemplate/form/modalAction.tsx
+112:8  Warning: React Hook useEffect has a missing dependency: 'clearErrors'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+118:8  Warning: React Hook useEffect has a missing dependency: 'setValue'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/systemConfiguration/(menu)/capacityRightTemplate/page.tsx
+180:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+617:12  Warning: React Hook useMemo has missing dependencies: 'renderPermission' and 'togglePopover'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/systemConfiguration/(menu)/configModeZoneBaseInven/page.tsx
+169:8  Warning: React Hook useEffect has missing dependencies: 'fetchData' and 'getPermission'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+461:9  Warning: React Hook useMemo has missing dependencies: 'renderPermission' and 'togglePopover'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/systemConfiguration/(menu)/emailGroupForEvent/page.tsx
+139:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+509:11  Warning: React Hook useMemo has missing dependencies: 'renderPermission' and 'togglePopover'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/systemConfiguration/(menu)/emailNotiManage/form/modalAction.tsx
+77:8  Warning: React Hook useEffect has a missing dependency: 'emailNotiMgn'. Either include it or remove the dependency array. If 'setSubSystem' needs the current value of 'emailNotiMgn', you can also switch to useReducer instead of useState and read 'emailNotiMgn' in the reducer.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/systemConfiguration/(menu)/emailNotiManage/page.tsx
+130:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+432:9  Warning: React Hook useMemo has missing dependencies: 'handleActive', 'renderPermission', and 'togglePopover'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/systemConfiguration/(menu)/hvOperationFlow/page.tsx
+175:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+364:8  Warning: React Hook useEffect has a missing dependency: 'initialColumnsHistory'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+494:9  Warning: React Hook useMemo has missing dependencies: 'renderPermission' and 'togglePopover'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/systemConfiguration/(menu)/nominationDeadline/form/modalAction.tsx
+116:8  Warning: React Hook useEffect has missing dependencies: 'clearErrors', 'reset', and 'resetField'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/systemConfiguration/(menu)/nominationDeadline/page.tsx
+100:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+537:12  Warning: React Hook useMemo has missing dependencies: 'renderPermission' and 'togglePopover'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/systemConfiguration/(menu)/planningDeadline/form/modalAction.tsx
+112:8  Warning: React Hook useEffect has a missing dependency: 'clearErrors'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/systemConfiguration/(menu)/planningDeadline/page.tsx
+157:8  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+509:12  Warning: React Hook useMemo has missing dependencies: 'renderPermission' and 'togglePopover'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/systemConfiguration/(menu)/systemParameter/form/modalAction.tsx
+100:8  Warning: React Hook useEffect has missing dependencies: 'clearErrors' and 'sysParamModule'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/systemConfiguration/(menu)/systemParameter/page.tsx
+151:8  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+388:11  Warning: The 'togglePopover' function makes the dependencies of useMemo Hook (at line 537) change on every render. Move it inside the useMemo callback. Alternatively, wrap the definition of 'togglePopover' in its own useCallback() Hook.  react-hooks/exhaustive-deps
+410:11  Warning: The 'renderPermission' function makes the dependencies of useMemo Hook (at line 537) change on every render. Move it inside the useMemo callback. Alternatively, wrap the definition of 'renderPermission' in its own useCallback() Hook.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/uxui/(menu)/announcement/page.tsx
+135:8  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+468:9  Warning: React Hook useMemo has missing dependencies: 'handleActive', 'renderPermission', 'togglePopover', and 'userPermission?.f_edit'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/uxui/(menu)/capacityPublicRemarks/page.tsx
+140:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+448:9  Warning: React Hook useMemo has missing dependencies: 'renderPermission' and 'togglePopover'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/uxui/(menu)/meteringCheckingCondition/form/modalAction.tsx
+295:8  Warning: React Hook useEffect has a missing dependency: 'clearErrors'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+451:57  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+451:57  Warning: img elements must have an alt prop, either with meaningful text, or an empty string for decorative images.  jsx-a11y/alt-text
+453:57  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+453:57  Warning: img elements must have an alt prop, either with meaningful text, or an empty string for decorative images.  jsx-a11y/alt-text
+637:57  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+637:57  Warning: img elements must have an alt prop, either with meaningful text, or an empty string for decorative images.  jsx-a11y/alt-text
+639:57  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+639:57  Warning: img elements must have an alt prop, either with meaningful text, or an empty string for decorative images.  jsx-a11y/alt-text
+812:72  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+812:72  Warning: img elements must have an alt prop, either with meaningful text, or an empty string for decorative images.  jsx-a11y/alt-text
+886:69  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+886:69  Warning: img elements must have an alt prop, either with meaningful text, or an empty string for decorative images.  jsx-a11y/alt-text
+963:71  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+963:71  Warning: img elements must have an alt prop, either with meaningful text, or an empty string for decorative images.  jsx-a11y/alt-text
+1040:70  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+1040:70  Warning: img elements must have an alt prop, either with meaningful text, or an empty string for decorative images.  jsx-a11y/alt-text
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/uxui/(menu)/meteringCheckingCondition/page.tsx
+135:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+442:9  Warning: React Hook useMemo has missing dependencies: 'renderPermission' and 'togglePopover'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/uxui/(menu)/setupBackground/form/modalAction.tsx
+67:8  Warning: React Hook useEffect has a missing dependency: 'clearErrors'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+158:45  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+176:45  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/uxui/(menu)/setupBackground/form/modalAction_bak.tsx
+144:45  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/uxui/(menu)/setupBackground/form/table.tsx
+149:45  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+149:45  Warning: img elements must have an alt prop, either with meaningful text, or an empty string for decorative images.  jsx-a11y/alt-text
+218:25  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/uxui/(menu)/setupBackground/page.tsx
+84:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+114:8  Warning: React Hook useEffect has missing dependencies: 'currentPage' and 'itemsPerPage'. Either include them or remove the dependency array. You can also replace multiple useState variables with useReducer if 'setPaginatedData' needs the current value of 'currentPage'.  react-hooks/exhaustive-deps
+285:29  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+285:29  Warning: img elements must have an alt prop, either with meaningful text, or an empty string for decorative images.  jsx-a11y/alt-text
+313:9  Warning: React Hook useMemo has missing dependencies: 'dataTable', 'handleActive', and 'userPermission?.f_edit'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+426:25  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/uxui/(menu)/termAndCondition/form/table.tsx
+159:53  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/uxui/(menu)/termAndCondition/form/tableHistory.tsx
+102:45  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/uxui/(menu)/termAndCondition/page.tsx
+151:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+433:29  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+509:9  Warning: React Hook useMemo has missing dependencies: 'renderPermission' and 'togglePopover'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/uxui/(menu)/userGuide/form/modalAction.tsx
+122:8  Warning: React Hook useEffect has missing dependencies: 'fetchRoleMaster', 'handleRemoveFile', and 'tk'. Either include them or remove the dependency array. You can also do a functional update 'settk(t => ...)' if you only need 'tk' in the 'settk' call.  react-hooks/exhaustive-deps
+236:39  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/uxui/(menu)/userGuide/form/table.tsx
+170:53  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/uxui/(menu)/userGuide/form/tableHistory.tsx
+130:45  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/uxui/(menu)/userGuide/page.tsx
+197:8  Warning: React Hook useEffect has missing dependencies: 'fetchData' and 'getPermission'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+451:29  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+545:9  Warning: React Hook useMemo has missing dependencies: 'getPermissionDownload', 'renderPermission', and 'togglePopover'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/userManagement/(menu)/auditLog/page.tsx
+159:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/userManagement/(menu)/divisions/page.tsx
+150:6  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/userManagement/(menu)/group/(menu)/other/form/modalAction.tsx
+116:8  Warning: React Hook useEffect has missing dependencies: 'setIsLoading' and 'watch'. Either include them or remove the dependency array. If 'setIsLoading' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/userManagement/(menu)/group/(menu)/other/page.tsx
+201:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+713:9  Warning: React Hook useMemo has missing dependencies: 'handleActive', 'renderPermission', and 'togglePopover'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/userManagement/(menu)/group/(menu)/shippers/form/customList.tsx
+108:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/userManagement/(menu)/group/(menu)/shippers/form/modalAction.tsx
+124:8  Warning: React Hook useEffect has missing dependencies: 'setIsLoading' and 'watch'. Either include them or remove the dependency array. If 'setIsLoading' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+426:61  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+440:65  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/userManagement/(menu)/group/(menu)/shippers/form/modalTransfer.tsx
+155:8  Warning: React Hook useEffect has missing dependencies: 'open' and 'updateContractPoint'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+167:8  Warning: React Hook useEffect has a missing dependency: 'transferData?.shipper_contract_point'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+167:9  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/userManagement/(menu)/group/(menu)/shippers/page.tsx
+206:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+725:9  Warning: React Hook useMemo has missing dependencies: 'handleActive', 'renderPermission', and 'togglePopover'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/userManagement/(menu)/group/(menu)/tso/form/modalAction.tsx
+122:8  Warning: React Hook useEffect has missing dependencies: 'dataDefaultRole', 'setIsLoading', and 'watch'. Either include them or remove the dependency array. If 'setIsLoading' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/userManagement/(menu)/group/(menu)/tso/page.tsx
+200:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+671:9  Warning: React Hook useMemo has missing dependencies: 'handleActive', 'renderPermission', 'togglePopover', and 'userPermission?.f_edit'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/userManagement/(menu)/roles/page.tsx
+167:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+572:12  Warning: React Hook useMemo has missing dependencies: 'renderPermission' and 'togglePopover'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/userManagement/(menu)/systemLogin/form/modalAction.tsx
+190:8  Warning: React Hook useEffect has a missing dependency: 'selectedMode'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/userManagement/(menu)/systemLogin/page.tsx
+157:8  Warning: React Hook useEffect has missing dependencies: 'fetchData' and 'getPermission'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+414:8  Warning: React Hook useEffect has a missing dependency: 'mixData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+680:12  Warning: React Hook useMemo has missing dependencies: 'renderPermission', 'togglePopover', and 'userPermission?.f_view'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/userManagement/(menu)/users/form/modalAction.tsx
+187:8  Warning: React Hook useEffect has missing dependencies: 'fetchDataEdit' and 'watch'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+272:8  Warning: React Hook useEffect has missing dependencies: 'currentDate', 'dataUserToEdit?.account_manage', 'fetchData', 'getRoleMaster', 'masterRole', 'reset', 'setIsLoading', and 'setResetForm'. Either include them or remove the dependency array. If 'setResetForm' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+303:9  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/userManagement/(menu)/users/form/modalSummary.tsx
+51:8  Warning: React Hook useEffect has a missing dependency: 'dataUser'. Either include it or remove the dependency array. If 'setPasswordValue' needs the current value of 'dataUser', you can also switch to useReducer instead of useState and read 'dataUser' in the reducer.  react-hooks/exhaustive-deps
+84:8  Warning: React Hook useEffect has missing dependencies: 'dataUser' and 'fetchData'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+84:9  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/userManagement/(menu)/users/form/modalUpdateStat.tsx
+48:8  Warning: React Hook useEffect has a missing dependency: 'setValue'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dam/(menu)/userManagement/(menu)/users/page.tsx
+327:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+1122:9  Warning: React Hook useMemo has missing dependencies: 'openStatFunc' and 'togglePopover'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/dashboardandreport/(menu)/waitinglist/page.tsx
+247:8  Warning: React Hook useEffect has a missing dependency: 'handleFieldSearch'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+265:8  Warning: React Hook useEffect has missing dependencies: 'activeButton', 'handleUpdateActiveButtonData', and 'subMenu'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+331:8  Warning: React Hook useEffect has missing dependencies: 'getPermission' and 'getSubMenu'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+559:9  Warning: React Hook useMemo has unnecessary dependencies: 'dataTable', 'userPermission', and 'user_permission'. Either exclude them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/event/(menu)/EmergencyDifficultDay/form/document/formDocument39.tsx
+201:8  Warning: React Hook useEffect has missing dependencies: 'maiHedDocSamKaoLasted', 'modeOpenDocument', and 'setValue'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/event/(menu)/EmergencyDifficultDay/form/document/formDocument4.tsx
+189:8  Warning: React Hook useEffect has missing dependencies: 'modeOpenDocument' and 'setValue'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/event/(menu)/EmergencyDifficultDay/form/document/formDocument41.tsx
+490:8  Warning: React Hook useEffect has missing dependencies: 'maiHedDocSeeLasted', 'modeOpenDocument', 'setDataChudTee', 'setDataChudTeeForShipper', 'setValue', and 'userDT?.account_manage'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+724:8  Warning: React Hook useEffect has missing dependencies: 'defaultShippersId1', 'fileUrl1', 'selectedShippers1', and 'watch'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+724:9  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/event/(menu)/EmergencyDifficultDay/form/document/formDocument5.tsx
+178:8  Warning: React Hook useEffect has missing dependencies: 'modeOpenDocument' and 'setValue'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/event/(menu)/EmergencyDifficultDay/form/document/formDocument6.tsx
+470:8  Warning: React Hook useEffect has missing dependencies: 'maiHedDocHokLasted', 'modeOpenDocument', 'setDataChudTee', 'setDataChudTeeForShipper', 'setValue', and 'userDT?.account_manage'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/event/(menu)/EmergencyDifficultDay/form/documentViewer.tsx
+62:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/event/(menu)/EmergencyDifficultDay/form/historyViewer.tsx
+164:8  Warning: React Hook useEffect has missing dependencies: 'WhichOpenDocument', 'fetchData', and 'rowselected?.event_nember'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+193:8  Warning: React Hook useEffect has a missing dependency: 'dataTable'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/event/(menu)/EmergencyDifficultDay/form/tableHistory/tableVersion.tsx
+66:8  Warning: React Hook useEffect has missing dependencies: 'WhichOpenDocument' and 'modeOpenDocument'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/event/(menu)/EmergencyDifficultDay/page.tsx
+94:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+777:8  Warning: React Hook useEffect has a missing dependency: 'currentPage'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/event/(menu)/EventOffSpecGas/form/documentViewer.tsx
+55:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+100:8  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/event/(menu)/EventOffSpecGas/form/formDocument1.tsx
+126:8  Warning: React Hook useEffect has missing dependencies: 'dataOpenDocument?.document1?.event_date', 'dataOpenDocument?.document1?.event_doc_status_id', 'dataOpenDocument?.document1?.event_document_file', 'dataOpenDocument?.document1?.id', 'dataOpenDocument?.document1?.input_date_time_of_the_incident', 'dataOpenDocument?.document1?.input_delivery_point_at_the_scene', 'dataOpenDocument?.document1?.input_duration_that_is_expected_to_be_completed', 'dataOpenDocument?.document1?.input_gas_quality_is_not_in_the_gas_quality_requirements', 'dataOpenDocument?.document1?.input_more', 'dataOpenDocument?.document1?.input_note', 'dataOpenDocument?.document1?.input_reason_the_gas_quality_requirements', 'dataOpenDocument?.document1?.longdo_dict', 'dataOpenDocument?.event_nember', 'modeOpenDocument', and 'setValue'. Either include them or remove the dependency array. If 'setDocumentOneId' needs the current value of 'dataOpenDocument.document1.id', you can also switch to useReducer instead of useState and read 'dataOpenDocument.document1.id' in the reducer.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/event/(menu)/EventOffSpecGas/form/formDocument2.tsx
+182:8  Warning: React Hook useEffect has missing dependencies: 'modeOpenDocument' and 'setValue'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/event/(menu)/EventOffSpecGas/form/formDocument3.tsx
+227:8  Warning: React Hook useEffect has missing dependencies: 'modeOpenDocument' and 'setValue'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/event/(menu)/EventOffSpecGas/form/historyViewer.tsx
+137:8  Warning: React Hook useEffect has a missing dependency: 'dataTable'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+160:8  Warning: React Hook useEffect has missing dependencies: 'WhichOpenDocument', 'fetchData', and 'rowselected?.event_nember'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/event/(menu)/EventOffSpecGas/page.tsx
+99:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/event/(menu)/OFIF/form/document/formDocument7.tsx
+600:8  Warning: React Hook useEffect has missing dependencies: 'maiHedDocJedLasted', 'modeOpenDocument', 'setDataChudTee', 'setDataChudTeeForShipper', 'setValue', and 'userDT?.account_manage'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/event/(menu)/OFIF/form/document/formDocument8.tsx
+172:8  Warning: React Hook useEffect has missing dependencies: 'modeOpenDocument' and 'setValue'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/event/(menu)/OFIF/form/documentViewer.tsx
+54:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/event/(menu)/OFIF/form/historyViewer.tsx
+117:8  Warning: React Hook useEffect has missing dependencies: 'WhichOpenDocument', 'fetchData', and 'rowselected?.event_nember'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+146:8  Warning: React Hook useEffect has a missing dependency: 'dataTable'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/event/(menu)/OFIF/form/tableHistory/tableHistoryDocument1.tsx
+58:8  Warning: React Hook useEffect has a missing dependency: 'modeOpenDocument'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/event/(menu)/OFIF/form/tableHistory/tableVersion.tsx
+94:8  Warning: React Hook useEffect has missing dependencies: 'WhichOpenDocument', 'modeOpenDocument', and 'userDT?.account_manage'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/event/(menu)/OFIF/page.tsx
+104:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+631:8  Warning: React Hook useEffect has a missing dependency: 'currentPage'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/layout.tsx
+10:21  Error: Do not pass children as props. Instead, nest children between the opening and closing tags.  react/no-children-prop
+
+./src/app/[lng]/authorization/(menu)/metering/(menu)/MeteringChecking/form/table.tsx
+185:57  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/[lng]/authorization/(menu)/metering/(menu)/MeteringChecking/page.tsx
+164:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/metering/(menu)/MeteringManagement/form/table.tsx
+51:8  Warning: React Hook useEffect has a missing dependency: 'tk'. Either include it or remove the dependency array. You can also do a functional update 'settk(t => ...)' if you only need 'tk' in the 'settk' call.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/metering/(menu)/MeteringManagement/page.tsx
+122:8  Warning: React Hook useEffect has missing dependencies: 'areaMaster?.data', 'getPermission', and 'zoneMaster?.data'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+489:8  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+520:8  Warning: React Hook useEffect has a missing dependency: 'tk'. Either include it or remove the dependency array. You can also do a functional update 'settk(t => ...)' if you only need 'tk' in the 'settk' call.  react-hooks/exhaustive-deps
+566:8  Warning: React Hook useEffect has a missing dependency: 'areaMaster?.data'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+572:8  Warning: React Hook useEffect has a missing dependency: 'fetchRetrievingId'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/metering/(menu)/MeteringRetrieving/page.tsx
+265:8  Warning: React Hook useEffect has missing dependencies: 'dataTab1' and 'dataTab2'. Either include them or remove the dependency array. You can also replace multiple useState variables with useReducer if 'setData' needs the current value of 'dataTab2'.  react-hooks/exhaustive-deps
+270:8  Warning: React Hook useEffect has missing dependencies: 'fetchData' and 'getPermission'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/daiAdjustmentReport/form/backup/tableTabTotal.tsx
+63:6  Warning: React Hook useEffect has a missing dependency: 'tableType'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+140:6  Warning: React Hook useEffect has a missing dependency: 'tableType'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/daiAdjustmentReport/form/tableTabDetail.tsx
+38:8  Warning: React Hook useEffect has a missing dependency: 'tableType'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+55:8  Warning: React Hook useEffect has a missing dependency: 'tableDataRender'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/daiAdjustmentReport/page.tsx
+50:8  Warning: React Hook useEffect has a missing dependency: 'setValue'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+90:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+502:8  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+568:8  Warning: React Hook useEffect has a missing dependency: 'tabIndex'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/dailyAdjustment/form/modalAction.tsx
+99:8  Warning: React Hook useEffect has a missing dependency: 'clearErrors'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+109:8  Warning: React Hook useEffect has missing dependencies: 'setValue' and 'userDT?.account_manage'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+199:8  Warning: React Hook useEffect has a missing dependency: 'watch'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+199:9  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+199:27  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+266:8  Warning: React Hook useEffect has missing dependencies: 'fetchNomData' and 'watch'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+266:27  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+266:51  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+266:69  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+266:87  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+266:102  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+266:119  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+296:8  Warning: React Hook useEffect has a missing dependency: 'clearErrors'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/dailyAdjustment/page.tsx
+127:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+288:8  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+810:9  Warning: React Hook useMemo has a missing dependency: 'togglePopover'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/dailyManagement/form/modalAcceptReject.tsx
+49:8  Warning: React Hook useEffect has a missing dependency: 'setValue'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/dailyManagement/form/modalAction.tsx
+76:8  Warning: React Hook useEffect has a missing dependency: 'handleRemoveFile'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/dailyManagement/form/modalComment.tsx
+70:8  Warning: React Hook useEffect has missing dependencies: 'commentsReason', 'commentsShipper', and 'commentsTso'. Either include them or remove the dependency array. You can also replace multiple useState variables with useReducer if 'setComments' needs the current value of 'commentsShipper'.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/dailyManagement/nomCodeView/nomCodeView.tsx
+58:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+87:8  Warning: React Hook useEffect has missing dependencies: 'dataNomCode?.contract_code_id', 'dataNomCode?.nomination_type_id', and 'dataNomCode?.nomination_version'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+204:8  Warning: React Hook useEffect has a missing dependency: 'dataNomCode'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+484:8  Warning: React Hook useMemo has a missing dependency: 'dataNomCodeX?.nomination_version'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+484:9  Warning: React Hook useMemo has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/dailyManagement/nomCodeView/pageComment.tsx
+115:8  Warning: React Hook useEffect has missing dependencies: 'commentsReason', 'commentsShipper', and 'commentsTso'. Either include them or remove the dependency array. You can also replace multiple useState variables with useReducer if 'setComments' needs the current value of 'commentsShipper'.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/dailyManagement/nomCodeView/tableEachZone.tsx
+86:8  Warning: React Hook useEffect has missing dependencies: 'setTempData', 'setTempDataConcept', 'tabEntry', and 'zoneText'. Either include them or remove the dependency array. If 'setTempData' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+116:8  Warning: React Hook useEffect has missing dependencies: 'tabMain', 'tempData', and 'tempDataConcept'. Either include them or remove the dependency array. If 'setSortedData' needs the current value of 'tempData', you can also switch to useReducer instead of useState and read 'tempData' in the reducer.  react-hooks/exhaustive-deps
+209:8  Warning: React Hook useEffect has a missing dependency: 'getVisibleHours'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+362:8  Warning: React Hook useEffect has missing dependencies: 'initialColumnsTabConceptPoint', 'initialColumnsTabEntryExit', 'tempData', and 'tempDataConcept'. Either include them or remove the dependency array. If 'setSortedData' needs the current value of 'tempData', you can also switch to useReducer instead of useState and read 'tempData' in the reducer.  react-hooks/exhaustive-deps
+368:8  Warning: React Hook useEffect has a missing dependency: 'getInitialColumns'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+465:8  Warning: React Hook useEffect has missing dependencies: 'sortedData' and 'tempDataConcept'. Either include them or remove the dependency array. If 'setSortedData' needs the current value of 'tempDataConcept', you can also switch to useReducer instead of useState and read 'tempDataConcept' in the reducer.  react-hooks/exhaustive-deps
+498:8  Warning: React Hook useEffect has missing dependencies: 'sortedData', 'tabMain', 'tempData', and 'tempDataConcept'. Either include them or remove the dependency array. If 'setSortedData' needs the current value of 'tempData', you can also switch to useReducer instead of useState and read 'tempData' in the reducer.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/dailyManagement/nomCodeView/tableEntryComposition.tsx
+42:8  Warning: React Hook useEffect has a missing dependency: 'dataMasterZone'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+99:8  Warning: React Hook useEffect has a missing dependency: 'sortedMasterData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/dailyManagement/page.tsx
+80:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+441:8  Warning: React Hook useEffect has missing dependencies: 'IsSearchClick', 'fetchData', 'filter_group_id_from_somewhere_else', and 'handleFieldSearch'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/dailyadjustmentSummary/form/table.tsx
+53:8  Warning: React Hook useEffect has a missing dependency: 'getVisibleHours'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/dailyadjustmentSummary/page.tsx
+45:8  Warning: React Hook useEffect has a missing dependency: 'setValue'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+82:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+286:8  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+347:8  Warning: React Hook useEffect has a missing dependency: 'getVisibleHours'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+431:8  Warning: React Hook useEffect has a missing dependency: 'getInitialColumnsIntraday'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/minimumInventorySummary/form/tableTabWeekly.tsx
+154:8  Warning: React Hook useEffect has missing dependencies: 'dayNames' and 'getWeeklyTotalsByType'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+257:8  Warning: React Hook useMemo has missing dependencies: 'columnVisibility' and 'summarizeWeeklyData'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/minimumInventorySummary/page.tsx
+39:8  Warning: React Hook useEffect has a missing dependency: 'setValue'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+547:8  Warning: React Hook useEffect has a missing dependency: 'tabIndex'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+622:8  Warning: React Hook useEffect has a missing dependency: 'filteredColumns'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+682:8  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+686:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+690:8  Warning: React Hook useEffect has a missing dependency: 'handleFieldSearch'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/nominationsDashboard/page.tsx
+92:8  Warning: React Hook useEffect has missing dependencies: 'fetchData' and 'getPermission'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/parkingAllocation/form/modalAction.tsx
+97:8  Warning: React Hook useEffect has missing dependencies: 'selectedDateData', 'setValue', 'watch', and 'zoneMaster?.data'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+97:9  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+118:8  Warning: React Hook useEffect has missing dependencies: 'setValue', 'watch', and 'zoneMaster?.data'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+118:9  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/parkingAllocation/page.tsx
+114:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+318:8  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/qualityEvaluation/form/tableWeekly.tsx
+37:8  Warning: React Hook useEffect has a missing dependency: 'date_next_sunday'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+47:8  Warning: React Hook useEffect has a missing dependency: 'tableData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/qualityEvaluation/page.tsx
+77:6  Warning: React Hook useEffect has a missing dependency: 'setValue'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+107:6  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+447:6  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+478:6  Warning: React Hook useEffect has missing dependencies: 'handleFieldSearchTabChange' and 'setValue'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+775:6  Warning: React Hook useEffect has missing dependencies: 'isCheckAll' and 'tabIndex'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+814:6  Warning: React Hook useEffect has missing dependencies: 'fetchData', 'fetchDataWithParams', 'handleFieldSearch', and 'isFirstTime'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/qualityEvaluation/page_bk.tsx
+59:8  Warning: React Hook useEffect has a missing dependency: 'setValue'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+102:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+340:8  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+345:8  Warning: React Hook useEffect has missing dependencies: 'fetchOnlyData' and 'setValue'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+464:8  Warning: React Hook useEffect has missing dependencies: 'isCheckAll' and 'tk'. Either include them or remove the dependency array. You can also do a functional update 'settk(t => ...)' if you only need 'tk' in the 'settk' call.  react-hooks/exhaustive-deps
+474:8  Warning: React Hook useEffect has a missing dependency: 'handleFieldSearch'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/qualityPlanning/form/tableIntraday.tsx
+58:8  Warning: React Hook useEffect has a missing dependency: 'getVisibleHours'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/qualityPlanning/form/tableWeekly.tsx
+54:8  Warning: React Hook useEffect has a missing dependency: 'date_next_sunday'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+65:8  Warning: React Hook useEffect has a missing dependency: 'tableData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/qualityPlanning/page.tsx
+275:6  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+296:6  Warning: React Hook useEffect has missing dependencies: 'defaultGasDay', 'getHourRange', 'handleFieldSearch', and 'searchQuery'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+301:6  Warning: React Hook useEffect has a missing dependency: 'getHourRange'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+412:6  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/qualityPlanning/page_bk.tsx
+60:8  Warning: React Hook useEffect has a missing dependency: 'setValue'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+183:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+505:8  Warning: React Hook useEffect has missing dependencies: 'fetchData' and 'firstTimeLoad'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+518:8  Warning: React Hook useEffect has missing dependencies: 'fetchOnlyData' and 'firstTimeLoad'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+642:8  Warning: React Hook useEffect has missing dependencies: 'dashboardObj' and 'getVisibleHours'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+721:8  Warning: React Hook useEffect has a missing dependency: 'getInitialColumnsIntraday'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/queryShipperNominationFile/page.tsx
+91:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+194:8  Warning: React Hook useEffect has a missing dependency: 'userDT?.account_manage'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+283:8  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+287:8  Warning: React Hook useEffect has a missing dependency: 'fetchOnlyData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+581:9  Warning: React Hook useMemo has missing dependencies: 'openAllFileModal' and 'tabIndex'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/shipperNominationReport/form/detailPage/detailPage.tsx
+39:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/shipperNominationReport/form/detailPage/tableEachZone.tsx
+394:8  Warning: React Hook useEffect has a missing dependency: 'getVisibleHours'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+602:8  Warning: React Hook useEffect has a missing dependency: 'filterColumnsByTabIndexConcept'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+612:8  Warning: React Hook useEffect has a missing dependency: 'getInitialColumns'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/shipperNominationReport/form/tableWeekly.tsx
+55:8  Warning: React Hook useEffect has a missing dependency: 'subTabIndex'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/shipperNominationReport/form/viewPage/tableView.tsx
+53:8  Warning: React Hook useEffect has a missing dependency: 'tabIndex'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/shipperNominationReport/page.tsx
+108:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+926:8  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+1022:8  Warning: React Hook useEffect has a missing dependency: 'getVisibleHours'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+1100:8  Warning: React Hook useEffect has a missing dependency: 'getInitialColumnsIntraday'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+1326:9  Warning: React Hook useMemo has a missing dependency: 'togglePopover'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+1565:9  Warning: React Hook useMemo has a missing dependency: 'togglePopover'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/submissionFile/page.tsx
+86:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+206:8  Warning: React Hook useEffect has a missing dependency: 'handleClickOutside'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+338:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/summaryNominationReport/form/frameTable.tsx
+57:8  Warning: React Hook useEffect has a missing dependency: 'setCheckIsAllAreaImbalance'. Either include it or remove the dependency array. If 'setCheckIsAllAreaImbalance' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/summaryNominationReport/form/tableAll/tableAllArea.tsx
+83:8  Warning: React Hook useEffect has a missing dependency: 'getVisibleHours'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+186:8  Warning: React Hook useEffect has a missing dependency: 'getInitialColumns'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/summaryNominationReport/form/tableAll/tableAllNom.tsx
+82:8  Warning: React Hook useEffect has a missing dependency: 'getVisibleHours'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+164:8  Warning: React Hook useEffect has a missing dependency: 'filterColumnsByTabIndex'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+166:74  Warning: React Hook useMemo has a missing dependency: 'filterColumnsByTabIndex'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/summaryNominationReport/form/tableAll/tableAllTotalSystem.tsx
+86:8  Warning: React Hook useEffect has a missing dependency: 'getVisibleHours'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+183:8  Warning: React Hook useEffect has a missing dependency: 'getInitialColumns'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/summaryNominationReport/form/tableDaily/tableDailyArea.tsx
+80:8  Warning: React Hook useEffect has a missing dependency: 'getVisibleHours'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+179:8  Warning: React Hook useEffect has a missing dependency: 'getInitialColumns'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/summaryNominationReport/form/tableDaily/tableDailyNom.tsx
+35:8  Warning: React Hook useEffect has missing dependencies: 'currentPage' and 'itemsPerPage'. Either include them or remove the dependency array. You can also replace multiple useState variables with useReducer if 'setSortedData' needs the current value of 'currentPage'.  react-hooks/exhaustive-deps
+79:8  Warning: React Hook useEffect has a missing dependency: 'getVisibleHours'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+186:8  Warning: React Hook useEffect has a missing dependency: 'getInitialColumns'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+218:8  Warning: React Hook useEffect has a missing dependency: 'dataTable'. Either include it or remove the dependency array. You can also replace multiple useState variables with useReducer if 'setPaginatedData' needs the current value of 'dataTable'.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/summaryNominationReport/form/tableDaily/tableDailyTotalSystem.tsx
+82:8  Warning: React Hook useEffect has a missing dependency: 'getVisibleHours'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+194:8  Warning: React Hook useEffect has a missing dependency: 'getInitialColumns'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/summaryNominationReport/form/tableWeekly/tableWeeklyArea.tsx
+78:8  Warning: React Hook useEffect has a missing dependency: 'getVisibleHours'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+131:8  Warning: React Hook useEffect has a missing dependency: 'getInitialColumns'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/summaryNominationReport/form/tableWeekly/tableWeeklyNom.tsx
+78:8  Warning: React Hook useEffect has a missing dependency: 'getVisibleHours'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+114:8  Warning: React Hook useEffect has a missing dependency: 'getInitialColumns'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+156:32  Warning: Assignments to the 'date_next_sunday' variable from inside React Hook useEffect will be lost after each render. To preserve the value over time, store it in a useRef Hook and keep the mutable value in the '.current' property. Otherwise, you can move this variable directly inside useEffect.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/summaryNominationReport/form/tableWeekly/tableWeeklyTotalSystem.tsx
+87:8  Warning: React Hook useEffect has a missing dependency: 'getVisibleHours'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+133:8  Warning: React Hook useEffect has a missing dependency: 'getInitialColumns'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+182:8  Warning: React Hook useEffect has a missing dependency: 'srchStartDate'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/summaryNominationReport/page.tsx
+173:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+338:8  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+407:9  Warning: React Hook useMemo has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+503:8  Warning: React Hook useEffect has a missing dependency: 'dashboardObj'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/uploadTemplateForShipper/form/modalAction.tsx
+77:8  Warning: React Hook useEffect has a missing dependency: 'handleRemoveFile'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/uploadTemplateForShipper/page.tsx
+67:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+85:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+210:8  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/weeklyManagement/form/modalAcceptReject.tsx
+50:8  Warning: React Hook useEffect has a missing dependency: 'setValue'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/weeklyManagement/form/modalAction.tsx
+82:8  Warning: React Hook useEffect has a missing dependency: 'handleRemoveFile'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/weeklyManagement/form/modalComment.tsx
+70:8  Warning: React Hook useEffect has missing dependencies: 'commentsReason', 'commentsShipper', and 'commentsTso'. Either include them or remove the dependency array. You can also replace multiple useState variables with useReducer if 'setComments' needs the current value of 'commentsShipper'.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/weeklyManagement/nomCodeView/nomCodeView.tsx
+55:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+82:8  Warning: React Hook useEffect has missing dependencies: 'dataNomCode.contract_code_id', 'dataNomCode.nomination_type_id', and 'dataNomCode.nomination_version'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+157:8  Warning: React Hook useEffect has a missing dependency: 'dataNomCode'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+424:8  Warning: React Hook useMemo has a missing dependency: 'dataNomCodeX?.nomination_version'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+424:9  Warning: React Hook useMemo has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+510:8  Warning: React Hook useEffect has a missing dependency: 'dataNomCode'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/weeklyManagement/nomCodeView/pageComment.tsx
+105:8  Warning: React Hook useEffect has missing dependencies: 'commentsReason', 'commentsShipper', and 'commentsTso'. Either include them or remove the dependency array. You can also replace multiple useState variables with useReducer if 'setComments' needs the current value of 'commentsShipper'.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/weeklyManagement/nomCodeView/tableEachZone.tsx
+91:8  Warning: React Hook useEffect has missing dependencies: 'setTempData', 'setTempDataConcept', 'tabEntry', and 'zoneText'. Either include them or remove the dependency array. If 'setTempData' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+123:8  Warning: React Hook useEffect has missing dependencies: 'tabMain', 'tempData', and 'tempDataConcept'. Either include them or remove the dependency array. If 'setSortedData' needs the current value of 'tempData', you can also switch to useReducer instead of useState and read 'tempData' in the reducer.  react-hooks/exhaustive-deps
+247:8  Warning: React Hook useEffect has missing dependencies: 'getInitialColumns', 'tempData', and 'tempDataConcept'. Either include them or remove the dependency array. If 'setSortedData' needs the current value of 'tempData', you can also switch to useReducer instead of useState and read 'tempData' in the reducer.  react-hooks/exhaustive-deps
+401:8  Warning: React Hook useEffect has missing dependencies: 'sortedData', 'tabMain', 'tempData', and 'tempDataConcept'. Either include them or remove the dependency array. If 'setSortedData' needs the current value of 'tempData', you can also switch to useReducer instead of useState and read 'tempData' in the reducer.  react-hooks/exhaustive-deps
+457:8  Warning: React Hook useEffect has missing dependencies: 'sortedData' and 'tempDataConcept'. Either include them or remove the dependency array. If 'setSortedData' needs the current value of 'tempDataConcept', you can also switch to useReducer instead of useState and read 'tempDataConcept' in the reducer.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/weeklyManagement/nomCodeView/tableEntryComposition.tsx
+51:8  Warning: React Hook useEffect has a missing dependency: 'dataMasterZone'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+108:8  Warning: React Hook useEffect has a missing dependency: 'sortedMasterData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/nominations/(menu)/weeklyManagement/page.tsx
+88:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+136:8  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+159:8  Warning: React Hook useEffect has a missing dependency: 'shipperGroupData?.data'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+484:8  Warning: React Hook useEffect has missing dependencies: 'fetchData', 'fetchDataWithParams', and 'filter_gas_week_from_somewhere_else'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+518:8  Warning: React Hook useEffect has missing dependencies: 'fetchData' and 'isNomCodeClick'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/planning/(menu)/planningDashboard/form/chartArea.tsx
+52:8  Warning: React Hook useEffect has a missing dependency: 'userDT?.account_manage'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/planning/(menu)/planningDashboard/form/chartLongTerm1.tsx
+99:11  Warning: The 'chartData' object makes the dependencies of useMemo Hook (at line 444) change on every render. To fix this, wrap the initialization of 'chartData' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+248:11  Warning: The 'options' object makes the dependencies of useMemo Hook (at line 444) change on every render. Move it inside the useMemo callback. Alternatively, wrap the initialization of 'options' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/planning/(menu)/planningDashboard/form/chartLongTerm2_backup.tsx
+112:11  Warning: The 'chartData' object makes the dependencies of useMemo Hook (at line 202) change on every render. To fix this, wrap the initialization of 'chartData' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+118:11  Warning: The 'options' object makes the dependencies of useMemo Hook (at line 202) change on every render. To fix this, wrap the initialization of 'options' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/planning/(menu)/planningDashboard/form/chartMedTermAll.tsx
+84:8  Warning: React Hook useEffect has missing dependencies: 'areaMaster?.data', 'geranateFullView', and 'processData'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+105:8  Warning: React Hook useEffect has a missing dependency: 'userDT?.account_manage'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/planning/(menu)/planningDashboard/form/chartShortTermAll.tsx
+89:8  Warning: React Hook useEffect has missing dependencies: 'areaMaster?.data', 'geranateFullView', and 'processData'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+109:8  Warning: React Hook useEffect has a missing dependency: 'userDT?.account_manage'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/planning/(menu)/planningDashboard/form/modalFullView.tsx
+100:8  Warning: React Hook useEffect has missing dependencies: 'areaMaster?.data' and 'processData'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/planning/(menu)/planningDashboard/form/modalFullView_SHORT.tsx
+77:8  Warning: React Hook useEffect has missing dependencies: 'areaMaster?.data', 'geranateFullView', and 'processData'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/planning/(menu)/planningDashboard/form/modalFullview_MEDIUM.tsx
+78:8  Warning: React Hook useEffect has missing dependencies: 'areaMaster?.data', 'geranateFullView', and 'processData'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/planning/(menu)/planningDashboard/page.tsx
+294:8  Warning: React Hook useEffect has missing dependencies: 'fetchData', 'getPermission', and 'isLoading'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+496:8  Warning: React Hook useEffect has missing dependencies: 'areaMaster', 'srchStartYearMedTerm', and 'userPermission'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+552:8  Warning: React Hook useEffect has missing dependencies: 'srchStartDay' and 'userPermission'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+590:8  Warning: React Hook useEffect has missing dependencies: 'areaMaster?.data', 'dataMedTerm', 'dataShortTerm', and 'filterDataLongTerm'. Either include them or remove the dependency array. You can also replace multiple useState variables with useReducer if 'setAreaMasterData' needs the current value of 'filterDataLongTerm'.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/planning/(menu)/planningFileSubmissionTemplate/form/modalAction.tsx
+92:8  Warning: React Hook useEffect has a missing dependency: 'reset'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/planning/(menu)/planningFileSubmissionTemplate/page.tsx
+77:6  Warning: React Hook useEffect has missing dependencies: 'getPermission', 'shipperGroupData?.data', and 'termTypeMaster?.data'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+187:6  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/planning/(menu)/planningNewPoint/page.tsx
+75:6  Warning: React Hook useEffect has missing dependencies: 'getPermission', 'shipperGroupData?.data', and 'termTypeMaster?.data'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+174:6  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/planning/(menu)/planningQueryShipperFiles/page.tsx
+73:6  Warning: React Hook useEffect has missing dependencies: 'getPermission', 'shipperGroupData?.data', and 'termTypeMaster?.data'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+172:6  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/planning/(menu)/planningSubmissionFiles/form/modalComfirmTerm.tsx
+76:8  Warning: React Hook useEffect has missing dependencies: 'onClose', 'reset', and 'setIdShipper'. Either include them or remove the dependency array. If 'onClose' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+95:8  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+148:8  Warning: React Hook useEffect has missing dependencies: 'setValue' and 'watch'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+148:9  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/planning/(menu)/planningSubmissionFiles/form/modalSelectShipper.tsx
+85:8  Warning: React Hook useEffect has missing dependencies: 'onClose', 'reset', and 'setIdShipper'. Either include them or remove the dependency array. If 'onClose' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+90:8  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+143:8  Warning: React Hook useEffect has missing dependencies: 'setValue' and 'watch'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+143:9  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/planning/(menu)/planningSubmissionFiles/form/modalSelectShipper_bak.tsx
+64:8  Warning: React Hook useEffect has missing dependencies: 'onClose', 'reset', and 'setIdShipper'. Either include them or remove the dependency array. If 'onClose' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/planning/(menu)/planningSubmissionFiles/page.tsx
+165:8  Warning: React Hook useEffect has missing dependencies: 'fetchData' and 'getPermission'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+278:8  Warning: React Hook useEffect has a missing dependency: 'handleClickOutside'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+310:8  Warning: React Hook useEffect has missing dependencies: 'setValue' and 'watch'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+310:9  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+478:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/[lng]/authorization/(menu)/profile/form/modalAction.tsx
+156:45  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/[lng]/authorization/(menu)/profile/page.tsx
+222:33  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/[lng]/authorization/(menu)/tariff/(menu)/TariffChargeReport/[id]/form/tableViewCapacityCharge.tsx
+79:8  Warning: React Hook useEffect has a missing dependency: 'userDT'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/tariff/(menu)/TariffChargeReport/[id]/form/tableViewCapacityOveruseCharge.tsx
+55:8  Warning: React Hook useEffect has a missing dependency: 'userDT'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/tariff/(menu)/TariffChargeReport/[id]/form/tableViewCommodityCharge.tsx
+117:8  Warning: React Hook useEffect has a missing dependency: 'userDT'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/tariff/(menu)/TariffChargeReport/[id]/form/tableViewImbalancesPenaltyCharge.tsx
+72:8  Warning: React Hook useEffect has a missing dependency: 'userDT'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/tariff/(menu)/TariffChargeReport/[id]/page.tsx
+561:8  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+573:8  Warning: React Hook useEffect has missing dependencies: 'fetchData' and 'getPermission'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+587:8  Warning: React Hook useEffect has a missing dependency: 'getTariffId'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/tariff/(menu)/TariffChargeReport/page.tsx
+123:8  Warning: React Hook useEffect has missing dependencies: 'areaMaster?.data', 'getPermission', and 'zoneMaster?.data'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+380:8  Warning: React Hook useEffect has missing dependencies: 'handleFieldSearch' and 'is1stTimeLoad'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/tariff/(menu)/TariffCreditDebitNote/form/modalAction.tsx
+178:8  Warning: React Hook useEffect has missing dependencies: 'clearErrors', 'dataShipper', and 'dataTypeCharge'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+188:8  Warning: React Hook useEffect has missing dependencies: 'setValue' and 'userDT?.account_manage'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+586:8  Warning: React Hook useEffect has missing dependencies: 'handleGetContract', 'handleGetTariffId', and 'watch'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+586:9  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+586:30  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+594:8  Warning: React Hook useEffect has a missing dependency: 'watch'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+594:9  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+594:36  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+594:55  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+594:70  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+594:84  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+603:8  Warning: React Hook useEffect has a missing dependency: 'watch'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+603:9  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+603:30  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+603:50  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+603:76  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+603:96  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+612:8  Warning: React Hook useEffect has a missing dependency: 'watch'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+612:23  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/tariff/(menu)/TariffCreditDebitNote/form/modalComment.tsx
+25:8  Warning: React Hook useEffect has a missing dependency: 'dataShipper'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/[lng]/authorization/(menu)/tariff/(menu)/TariffCreditDebitNote/form/tableDetailNote.tsx
+326:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/[lng]/authorization/(menu)/tariff/(menu)/TariffCreditDebitNote/page.tsx
+213:8  Warning: React Hook useEffect has a missing dependency: 'getPermission'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/i18n/client.ts
+70:6  Warning: React Hook useEffect has a missing dependency: 'setCookie'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/components/headers/NotificationArea.tsx
+239:8  Warning: React Hook useMemo has missing dependencies: 'handleSelectAll', 'handleViewNotification', and 'notifications.length'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/components/headers/Notifys.tsx
+130:6  Warning: React Hook useEffect has missing dependencies: 'refreshNotifications' and 'userEmail'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/components/layout/LayoutMenu.tsx
+218:6  Warning: React Hook useEffect has a missing dependency: 'router'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+235:31  Error: Do not pass children as props. Instead, nest children between the opening and closing tags.  react/no-children-prop
+
+./src/components/layout/NavMenu.tsx
+71:9  Warning: The 'closePopup' function makes the dependencies of useEffect Hook (at line 193) change on every render. To fix this, wrap the definition of 'closePopup' in its own useCallback() Hook.  react-hooks/exhaustive-deps
+
+./src/components/library/dateRang/backup/dateSelectForm_20250730.tsx
+77:25  Warning: Assignments to the 'valueShow' variable from inside React Hook useEffect will be lost after each render. To preserve the value over time, store it in a useRef Hook and keep the mutable value in the '.current' property. Otherwise, you can move this variable directly inside useEffect.  react-hooks/exhaustive-deps
+89:24  Warning: Assignments to the 'readOnly' variable from inside React Hook useEffect will be lost after each render. To preserve the value over time, store it in a useRef Hook and keep the mutable value in the '.current' property. Otherwise, you can move this variable directly inside useEffect.  react-hooks/exhaustive-deps
+112:30  Error: Component definition is missing display name  react/display-name
+
+./src/components/library/dateRang/backup/dateSelectForm_clean.tsx
+74:25  Warning: Assignments to the 'valueShow' variable from inside React Hook useEffect will be lost after each render. To preserve the value over time, store it in a useRef Hook and keep the mutable value in the '.current' property. Otherwise, you can move this variable directly inside useEffect.  react-hooks/exhaustive-deps
+86:24  Warning: Assignments to the 'readOnly' variable from inside React Hook useEffect will be lost after each render. To preserve the value over time, store it in a useRef Hook and keep the mutable value in the '.current' property. Otherwise, you can move this variable directly inside useEffect.  react-hooks/exhaustive-deps
+109:30  Error: Component definition is missing display name  react/display-name
+
+./src/components/library/dateRang/dateSearch.tsx
+87:6  Warning: React Hook useEffect has a missing dependency: 'dateToFix'. Either include it or remove the dependency array. If 'setSelectedDate' needs the current value of 'dateToFix', you can also switch to useReducer instead of useState and read 'dateToFix' in the reducer.  react-hooks/exhaustive-deps
+128:6  Warning: React Hook useEffect has a missing dependency: 'defaultValue'. Either include it or remove the dependency array. If 'setSelectedDate' needs the current value of 'defaultValue', you can also switch to useReducer instead of useState and read 'defaultValue' in the reducer.  react-hooks/exhaustive-deps
+155:23  Error: Component definition is missing display name  react/display-name
+
+./src/components/library/dateRang/dateSelectForm.tsx
+82:25  Warning: Assignments to the 'valueShow' variable from inside React Hook useEffect will be lost after each render. To preserve the value over time, store it in a useRef Hook and keep the mutable value in the '.current' property. Otherwise, you can move this variable directly inside useEffect.  react-hooks/exhaustive-deps
+98:24  Warning: Assignments to the 'readOnly' variable from inside React Hook useEffect will be lost after each render. To preserve the value over time, store it in a useRef Hook and keep the mutable value in the '.current' property. Otherwise, you can move this variable directly inside useEffect.  react-hooks/exhaustive-deps
+
+./src/components/library/dateRang/dateSelectFormThai.tsx
+84:24  Warning: Assignments to the 'readOnly' variable from inside React Hook useEffect will be lost after each render. To preserve the value over time, store it in a useRef Hook and keep the mutable value in the '.current' property. Otherwise, you can move this variable directly inside useEffect.  react-hooks/exhaustive-deps
+89:25  Warning: Assignments to the 'valueShow' variable from inside React Hook useEffect will be lost after each render. To preserve the value over time, store it in a useRef Hook and keep the mutable value in the '.current' property. Otherwise, you can move this variable directly inside useEffect.  react-hooks/exhaustive-deps
+
+./src/components/library/localCaptcha/localCapcha.tsx
+85:8  Warning: React Hook useEffect has missing dependencies: 'drawCaptcha', 'handleRefreshCaptcha', and 'isSubmit'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+91:8  Warning: React Hook useEffect has a missing dependency: 'handleRefreshCaptcha'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+121:8  Warning: React Hook useEffect has a missing dependency: 'setIsVerify'. Either include it or remove the dependency array. If 'setIsVerify' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+128:8  Warning: React Hook useEffect has missing dependencies: 'handleRefreshCaptcha' and 'setHardResetCaptcha'. Either include them or remove the dependency array. If 'setHardResetCaptcha' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+
+./src/components/library/passwordStrong/PasswordStrong.tsx
+64:6  Warning: React Hook useEffect has missing dependencies: 'countLeast' and 'setflag'. Either include them or remove the dependency array. If 'setflag' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+
+./src/components/other/InactivityTracker.tsx
+224:8  Warning: React Hook useEffect has a missing dependency: 'timeout'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+397:8  Warning: React Hook useEffect has an unnecessary dependency: 'location.pathname'. Either exclude it or remove the dependency array. Outer scope values like 'location.pathname' aren't valid dependencies because mutating them doesn't re-render the component.  react-hooks/exhaustive-deps
+
+./src/components/other/SearchForm.tsx
+105:6  Warning: React Hook useEffect has missing dependencies: 'options' and 'sortOptionBy'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+105:7  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+
+./src/components/other/fatherDynamicModify.tsx
+135:8  Warning: React Hook useEffect has missing dependencies: 'contractPointData', 'mode', 'originOrSum', 'processingData', 'srchEnddate', 'srchStartdate', 'trickerColumn', 'updateHeadersLastFive', and 'updateHeadersLastTwo'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/components/other/fatherDynamicTable.tsx
+185:8  Warning: React Hook useEffect has missing dependencies: 'data_table_val' and 'processingData'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+239:11  Warning: The 'entryValue' conditional could make the dependencies of useEffect Hook (at line 265) change on every render. To fix this, wrap the initialization of 'entryValue' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+240:11  Warning: The 'exitValue' conditional could make the dependencies of useEffect Hook (at line 271) change on every render. To fix this, wrap the initialization of 'exitValue' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+245:8  Warning: React Hook useEffect has missing dependencies: 'entryValue' and 'exitValue'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+480:8  Warning: React Hook useEffect has a missing dependency: 'mode'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/components/other/googleMap.tsx
+38:6  Warning: React Hook useEffect has an unnecessary dependency: 'GG_TOKEN'. Either exclude it or remove the dependency array. Outer scope values like 'GG_TOKEN' aren't valid dependencies because mutating them doesn't re-render the component.  react-hooks/exhaustive-deps
+
+./src/components/other/modalHistory.tsx
+271:6  Warning: React Hook useEffect has missing dependencies: 'handleFieldSearch', 'handlefindUpdate', and 'tableType'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+710:6  Warning: React Hook useEffect has a missing dependency: 'initialColumns'. Either include it or remove the dependency array. If 'setColumnVisibility' needs the current value of 'initialColumns', you can also switch to useReducer instead of useState and read 'initialColumns' in the reducer.  react-hooks/exhaustive-deps
+
+./src/components/other/modalProfile/form/modalAction.tsx
+157:45  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/components/other/modalProfile/modalProfile.tsx
+150:8  Warning: React Hook useEffect has a missing dependency: 'setopen'. Either include it or remove the dependency array. If 'setopen' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+
+./src/components/other/motherDynamicTable2.tsx
+110:8  Warning: React Hook useEffect has missing dependencies: 'data_table_val' and 'processingData'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+153:8  Warning: React Hook useEffect has a missing dependency: 'setGroupRowJsonState'. Either include it or remove the dependency array. Outer scope values like 'group_row_json' aren't valid dependencies because mutating them doesn't re-render the component.  react-hooks/exhaustive-deps
+207:8  Warning: React Hook useEffect has missing dependencies: 'contractPointData?.data', 'dataTable?.booking_row_json', 'dataTable?.booking_row_json_release', and 'originOrSum'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+227:11  Warning: The 'entryValue' conditional could make the dependencies of useEffect Hook (at line 249) change on every render. To fix this, wrap the initialization of 'entryValue' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+228:11  Warning: The 'exitValue' conditional could make the dependencies of useEffect Hook (at line 255) change on every render. To fix this, wrap the initialization of 'exitValue' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+262:8  Warning: React Hook useEffect has a missing dependency: 'contractPointData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+270:8  Warning: React Hook useEffect has a missing dependency: 'contractPointData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+411:8  Warning: React Hook useEffect has missing dependencies: 'fromDate', 'fromDateExit', 'headers', 'headersExit', 'toDate', 'toDateExit', 'updateHeadersLastFive', and 'updateHeadersLastTwo'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+420:8  Warning: React Hook useEffect has missing dependencies: 'fromDate', 'fromDateExit', 'headers', 'headersExit', 'toDate', 'toDateExit', 'updateHeadersLastFive', and 'updateHeadersLastTwo'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+477:8  Warning: React Hook useEffect has missing dependencies: 'setDataHeaderEntry' and 'updatedHeaders'. Either include them or remove the dependency array. If 'setDataHeaderEntry' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+477:9  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+486:8  Warning: React Hook useEffect has missing dependencies: 'setDataHeaderExit' and 'updatedHeadersExit'. Either include them or remove the dependency array. If 'setDataHeaderExit' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+486:9  Warning: React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be statically checked.  react-hooks/exhaustive-deps
+570:8  Warning: React Hook useEffect has missing dependencies: 'setDataPostEntry', 'updatedHeaders', and 'updatedHeadersExit'. Either include them or remove the dependency array. If 'setDataPostEntry' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+
+./src/components/other/nodataTable.tsx
+14:13  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/components/other/renderPdf2.tsx
+52:47  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+52:54  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+
+./src/components/other/searchInput.tsx
+15:6  Warning: React Hook useEffect has a missing dependency: 'handleClear'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/components/other/searchInput2.tsx
+22:8  Warning: React Hook useEffect has a missing dependency: 'handleClear'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/components/other/selectBoxMultiForm.tsx
+32:8  Warning: React Hook useEffect has a missing dependency: 'tk'. Either include it or remove the dependency array. You can also do a functional update 'settk(t => ...)' if you only need 'tk' in the 'settk' call.  react-hooks/exhaustive-deps
+
+./src/components/other/selectProps.tsx
+89:8  Warning: React Hook useEffect has a missing dependency: 'tk'. Either include it or remove the dependency array. You can also do a functional update 'settk(t => ...)' if you only need 'tk' in the 'settk' call.  react-hooks/exhaustive-deps
+
+./src/components/other/tableEntry.tsx
+103:8  Warning: React Hook useEffect has missing dependencies: 'processingData' and 'trickerColumn'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+295:8  Warning: React Hook useEffect has missing dependencies: 'HEADER_ORDER', 'contractPointData?.data', and 'originOrSum'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+347:8  Warning: React Hook useEffect has missing dependencies: 'IsEditedPeriod', 'dataRowAfterFromTo', 'entryValEdited', 'entryValOriginal', 'headerOrigin', and 'modeEditPeriod'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+375:8  Warning: React Hook useEffect has missing dependencies: 'headerEntryDateCapDailyBookingMmscfd', 'headerEntryDateMaxHourBookingMmbtu', 'headerEntryDateMaxHourBookingMmscfd', and 'setDataHeaderEntry'. Either include them or remove the dependency array. If 'setDataHeaderEntry' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+394:8  Warning: React Hook useEffect has a missing dependency: 'trickerEdit'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+417:8  Warning: React Hook useEffect has missing dependencies: 'dataTable?.booking_row_json', 'dataTable?.booking_row_json_release', and 'originOrSum'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+550:8  Warning: React Hook useEffect has a missing dependency: 'isCancelClick'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+569:8  Warning: React Hook useEffect has missing dependencies: 'dataTable?.booking_full_json', 'setIsAmendMode', and 'setIsCancelClick'. Either include them or remove the dependency array. If 'setIsAmendMode' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+613:8  Warning: React Hook useEffect has missing dependencies: 'isUpdateHeaderAmend', 'setIsDateChange', and 'updateHeader'. Either include them or remove the dependency array. If 'setIsDateChange' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+656:8  Warning: React Hook useEffect has missing dependencies: 'entryValEdited' and 'setDataPostEntry'. Either include them or remove the dependency array. If 'setDataPostEntry' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+662:8  Warning: React Hook useEffect has a missing dependency: 'setDataPostEntry'. Either include it or remove the dependency array. If 'setDataPostEntry' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+666:8  Warning: React Hook useEffect has a missing dependency: 'setDataPostEntry'. Either include it or remove the dependency array. If 'setDataPostEntry' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+673:8  Warning: React Hook useEffect has a missing dependency: 'dataRowAfterFromTo'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/components/other/tableExit.tsx
+99:8  Warning: React Hook useEffect has missing dependencies: 'processingData' and 'trickerColumn'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+284:8  Warning: React Hook useEffect has missing dependencies: 'HEADER_ORDER', 'contractPointData?.data', and 'originOrSum'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+329:8  Warning: React Hook useEffect has missing dependencies: 'IsEditedPeriod', 'dataRowAfterFromTo', 'entryValOriginal', 'exitValEdited', 'headerOrigin', and 'modeEditPeriod'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+355:8  Warning: React Hook useEffect has missing dependencies: 'headerEntryDateMaxHourBookingMmbtu' and 'setDataHeaderExit'. Either include them or remove the dependency array. If 'setDataHeaderExit' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+372:8  Warning: React Hook useEffect has a missing dependency: 'trickerEdit'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+396:8  Warning: React Hook useEffect has missing dependencies: 'dataTable?.booking_row_json', 'dataTable?.booking_row_json_release', and 'originOrSum'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+538:8  Warning: React Hook useEffect has missing dependencies: 'dataTable?.booking_full_json', 'setIsAmendMode', and 'setIsCancelClick'. Either include them or remove the dependency array. If 'setIsAmendMode' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+582:8  Warning: React Hook useEffect has missing dependencies: 'isUpdateHeaderAmend', 'setIsDateChange', and 'updateHeader'. Either include them or remove the dependency array. If 'setIsDateChange' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+625:8  Warning: React Hook useEffect has a missing dependency: 'setDataPostExit'. Either include it or remove the dependency array. If 'setDataPostExit' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+631:8  Warning: React Hook useEffect has a missing dependency: 'setDataPostExit'. Either include it or remove the dependency array. If 'setDataPostExit' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+635:8  Warning: React Hook useEffect has a missing dependency: 'setDataPostExit'. Either include it or remove the dependency array. If 'setDataPostExit' changes too often, find the parent component that defines it and wrap that definition in useCallback.  react-hooks/exhaustive-deps
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules

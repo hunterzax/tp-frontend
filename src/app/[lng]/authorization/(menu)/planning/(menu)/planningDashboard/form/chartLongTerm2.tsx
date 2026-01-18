@@ -33,8 +33,6 @@ const ChartLongTerm2: React.FC<TableProps> = ({ dataChart, userPermission, find_
             dispatch(fetchShipperGroup());
             dispatch(fetchAreaMaster());
             dispatch(fetchEntryExit());
-        }
-        if (forceRefetch) {
             setForceRefetch(false);
         }
     }, [dispatch, areaMaster, forceRefetch]);
@@ -47,7 +45,7 @@ const ChartLongTerm2: React.FC<TableProps> = ({ dataChart, userPermission, find_
     // const allYears = Array.from(new Set(dataChart.flatMap((item:any) => item.year)));
     const totalValues = dataChart?.years?.map((year: any, index: any) =>
         dataChart?.groups?.reduce((sum: any, item: any) => {
-             
+
             const yearIndex = index;
             return sum + (yearIndex !== -1 ? item.sumValues[yearIndex] : 0);
         }, 0)
@@ -211,7 +209,7 @@ const ChartLongTerm2: React.FC<TableProps> = ({ dataChart, userPermission, find_
                     // if (chartWidth > 800) {
                     if (chartWidth > 1000) {
                         return 0;
-                    // } else if (chartWidth > 400) {
+                        // } else if (chartWidth > 400) {
                     } else if (chartWidth <= 1000) {
                         return -45;
                     } else if (chartWidth <= 500) {

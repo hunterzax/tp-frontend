@@ -49,7 +49,7 @@ const PdfViewer2: React.FC<{ pdfUrl: string }> = ({ pdfUrl }) => {
                 {atBottom ? (
                     <button onClick={() => alert('You have scrolled to the bottom!')}>Accept</button>
                 ) : (
-                    <p>Scroll down to see the "Accept" button</p>
+                    <p>Scroll down to see the &quot;Accept&quot; button</p>
                 )}
             </div>
         </div>

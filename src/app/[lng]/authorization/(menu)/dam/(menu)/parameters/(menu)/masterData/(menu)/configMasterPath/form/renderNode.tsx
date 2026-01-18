@@ -28,9 +28,8 @@ export const RenderEntries = ({ entries, handleSelect, disabledItems, isFallback
 
 export const RenderExit = ({ entries, handleSelect, disabledItems, isFallback = false }: any) => (
     entries?.map((item: any) => (
-        <div className='flex items-center justify-center pr-2'>
+        <div key={item.id} className='flex items-center justify-center pr-2'>
             <div
-                key={item.id}
                 className={`flex justify-center items-center cursor-pointer p-2`}
                 // onClick={() => handleSelect(item.id, 'exit')}
                 onClick={() => {

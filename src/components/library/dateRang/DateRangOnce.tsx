@@ -8,7 +8,7 @@ import 'react-tooltip/dist/react-tooltip.css'; // นำเข้า CSS ขอ�
 type Props = {}
 
 // Custom Input component สำหรับใช้กับ DatePicker
-const CustomInput = forwardRef(({ value, onClick }: any, ref:any) => (
+const CustomInput = forwardRef(({ value, onClick }: any, ref: any) => (
   <button
     className="custom-date-input px-[10px] py-[5px] text-[16px] cursor-pointer border-[2px] border-[#fee86f] w-[200px]"
     onClick={onClick}
@@ -17,8 +17,9 @@ const CustomInput = forwardRef(({ value, onClick }: any, ref:any) => (
     {value || 'เลือกวันที่'}
   </button>
 ));
+CustomInput.displayName = 'CustomInput';
 
-function DateRangOnce({}: Props) {
+function DateRangOnce({ }: Props) {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [eventDate, setEventDate] = useState([
     {
@@ -95,4 +96,5 @@ function DateRangOnce({}: Props) {
   );
 }
 
+DateRangOnce.displayName = 'DateRangOnce';
 export default DateRangOnce;

@@ -1,6 +1,6 @@
 "use client";
 // import { useTranslation } from "@/app/i18n/client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
 import { getService } from "@/utils/postService";
 import { QualityPlanningData } from "@/app/types";
 import { QualityPlanningTabs } from "./components/QualityPlanningTabs";
@@ -29,9 +29,9 @@ dayjs.extend(customParseFormat);
 
 // ประกาศ interface สำหรับ props ที่รับเข้ามา
 interface ClientProps {
-  params: {
-    lng: string;  // รับภาษาจาก URL parameter
-  };
+  params: Promise<{
+    lng: string;
+  }>;
 }
 
 // ประกาศ interface สำหรับข้อมูล Weekly ที่ extend จาก QualityPlanningData
@@ -42,7 +42,9 @@ interface WeeklyData extends QualityPlanningData {
   };
 }
 
-export default function ClientPage({ params: { lng } }: ClientProps) {
+export default function ClientPage(props: ClientProps) {
+  const { params } = props;
+  const { lng } = use(params);
   // const { t } = useTranslation(lng, "mainPage");
 
   // สถานะสำหรับการจัดการ tab และข้อมูล

@@ -12,8 +12,8 @@ import ReactFlow, {
 } from 'reactflow';
 import 'reactflow/dist/style.css';
 
-import entryNode from './nodeEntry';
-import exitNode from './nodeExit';
+import EntryNode from './nodeEntry';
+import ExitNode from './nodeExit';
 import './style.css';
 import { RenderEntries, RenderExit } from './renderNode';
 import { createNodeEdges, sortNodesByEdges } from '@/utils/generalFormatter';
@@ -28,8 +28,8 @@ interface FlowProps {
 }
 
 const nodeTypes = {
-    entryNode: entryNode,
-    exitNode: exitNode,
+    entryNode: EntryNode,
+    exitNode: ExitNode,
 };
 
 const initialNodes: any = [
@@ -168,13 +168,13 @@ const MasterPathFlow: React.FC<FlowProps> = ({ entryExitMaster, setNodeData, set
     }, [edges])
 
     const addNode = (item: any, position: any) => {
-         
+
         const newNode = {
             id: `${item.id}`,
             data: { label: item.name, id: item.id, color: item.color, onDelete: deleteNode },
-            position: { 
-                x: 87 + Math.floor((crypto.getRandomValues(new Uint32Array(1))[0] / 0xffffffff) * 100) + 1, 
-                y: 251 + Math.floor((crypto.getRandomValues(new Uint32Array(1))[0] / 0xffffffff) * 100) + 1 
+            position: {
+                x: 87 + Math.floor((crypto.getRandomValues(new Uint32Array(1))[0] / 0xffffffff) * 100) + 1,
+                y: 251 + Math.floor((crypto.getRandomValues(new Uint32Array(1))[0] / 0xffffffff) * 100) + 1
             },
             type: position === 'entry' ? 'entryNode' : 'exitNode',
         };
@@ -306,35 +306,35 @@ const MasterPathFlow: React.FC<FlowProps> = ({ entryExitMaster, setNodeData, set
 
     const onNodesChange = (changes: any) => {
         rawOnNodesChange(
-          changes.filter((change: any) => change.type !== "remove") // Prevent node deletion
+            changes.filter((change: any) => change.type !== "remove") // Prevent node deletion
         );
-      };
-      
-      const onEdgesChange = (changes: any) => {
+    };
+
+    const onEdgesChange = (changes: any) => {
         rawOnEdgesChange(
-          changes.filter((change: any) => change.type !== "remove") // Prevent edge deletion
+            changes.filter((change: any) => change.type !== "remove") // Prevent edge deletion
         );
-      };
-      
-      useEffect(() => {
+    };
+
+    useEffect(() => {
         const handleKeyDown = (event: KeyboardEvent) => {
-          const activeElement = document.activeElement;
-          const isInputField =
-            activeElement?.tagName === "INPUT" ||
-            activeElement?.tagName === "TEXTAREA" ||
-            activeElement?.tagName === "SELECT" ||
-            (activeElement?.getAttribute("contenteditable") === "true");
-      
-          if (!isInputField && (event.key === "Backspace" || event.key === "Delete")) {
-            event.preventDefault();
-          }
+            const activeElement = document.activeElement;
+            const isInputField =
+                activeElement?.tagName === "INPUT" ||
+                activeElement?.tagName === "TEXTAREA" ||
+                activeElement?.tagName === "SELECT" ||
+                (activeElement?.getAttribute("contenteditable") === "true");
+
+            if (!isInputField && (event.key === "Backspace" || event.key === "Delete")) {
+                event.preventDefault();
+            }
         };
-      
+
         document.addEventListener("keydown", handleKeyDown);
         return () => {
-          document.removeEventListener("keydown", handleKeyDown);
+            document.removeEventListener("keydown", handleKeyDown);
         };
-      }, []);
+    }, []);
 
     return (<>
         <ReactFlow
@@ -344,7 +344,7 @@ const MasterPathFlow: React.FC<FlowProps> = ({ entryExitMaster, setNodeData, set
             onNodesChange={onNodesChange}
             onEdgesChange={onEdgesChange}
             onConnect={onConnect}
-            // fitView
+        // fitView
         >
             <MiniMap />
             <Controls />

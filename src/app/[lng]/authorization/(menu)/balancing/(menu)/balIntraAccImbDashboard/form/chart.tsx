@@ -577,7 +577,7 @@ const ChartSystem: React.FC<Props> = ({
             <div className="date-label text-[#58585A] flex font-bold text-2xl mb-5">
                 <div className="mr-2">{'Date : '}</div>
                 {formatSortedDates(showDateArray)?.map((item: any, index: any) => {
-                    return (<div className={`${showDateArray?.length - 1 !== index ? 'mr-2' : 'mr-0'}`}>{item + (showDateArray?.length - 1 !== index ? ',' : '')}</div>)
+                    return (<div key={index} className={`${showDateArray?.length - 1 !== index ? 'mr-2' : 'mr-0'}`}>{item + (showDateArray?.length - 1 !== index ? ',' : '')}</div>)
                 })}
             </div>
             <div className="w-full flex justify-start items-center text-[16px] font-bold mb-2">{'Acc.Imbalance (MMBTU)'}</div>

@@ -20,7 +20,7 @@ function DateRang() {
     },
   });
 
-  
+
   const [eventDate, setEventDate] = useState([
     {
       id: 1,
@@ -102,7 +102,7 @@ function DateRang() {
     }
   }
 
-  function handleMouseLeave(day: any) {}
+  function handleMouseLeave(day: any) { }
 
   const [focusedInput, setFocusedInput] = useState(null);
 
@@ -128,121 +128,121 @@ function DateRang() {
   }, [collapsed]);
 
   return (
-      <div className=" w-fit min-w-[680px] relative">
-        <div className="grid grid-cols-2 border-[2px] border-[#eff2f7] bg-[#eff2f7] rounded-md">
-          <div
-            className="bg-[#ffffff] px-2 py-1 flex justify-start items-center cursor-pointer gap-2"
-            onClick={() => {
-              focusTab === 0 ? setCollapsed(false) : setCollapsed(true);
-              setFocusTab(0);
-            }}
-          >
-            <CalendarTodayIcon />
+    <div className=" w-fit min-w-[680px] relative">
+      <div className="grid grid-cols-2 border-[2px] border-[#eff2f7] bg-[#eff2f7] rounded-md">
+        <div
+          className="bg-[#ffffff] px-2 py-1 flex justify-start items-center cursor-pointer gap-2"
+          onClick={() => {
+            focusTab === 0 ? setCollapsed(false) : setCollapsed(true);
+            setFocusTab(0);
+          }}
+        >
+          <CalendarTodayIcon />
+          <div>
             <div>
-              <div>
-                {dayjs(state?.selection1?.startDate).format("DD MMM YYYY")}
-              </div>
-              <div className=" text-gray-400 text-sm">
-                {dayjs(state?.selection1?.startDate).format("dddd")}
-              </div>
+              {dayjs(state?.selection1?.startDate).format("DD MMM YYYY")}
+            </div>
+            <div className=" text-gray-400 text-sm">
+              {dayjs(state?.selection1?.startDate).format("dddd")}
             </div>
           </div>
-          <div
-            className="bg-[#ffffff] px-2 py-1 flex justify-start items-center cursor-pointer gap-2 border-l-[1px]"
-            onClick={() => {
-              focusTab === 1 ? setCollapsed(false) : setCollapsed(true);
-              setFocusTab(1);
-            }}
-          >
-            <CalendarTodayIcon />
+        </div>
+        <div
+          className="bg-[#ffffff] px-2 py-1 flex justify-start items-center cursor-pointer gap-2 border-l-[1px]"
+          onClick={() => {
+            focusTab === 1 ? setCollapsed(false) : setCollapsed(true);
+            setFocusTab(1);
+          }}
+        >
+          <CalendarTodayIcon />
+          <div>
             <div>
+              {dayjs(state?.selection1?.endDate).format("DD MMM YYYY")}
+            </div>
+            <div className=" text-gray-400 text-sm">
+              {dayjs(state?.selection1?.endDate).format("dddd")}
+            </div>
+          </div>
+        </div>
+      </div>
+      {collapsed && (
+        <div className=" absolute">
+          <div className="grid grid-cols-2">
+            <div>
+              {focusTab === 0 && (
+                <div
+                  className="ml-2 w-0 h-0 
+            border-l-[10px] border-l-transparent
+            border-b-[15px] border-b-[#ffffff]
+            border-r-[10px] border-r-transparent"
+                ></div>
+              )}
+            </div>
+            <div>
+              {focusTab === 1 && (
+                <div
+                  className="ml-2 w-0 h-0 
+            border-l-[10px] border-l-transparent
+            border-b-[15px] border-b-[#ffffff]
+            border-r-[10px] border-r-transparent"
+                ></div>
+              )}
+            </div>
+          </div>
+          <div className=" bg-[#ffffff] rounded-md p-2">
+            {/* @ts-ignore */}
+            <DateRangePicker
+              focusedRange={[0, focusTab]}
+              editableDateInputs={false}
+              onChange={(item: any) => {
+                focusTab === 1 ? setFocusTab(0) : setFocusTab(1);
+                // focusTab === 1 && setCollapsed(false)
+                return setState({ ...state, ...item });
+              }}
+              {...({
+                showSelectionPreview: true,
+                moveRangeOnFirstSelection: false,
+                months: 2,
+                ranges: [state.selection1],
+                direction: "horizontal",
+                dayContentRenderer: customDayContent,
+              } as any)}
+              ariaLabels={{
+                dateInput: {
+                  selection1: {
+                    startDate: "start date input of selction 1",
+                    endDate: "end date input of selction 1",
+                  },
+                },
+                monthPicker: "month picker",
+                yearPicker: "year picker",
+                prevButton: "previous month button",
+                nextButton: "next month button",
+              }}
+            />
+            <div className=" flex justify-between items-end">
               <div>
-                {dayjs(state?.selection1?.endDate).format("DD MMM YYYY")}
+                <div className=" text-blue-500">{`จำนวน : ${countDay + 1 || 1
+                  } วัน`}</div>
+                <div className=" text-red-500">{`วันสำคัญ : ${messageEvent || "-"
+                  }`}</div>
               </div>
-              <div className=" text-gray-400 text-sm">
-                {dayjs(state?.selection1?.endDate).format("dddd")}
+              <div>
+                <button
+                  className=" border-[1px] rounded-md px-3 py-1 text-[12px] flex items-center gap-1"
+                  onClick={() => {
+                    setCollapsed(false);
+                  }}
+                >
+                  <CloseIcon style={{ fontSize: "12px" }} />
+                  <span>ปิด</span>
+                </button>
               </div>
             </div>
           </div>
         </div>
-        {collapsed && (
-          <div className=" absolute">
-            <div className="grid grid-cols-2">
-              <div>
-                {focusTab === 0 && (
-                  <div
-                    className="ml-2 w-0 h-0 
-            border-l-[10px] border-l-transparent
-            border-b-[15px] border-b-[#ffffff]
-            border-r-[10px] border-r-transparent"
-                  ></div>
-                )}
-              </div>
-              <div>
-                {focusTab === 1 && (
-                  <div
-                    className="ml-2 w-0 h-0 
-            border-l-[10px] border-l-transparent
-            border-b-[15px] border-b-[#ffffff]
-            border-r-[10px] border-r-transparent"
-                  ></div>
-                )}
-              </div>
-            </div>
-            <div className=" bg-[#ffffff] rounded-md p-2">
-              {/* @ts-ignore */}
-              <DateRangePicker
-                focusedRange={[0, focusTab]}
-                editableDateInputs={false}
-                onChange={(item: any) => {
-                  focusTab === 1 ? setFocusTab(0) : setFocusTab(1);
-                  // focusTab === 1 && setCollapsed(false)
-                  return setState({ ...state, ...item });
-                }}
-                showSelectionPreview={true}
-                moveRangeOnFirstSelection={false}
-                months={2}
-                ranges={[state.selection1]}
-                direction="horizontal"
-                dayContentRenderer={customDayContent}
-                ariaLabels={{
-                  dateInput: {
-                    selection1: {
-                      startDate: "start date input of selction 1",
-                      endDate: "end date input of selction 1",
-                    },
-                  },
-                  monthPicker: "month picker",
-                  yearPicker: "year picker",
-                  prevButton: "previous month button",
-                  nextButton: "next month button",
-                }}
-              />
-              <div className=" flex justify-between items-end">
-                <div>
-                  <div className=" text-blue-500">{`จำนวน : ${
-                    countDay + 1 || 1
-                  } วัน`}</div>
-                  <div className=" text-red-500">{`วันสำคัญ : ${
-                    messageEvent || "-"
-                  }`}</div>
-                </div>
-                <div>
-                  <button
-                    className=" border-[1px] rounded-md px-3 py-1 text-[12px] flex items-center gap-1"
-                    onClick={() => {
-                      setCollapsed(false);
-                    }}
-                  >
-                    <CloseIcon style={{ fontSize: "12px" }} />
-                    <span>ปิด</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-      </div>
+      )}
+    </div>
   );
 }
 

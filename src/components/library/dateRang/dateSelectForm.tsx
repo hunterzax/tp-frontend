@@ -234,6 +234,7 @@ const DatePickaForm = forwardRef<HTMLInputElement, DatePickerSectionProps>(({
 
         </div>
     ));
+    CustomInput.displayName = 'CustomInput';
 
     const currentYear = dayjs().year();
     const currentMonth = dayjs().month(); // Note: month is 0-indexed, so January is 0, February is 1, etc.

@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, use } from "react";
 import { useTranslation } from "react-i18next";
 import { useRouter } from "next/navigation";
 import { getNoTokenService, postService } from "@/utils/postService";
@@ -10,12 +10,13 @@ import TemplateMail from '@/components/other/rendermailTemplate';
 import Spinloading from "@/components/other/spinLoading";
 
 const ForgotPwdPage: React.FC<any> = (props) => {
-  const {params: { lng },} = props;
+  const { params } = props;
+  const { lng } = use<{ lng: string }>(params);
   const { t } = useTranslation(lng);
   const [isModalSuccess, setisModalSuccess] = useState<boolean>(false);
   const [modalSuccessMsg, setModalSuccessMsg] = useState('');
   const [isModalError, setisModalError] = useState<boolean>(false);
-  const [resetForm, setResetForm] = useState<() => void | null>(); 
+  const [resetForm, setResetForm] = useState<() => void | null>();
   const router = useRouter();
 
   const handleFormSubmit = async (data: any) => {
@@ -24,9 +25,9 @@ const ForgotPwdPage: React.FC<any> = (props) => {
 
     const result = await postService('/master/account-manage/get-link', data);
 
-    if(result?.link){
+    if (result?.link) {
       await renderTemplate(result?.link, data);
-    }else{
+    } else {
       setisModalError(true);
       setIsLoading(false);
     }
@@ -36,17 +37,17 @@ const ForgotPwdPage: React.FC<any> = (props) => {
   const fetchData = async () => {
     try {
       const response: any = await getNoTokenService(`/master/parameter/setup-background`);
-      if(response && Array.isArray(response) && response.length > 0){
+      if (response && Array.isArray(response) && response.length > 0) {
         const activeBgList = response.filter((item: any) => item && item.active == true && item.url).sort(
           (a: any, b: any) => (b?.id || 0) - (a.id || 1)
         )
-        if(activeBgList && activeBgList.length > 0 && activeBgList[0]?.url){
+        if (activeBgList && activeBgList.length > 0 && activeBgList[0]?.url) {
           setBgUrl(activeBgList[0].url)
         }
       }
     } catch (err) {
       // setError(err.message);
-    } 
+    }
   };
 
   useEffect(() => {
@@ -55,26 +56,26 @@ const ForgotPwdPage: React.FC<any> = (props) => {
 
   async function renderTemplate(link: any, data: any) {
     const bodyMail = await TemplateMail({
-        header: "Reset Your Password", 
-        description: "A request has been received to reset the password for your account. <br/> Please click the button below to reset your password", 
-        btntxt: "Reset Password", 
-        url: link,
-        mode: "resetmail"
+      header: "Reset Your Password",
+      description: "A request has been received to reset the password for your account. <br/> Please click the button below to reset your password",
+      btntxt: "Reset Password",
+      url: link,
+      mode: "resetmail"
     });
 
     let body: any = {
-      "to" : data?.email,
-      "subject" : "Reset Your Password",
-      "body" : JSON.parse(bodyMail)
+      "to": data?.email,
+      "subject": "Reset Your Password",
+      "body": JSON.parse(bodyMail)
     }
 
     const result = await postService('/mail/send-email', body);
 
-    if(result){
+    if (result) {
       // Please check your email for the instructions to reset your password.
       setModalSuccessMsg("Please check your email for the instructions to reset your password.")
       setisModalSuccess(true);
-    }else{
+    } else {
       setisModalError(true);
     }
   }
@@ -92,7 +93,7 @@ const ForgotPwdPage: React.FC<any> = (props) => {
     >
       <div className="w-full h-full flex justify-center items-center">
         <div className="bg-white w-[500px] h-auto rounded-[20px] relative">
-          <Spinloading spin={isLoading} rounded={20}/> {/* loading example here */}
+          <Spinloading spin={isLoading} rounded={20} /> {/* loading example here */}
           <div className="w-full h-[150px] flex justify-center items-center mt-[1rem]">
             <Image
               src={`/assets/icon/ptt-logo-2.svg`}
@@ -104,17 +105,17 @@ const ForgotPwdPage: React.FC<any> = (props) => {
           </div>
           <div className="text-center text-[#2B2A87] text-[28px] font-bold mb-[3rem]">{"Forgot Password"}</div>
           <div className="mb-10">
-              <FormForgotPwd
-                  lng={lng}
-                  onSubmit={handleFormSubmit}
-                  setResetForm={setResetForm}
-              />
+            <FormForgotPwd
+              lng={lng}
+              onSubmit={handleFormSubmit}
+              setResetForm={setResetForm}
+            />
           </div>
-          <div 
-              className="mt-[2rem] mb-[3rem] px-[2rem] h-auto text-center text-[#B2B8BB] cursor-pointer hover:text-[#8f9497]"
-              onClick={() => router.push(`/${lng}/signin`)}
+          <div
+            className="mt-[2rem] mb-[3rem] px-[2rem] h-auto text-center text-[#B2B8BB] cursor-pointer hover:text-[#8f9497]"
+            onClick={() => router.push(`/${lng}/signin`)}
           >
-              <span className="underline text-[#4B5563]">{"Back"}</span>
+            <span className="underline text-[#4B5563]">{"Back"}</span>
           </div>
           <ModalComponent
             open={isModalSuccess}
@@ -131,7 +132,7 @@ const ForgotPwdPage: React.FC<any> = (props) => {
             open={isModalError}
             handleClose={() => {
               setisModalError(false);
-              if(resetForm) resetForm();
+              if (resetForm) resetForm();
             }}
             title="Failed"
             description={

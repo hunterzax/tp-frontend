@@ -34,9 +34,9 @@ import ColumnVisibilityPopover from "@/components/other/popOverShowHideCol";
 import axios from "axios";
 
 interface ClientProps {
-    // params: {
-    //     lng: string;
-    // };
+  // params: {
+  //     lng: string;
+  // };
 }
 
 const ClientPage: React.FC<ClientProps> = () => {
@@ -657,13 +657,13 @@ const ClientPage: React.FC<ClientProps> = () => {
       const apiUrl = process.env.NEXT_PUBLIC_API_URL || '';
       const apiPath = process.env.NEXT_PUBLIC_WEB_CONFIG_API_PATH || '';
       const fullUrl = `${apiUrl}${apiPath}/user/login`;
-      
+
       // Validate that URL uses HTTPS protocol
       if (!fullUrl.startsWith('https://') && process.env.NODE_ENV === 'production') {
         console.error('CWE-319 Security Warning: Attempting to send sensitive data over non-HTTPS connection');
         throw new Error('Secure connection (HTTPS) required for authentication');
       }
-      
+
       const loginResponse = await fetch(fullUrl, {
         method: 'POST',
         body: JSON.stringify({
@@ -868,7 +868,7 @@ const ClientPage: React.FC<ClientProps> = () => {
                     // Add feature
                     // if (url) {
 
-                      
+
                     //   // window.open(`${url}?access_token=${encodeURIComponent(await webConfigGetAccessToken())}`, '_blank');
                     //   // const response = await fetch(url, {
                     //   //   method: 'GET',
@@ -900,9 +900,9 @@ const ClientPage: React.FC<ClientProps> = () => {
                     //   //   } catch (e) {
                     //   //     console.error(e);
                     //   //   }
-                      
+
                     // }
-                      
+
                     // End feature
 
                     //--- Old ---
@@ -931,16 +931,16 @@ const ClientPage: React.FC<ClientProps> = () => {
                     //       URL.revokeObjectURL(blobUrl);
                     //     }, 1000);
                     //   }
-                      //--- End old -----
+                    //--- End old -----
 
 
-                      // If you want to open the content in a new window
-                      // const newWindow = window.open(url, '_blank');
-                      // if (newWindow) {
-                      //   newWindow.document.write(data);
-                      //   newWindow.document.close();
-                      // }
-                    
+                    // If you want to open the content in a new window
+                    // const newWindow = window.open(url, '_blank');
+                    // if (newWindow) {
+                    //   newWindow.document.write(data);
+                    //   newWindow.document.close();
+                    // }
+
 
                   } catch (error) {
                     // Error making request
@@ -1055,9 +1055,9 @@ const ClientPage: React.FC<ClientProps> = () => {
               modalErrorMsg?.split('<br/>').length > 1 ?
                 <ul className="text-start list-disc">
                   {
-                    modalErrorMsg.split('<br/>').map(item => {
+                    modalErrorMsg.split('<br/>').map((item, index) => {
                       return (
-                        <li>{item}</li>
+                        <li key={index}>{item}</li>
                       )
                     })
                   }

@@ -2269,7 +2269,7 @@ const ClientPage: React.FC<ClientProps> = () => {
             if (!headerArray || !Array.isArray(headerArray)) {
                 return {};
             }
-            
+
             const result: Record<string, any> = {};
 
             headerArray.forEach(item => {
@@ -2975,18 +2975,18 @@ const ClientPage: React.FC<ClientProps> = () => {
                                         label: item.name,
                                     }))
                                 }
-                                // options={Array.isArray(dataShipper) ? dataShipper
-                                //     ?.filter((item: any) => // เห็นแค่ชื่อตัวเอง
-                                //         userDT?.account_manage?.[0]?.user_type_id == 3
-                                //             ? item?.id === userDT?.account_manage?.[0]?.group?.id
-                                //             : true
-                                //     )
-                                //     .map((item: any) => ({
-                                //         value: item.id_name,
-                                //         label: item.name,
-                                //     }))
-                                //     : []
-                                // }
+                            // options={Array.isArray(dataShipper) ? dataShipper
+                            //     ?.filter((item: any) => // เห็นแค่ชื่อตัวเอง
+                            //         userDT?.account_manage?.[0]?.user_type_id == 3
+                            //             ? item?.id === userDT?.account_manage?.[0]?.group?.id
+                            //             : true
+                            //     )
+                            //     .map((item: any) => ({
+                            //         value: item.id_name,
+                            //         label: item.name,
+                            //     }))
+                            //     : []
+                            // }
                             />
 
                             <InputSearch
@@ -3346,7 +3346,7 @@ const ClientPage: React.FC<ClientProps> = () => {
                                 }
 
                                 return (
-                                    <div className="pb-2">
+                                    <div key={index} className="pb-2">
                                         <div
                                             className={`w-full h-[64px] border border-[#DFE4EA] rounded-[8px] cursor-pointer flex items-center justify-between gap-2 px-2 ${index === 0 ? 'bg-[#9EE4FF]' : 'bg-[#F3F4F7]'}`}
                                             onClick={() => handleExpand(item.id)}

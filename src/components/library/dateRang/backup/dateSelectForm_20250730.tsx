@@ -109,90 +109,64 @@ const DatePickaForm: React.FC<DatePickerSectionProps> = ({
 
     const btnProps = "grid grid-cols-[90%_10%] w-full justify-center rounded-lg h-[44px] bg-white border pl-2 pr-[1px] border-[#DFE4EA]";
 
-    const CustomInput: any = forwardRef(({ value, onClick }: any, ref: any) => (
-        <div
-            className={`
+    const CustomInput: any = forwardRef(function CustomInput({ value, onClick }: any, ref: any) {
+        return (
+            <div
+                className={`
                 ${btnProps}
                 ${isError && '!border-[#ED1B24]'}
                 ${mode === "create" && !value ? 'text-[#b9b9b9]' : value || valueShow ? 'text-[#464255]' : 'text-[#b9b9b9]'}
                 ${readOnly && '!bg-[#f1f1f1]'}
                 ${mode === 'edit-table' && '!w-[180px] border !border-[#000000] !rounded-none'}
             `}
-        >
-            <button
-                type='button'
-                className={`text-left ${forMode == 'form' ? 'pl-[12px]' : 'p-0'}`}
-                onClick={onClick}
-                disabled={readOnly}
-                ref={ref}
             >
-                {/* original code 2025-02-17 */}
-                {
-                    mode == 'edit-bulletin' || mode == 'edit-table' ?
-                        <div className={`${valueShow ? 'text-current' : 'text-[#9CA3AF]'} !text-[${splaceHolder}] placeholder-txt`}>
-                            {valueShow ? valueShow : placeHolder || placeHolder}
-                        </div>
+                <button
+                    type='button'
+                    className={`text-left ${forMode == 'form' ? 'pl-[12px]' : 'p-0'}`}
+                    onClick={onClick}
+                    disabled={readOnly}
+                    ref={ref}
+                >
+                    {/* original code 2025-02-17 */}
+                    {
+                        mode == 'edit-bulletin' || mode == 'edit-table' ?
+                            <div className={`${valueShow ? 'text-current' : 'text-[#9CA3AF]'} !text-[${splaceHolder}] placeholder-txt`}>
+                                {valueShow ? valueShow : placeHolder || placeHolder}
+                            </div>
 
-                        : mode == 'edit' || (readOnly && mode == 'edit') ?
-                            <Typography
-                                fontSize={14} sx={{ textOverflow: "ellipsis", whiteSpace: "nowrap", overflow: "hidden", width: "90%" }}
-                                className={`${value || (valueShow !== "Invalid Date" && valueShow !== "undefined/undefined/Invalid Date") ? 'text-current' : 'text-[#9CA3AF] placeholder-txt'} !text-[${splaceHolder}] ${mode == 'view' && valueShow == "Invalid Date" ? 'opacity-0' : 'opacity-100'}`}
-                            >
-                                {valueShow && valueShow !== "Invalid Date" && valueShow !== "undefined/undefined/Invalid Date" ? valueShow : placeHolder}
-                            </Typography>
-                            : mode == 'create' ?
-                                <Typography fontSize={14} sx={{ textOverflow: "ellipsis", whiteSpace: "nowrap", overflow: "hidden", width: "90%" }} className={`${valueShow && valueShow !== null ? 'text-[#464255]' : 'text-[#9CA3AF]'} !text-[${splaceHolder}] placeholder-txt ${mode == 'view' && valueShow == "Invalid Date" ? 'opacity-0' : 'opacity-100'}`}>
-                                    {valueShow && valueShow !== "Invalid Date" && valueShow !== null && valueShow !== "undefined/undefined/Invalid Date" ? valueShow : placeHolder}
-                                </Typography>
-                                : mode == 'view' &&
-                                <Typography fontSize={14} sx={{ textOverflow: "ellipsis", whiteSpace: "nowrap", overflow: "hidden", width: "90%" }} className={`${value || valueShow !== "Invalid Date" ? 'text-current' : 'text-[#9CA3AF] placeholder-txt'} !text-[${splaceHolder}] ${mode == 'view' && valueShow == "Invalid Date" ? 'opacity-0' : 'opacity-100'}`}>
+                            : mode == 'edit' || (readOnly && mode == 'edit') ?
+                                <Typography
+                                    fontSize={14} sx={{ textOverflow: "ellipsis", whiteSpace: "nowrap", overflow: "hidden", width: "90%" }}
+                                    className={`${value || (valueShow !== "Invalid Date" && valueShow !== "undefined/undefined/Invalid Date") ? 'text-current' : 'text-[#9CA3AF] placeholder-txt'} !text-[${splaceHolder}] ${mode == 'view' && valueShow == "Invalid Date" ? 'opacity-0' : 'opacity-100'}`}
+                                >
                                     {valueShow && valueShow !== "Invalid Date" && valueShow !== "undefined/undefined/Invalid Date" ? valueShow : placeHolder}
                                 </Typography>
-                }
-            </button>
+                                : mode == 'create' ?
+                                    <Typography fontSize={14} sx={{ textOverflow: "ellipsis", whiteSpace: "nowrap", overflow: "hidden", width: "90%" }} className={`${valueShow && valueShow !== null ? 'text-[#464255]' : 'text-[#9CA3AF]'} !text-[${splaceHolder}] placeholder-txt ${mode == 'view' && valueShow == "Invalid Date" ? 'opacity-0' : 'opacity-100'}`}>
+                                        {valueShow && valueShow !== "Invalid Date" && valueShow !== null && valueShow !== "undefined/undefined/Invalid Date" ? valueShow : placeHolder}
+                                    </Typography>
+                                    : mode == 'view' &&
+                                    <Typography fontSize={14} sx={{ textOverflow: "ellipsis", whiteSpace: "nowrap", overflow: "hidden", width: "90%" }} className={`${value || valueShow !== "Invalid Date" ? 'text-current' : 'text-[#9CA3AF] placeholder-txt'} !text-[${splaceHolder}] ${mode == 'view' && valueShow == "Invalid Date" ? 'opacity-0' : 'opacity-100'}`}>
+                                        {valueShow && valueShow !== "Invalid Date" && valueShow !== "undefined/undefined/Invalid Date" ? valueShow : placeHolder}
+                                    </Typography>
+                    }
+                </button>
 
-            {
-                // mode === 'create' && (!value || !valueShow) || mode == 'edit' && valueShow == 'Invalid Date' ?
-                (mode === 'create' && (!value || !valueShow)) || (mode == 'edit' && (valueShow == 'Invalid Date' || valueShow == undefined || valueShow == "undefined/undefined/Invalid Date")) ?
-                    <button
-                        type='button'
-                        // className="absolute top-[7px] right-[12px] !z-[0]"
-                        onClick={(e) => {
-                            e.stopPropagation();
-                            onClick();
-                        }}
-                    >
-                        <CalendarTodayOutlinedIcon style={styles.icon} className={`${readOnly ? 'text-[#B6b6b6]' : 'text-[rgba(44,44,44,0.54)]'}`} />
-                    </button>
-                    : mode == 'edit' && valueShow !== 'Invalid Date' && valueShow !== "undefined/undefined/Invalid Date" ? // เอาโหมด edit-table ออกเพราะไม่อยากให้กดเคลียร์หน้า edit table
+                {
+                    // mode === 'create' && (!value || !valueShow) || mode == 'edit' && valueShow == 'Invalid Date' ?
+                    (mode === 'create' && (!value || !valueShow)) || (mode == 'edit' && (valueShow == 'Invalid Date' || valueShow == undefined || valueShow == "undefined/undefined/Invalid Date")) ?
                         <button
                             type='button'
-                            className='!z-[0]'
-                            onClick={() => {
-                                setSelectedDate(undefined);
-                                onChange(undefined);
+                            // className="absolute top-[7px] right-[12px] !z-[0]"
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                onClick();
                             }}
-                            disabled={readOnly}
                         >
-                            {readOnly ?
-                                <CalendarTodayOutlinedIcon style={styles.icon} className={`${readOnly ? 'text-[#B6b6b6]' : 'text-[rgba(44,44,44,0.54)]'}`} />
-                                :
-                                <CloseIcon style={styles.icon} className={`${readOnly ? 'text-[#B6b6b6]' : 'text-[rgba(44,44,44,0.54)]'}`} />
-                            }
+                            <CalendarTodayOutlinedIcon style={styles.icon} className={`${readOnly ? 'text-[#B6b6b6]' : 'text-[rgba(44,44,44,0.54)]'}`} />
                         </button>
-                        : mode === 'view' ?
+                        : mode == 'edit' && valueShow !== 'Invalid Date' && valueShow !== "undefined/undefined/Invalid Date" ? // เอาโหมด edit-table ออกเพราะไม่อยากให้กดเคลียร์หน้า edit table
                             <button
-                                type='button'
-                                className='!z-[0]'
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    // onClick();
-                                }}
-                            >
-                                <CalendarTodayOutlinedIcon style={{ width: 20, height: 20, color: '#B6B6B6' }} />
-                            </button>
-                            // เอาโหมด edit-table ออกเพราะไม่อยากให้กดเคลียร์
-                            : (mode === 'create' || mode === 'edit-bulletin') && (value || valueShow) ? <button
                                 type='button'
                                 className='!z-[0]'
                                 onClick={() => {
@@ -201,23 +175,53 @@ const DatePickaForm: React.FC<DatePickerSectionProps> = ({
                                 }}
                                 disabled={readOnly}
                             >
-                                <CloseIcon style={styles.icon} className={`${readOnly ? '!text-[#B6b6b6]' : '!text-[rgba(44,44,44,0.6)]'}`} />
+                                {readOnly ?
+                                    <CalendarTodayOutlinedIcon style={styles.icon} className={`${readOnly ? 'text-[#B6b6b6]' : 'text-[rgba(44,44,44,0.54)]'}`} />
+                                    :
+                                    <CloseIcon style={styles.icon} className={`${readOnly ? 'text-[#B6b6b6]' : 'text-[rgba(44,44,44,0.54)]'}`} />
+                                }
                             </button>
-                                // : mode === 'edit-bulletin' && (!value || !valueShow) && <button
-                                : (mode === 'edit-bulletin' || mode == 'edit-table') && (!value || !valueShow) && <button
+                            : mode === 'view' ?
+                                <button
                                     type='button'
                                     className='!z-[0]'
                                     onClick={(e) => {
                                         e.stopPropagation();
-                                        onClick();
+                                        // onClick();
                                     }}
                                 >
-                                    <CalendarTodayOutlinedIcon style={styles.icon} />
+                                    <CalendarTodayOutlinedIcon style={{ width: 20, height: 20, color: '#B6B6B6' }} />
                                 </button>
-            }
+                                // เอาโหมด edit-table ออกเพราะไม่อยากให้กดเคลียร์
+                                : (mode === 'create' || mode === 'edit-bulletin') && (value || valueShow) ? <button
+                                    type='button'
+                                    className='!z-[0]'
+                                    onClick={() => {
+                                        setSelectedDate(undefined);
+                                        onChange(undefined);
+                                    }}
+                                    disabled={readOnly}
+                                >
+                                    <CloseIcon style={styles.icon} className={`${readOnly ? '!text-[#B6b6b6]' : '!text-[rgba(44,44,44,0.6)]'}`} />
+                                </button>
+                                    // : mode === 'edit-bulletin' && (!value || !valueShow) && <button
+                                    : (mode === 'edit-bulletin' || mode == 'edit-table') && (!value || !valueShow) && <button
+                                        type='button'
+                                        className='!z-[0]'
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            onClick();
+                                        }}
+                                    >
+                                        <CalendarTodayOutlinedIcon style={styles.icon} />
+                                    </button>
+                }
 
-        </div>
-    ));
+            </div>
+        );
+    });
+    CustomInput.displayName = "CustomInput";
+
 
     const currentYear = dayjs().year();
     const currentMonth = dayjs().month(); // Note: month is 0-indexed, so January is 0, February is 1, etc.

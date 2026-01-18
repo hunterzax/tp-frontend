@@ -284,7 +284,7 @@ export default function AppTable({ data, columns, isLoading, isTableLoading, exp
                                                                 key={header.id}
                                                                 scope="col"
                                                                 colSpan={header.colSpan}
-                                                                className={`${enableSorting ? table_sort_header_style : table_header_style} ${index == 0 ? 'rounded-tl-md' : (headerGroup?.headers && headerGroup.headers.length - 1 === index) && 'rounded-tr-md'} text-center relative z-50`}
+                                                                className={`${enableSorting ? table_sort_header_style : table_header_style} ${index == 0 ? 'rounded-tl-md' : (headerGroup?.headers && headerGroup.headers.length - 1 === index) ? 'rounded-tr-md' : ''} text-center relative z-50`}
                                                                 onClick={enableSorting ? header.column.getToggleSortingHandler() : undefined}
                                                                 style={{
                                                                     textAlign: align,

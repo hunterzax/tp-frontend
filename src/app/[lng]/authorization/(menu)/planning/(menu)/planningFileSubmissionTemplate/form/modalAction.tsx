@@ -302,7 +302,7 @@ const ModalAction: React.FC<FormExampleProps> = ({
                                                 type="submit"
                                                 className="w-[167px] font-light bg-[#00ADEF] text-white py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
                                             >
-                                                {mode === "create" ? "Save" : "Save"}
+                                                {"Save"}
                                             </button>
                                         )}
                                     </div>

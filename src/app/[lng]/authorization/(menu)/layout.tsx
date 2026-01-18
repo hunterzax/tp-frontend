@@ -7,7 +7,7 @@ export default function RootLayout({
 }>) {
   return (
     <section>
-        <LayoutMenu children={children} />
+      <LayoutMenu>{children}</LayoutMenu>
     </section>
   );
 }

@@ -39,8 +39,6 @@ const MotherTable2: React.FC<any> = ({ columnVisibility, setcolumnVisibility, in
     useEffect(() => {
         if (forceRefetch) {
             dispatch(fetchContractPoint());
-        }
-        if (forceRefetch) {
             setForceRefetch(false);
         }
     }, [dispatch, contractPointData, forceRefetch]);

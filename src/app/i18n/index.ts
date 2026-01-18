@@ -24,10 +24,7 @@ export async function getTranslation<
   Ns extends FlatNamespace,
   KPrefix extends KeyPrefix<FallbackNs<Ns>> = undefined
 >(lng: string, ns?: Ns | string[], options: { keyPrefix?: KPrefix } = {}) {
-  const i18nextInstance = await initI18next(
-    lng,
-    Array.isArray(ns) ? (ns as string[]) : (ns as string)
-  );
+  const i18nextInstance = await initI18next(lng, ns as any);
 
   return {
     t: i18nextInstance.getFixedT(lng, ns, options.keyPrefix),

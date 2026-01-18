@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Handle, NodeProps, Position } from 'reactflow';
 // import 'tailwindcss/tailwind.css'
 
-const entryNode = ({ data, id }: NodeProps) => {
+const EntryNode = ({ data, id }: NodeProps) => {
     const [isHovered, setIsHovered] = useState(false);
 
     return (
@@ -56,4 +56,4 @@ const entryNode = ({ data, id }: NodeProps) => {
     );
 };
 
-export default entryNode;
+export default EntryNode;

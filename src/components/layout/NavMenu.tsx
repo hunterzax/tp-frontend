@@ -157,12 +157,6 @@ const NavMenu = ({ toggleNav, setToggleNav, menu, setMenu, goToUrl, permission }
                   </div>
                 </h1>
               ) : (
-                // <div className="relative group">
-                //   <h1 className="text-[#757575]">{item?.icon || "-"}</h1>
-                //   <span className="absolute left-full top-1/2 transform -translate-y-1/2 ml-2 bg-gray-700 text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap !z-[99]">
-                //     {item?.name || "Default tooltip text"}
-                //   </span>
-                // </div>
                 <TooltipWrapper text={item?.name || "Default tooltip"} placement="right">
                   <h1 className="text-[#757575]">{item?.icon || "-"}</h1>
                 </TooltipWrapper>
@@ -219,8 +213,7 @@ const NavMenu = ({ toggleNav, setToggleNav, menu, setMenu, goToUrl, permission }
 
         {/* Header section หัวเมนูใหญ่ */}
         <header className="whitespace-nowrap flex items-center gap-2 pl-[20px] !my-[20px]">
-          {/* {(toggleNav && menu?.icon) || null}
-          <h1>{menu?.name || "-"}</h1> */}
+
           {
             !toggleNav ?
               // <div className="pl-6">

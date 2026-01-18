@@ -154,7 +154,7 @@ const DatePickaFormThai: React.FC<DatePickerSectionProps> = ({
                     >
                         <CalendarTodayOutlinedIcon style={{ width: 20, height: 20, color: readOnly ? '#B6b6b6' : '#000000' }} />
                     </button>
-                    : mode == 'edit' && valueShow !== 'Invalid Date' && valueShow !== "undefined/undefined/Invalid Date" ? 
+                    : mode == 'edit' && valueShow !== 'Invalid Date' && valueShow !== "undefined/undefined/Invalid Date" ?
                         <button
                             type='button'
                             className='!z-[0]'
@@ -164,7 +164,7 @@ const DatePickaFormThai: React.FC<DatePickerSectionProps> = ({
                             }}
                             disabled={readOnly}
                         >
-                            <CloseIcon style={styles.icon} sx={{visibility: readOnly ? 'hidden' : 'unset'}}/>
+                            <CloseIcon style={styles.icon} sx={{ visibility: readOnly ? 'hidden' : 'unset' }} />
                         </button>
                         : mode === 'view' ?
                             <button
@@ -186,7 +186,7 @@ const DatePickaFormThai: React.FC<DatePickerSectionProps> = ({
                                 }}
                                 disabled={readOnly}
                             >
-                                <CloseIcon style={styles.icon}/>
+                                <CloseIcon style={styles.icon} />
                             </button>
                                 // : mode === 'edit-bulletin' && (!value || !valueShow) && <button
                                 : (mode === 'edit-bulletin' || mode == 'edit-table') && (!value || !valueShow) && <button
@@ -203,6 +203,7 @@ const DatePickaFormThai: React.FC<DatePickerSectionProps> = ({
 
         </div>
     ));
+    CustomInput.displayName = 'CustomInput';
 
     const currentMonth = dayjs().month(); // Note: month is 0-indexed, so January is 0, February is 1, etc.
     const [currentMonthX, setCurrentMonthX] = useState(dayjs().month() + 1); // Initialize with the current month
@@ -260,5 +261,7 @@ const DatePickaFormThai: React.FC<DatePickerSectionProps> = ({
         </DatePicker>
     );
 };
+
+DatePickaFormThai.displayName = 'DatePickaFormThai';
 
 export default DatePickaFormThai;
