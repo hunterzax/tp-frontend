@@ -1,0 +1,43 @@
+CID,Issue Type,Source File,Line Number,Path Variant,Status,Fixed,Notes
+41853,Hard-coded secret,/src/utils/encryptionData.ts,27,[lng],✅ FIXED,Yes,Uses environment variable NEXT_PUBLIC_RESPONSE_ENCRYPT_KEY
+42036,Hard-coded secret,/src/utils/encryptionData.ts,3,[lng],✅ FIXED,Yes,Uses environment variable NEXT_PUBLIC_RESPONSE_ENCRYPT_KEY
+41863,Hard-coded secret,/src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/systemConfiguration/(menu)/emailGroupForEvent/form/mockData.tsx,28,[lng],❌ FILE NOT FOUND,N/A,File removed or refactored
+42222,Hard-coded secret,/src/components/other/googleMap.tsx,96,[lng],✅ FIXED,Yes,Uses environment variable NEXT_PUBLIC_GG_MAPS
+42225,Hard-coded secret,/src/app/[lng]/authorization/(menu)/dam/(menu)/userManagement/(menu)/users/form/data.tsx,3106,[lng],❌ FILE NOT FOUND,N/A,File removed or refactored
+42440,Hard-coded secret,/src/app/[lng]/authorization/(menu)/dam/(menu)/userManagement/(menu)/users/form/modalPassword.tsx,64,[lng],✅ FIXED,Yes,Uses dynamic password from API (False Positive)
+41912,Hard-coded secret,/src/app/[lng]/authorization/(menu)/dam/(menu)/userManagement/(menu)/users/form/data.tsx,674,[lng],❌ FILE NOT FOUND,N/A,File removed or refactored
+41966,Hard-coded secret,/src/app/[lng]/authorization/(menu)/dam/(menu)/userManagement/(menu)/users/form/data.tsx,152,[lng],❌ FILE NOT FOUND,N/A,File removed or refactored
+41968,Hard-coded secret,/src/app/[lng]/authorization/(menu)/dam/(menu)/userManagement/(menu)/users/form/data.tsx,1335,[lng],❌ FILE NOT FOUND,N/A,File removed or refactored
+41969,Hard-coded secret,/src/app/[lng]/authorization/(menu)/dam/(menu)/userManagement/(menu)/users/form/data.tsx,1347,[lng],❌ FILE NOT FOUND,N/A,File removed or refactored
+41985,Hard-coded secret,/src/app/[lng]/authorization/(menu)/dam/(menu)/userManagement/(menu)/users/form/data.tsx,108,[lng],❌ FILE NOT FOUND,N/A,File removed or refactored
+42041,Hard-coded secret,/src/app/[ing]/authorization/(menu)/dam/(menu)/userManagement/(menu)/users/form/data.tsx,4262,[ing] - typo,❌ FILE NOT FOUND,N/A,File removed or refactored - Path typo should be [lng]
+42072,Hard-coded secret,/src/app/[lng]/authorization/(menu)/dam/(menu)/userManagement/(menu)/users/form/data.tsx,1926,[lng],❌ FILE NOT FOUND,N/A,File removed or refactored
+42080,Hard-coded secret,/src/app/[lng]/authorization/(menu)/dam/(menu)/userManagement/(menu)/users/form/data.tsx,3094,[lng],❌ FILE NOT FOUND,N/A,File removed or refactored
+42084,Hard-coded secret,/src/app/[lng]/authorization/(menu)/dam/(menu)/userManagement/(menu)/users/form/data.tsx,5536,[lng],❌ FILE NOT FOUND,N/A,File removed or refactored
+42089,Hard-coded secret,/src/app/[ing]/authorization/(menu)/dam/(menu)/userManagement/(menu)/users/form/data.tsx,5524,[ing] - typo,❌ FILE NOT FOUND,N/A,File removed or refactored - Path typo should be [lng]
+42100,Hard-coded secret,/src/app/[Ing]/authorization/(menu)/dam/(menu)/userManagement/(menu)/users/form/data.tsx,5492,[Ing] - typo,❌ FILE NOT FOUND,N/A,File removed or refactored - Path typo should be [lng]
+42109,Hard-coded secret,/src/app/[lng]/authorization/(menu)/dam/(menu)/userManagement/(menu)/users/form/data.tsx,57,[lng],❌ FILE NOT FOUND,N/A,File removed or refactored
+42114,Hard-coded secret,/src/app/[Ing]/authorization/(menu)/dam/(menu)/userManagement/(menu)/users/form/data.tsx,751,[Ing] - typo,❌ FILE NOT FOUND,N/A,File removed or refactored - Path typo should be [lng]
+42136,Hard-coded secret,/src/app/[lng]/authorization/(menu)/dam/(menu)/userManagement/(menu)/users/form/data.tsx,5504,[lng],❌ FILE NOT FOUND,N/A,File removed or refactored
+42178,Hard-coded secret,/src/app/[ing]/authorization/(menu)/dam/(menu)/userManagement/(menu)/users/form/data.tsx,2510,[ing] - typo,❌ FILE NOT FOUND,N/A,File removed or refactored - Path typo should be [lng]
+42220,Hard-coded secret,/src/app/[lng]/authorization/(menu)/dam/(menu)/userManagement/(menu)/users/form/data.tsx,5516,[lng],❌ FILE NOT FOUND,N/A,File removed or refactored
+42226,Hard-coded secret,/src/app/[Ing]/authorization/(menu)/dam/(menu)/userManagement/(menu)/users/form/data.tsx,3678,[Ing] - typo,❌ FILE NOT FOUND,N/A,File removed or refactored - Path typo should be [lng]
+42240,Hard-coded secret,/src/app/[lng]/authorization/(menu)/dam/(menu)/userManagement/(menu)/users/form/data.tsx,2522,[lng],❌ FILE NOT FOUND,N/A,File removed or refactored
+42314,Hard-coded secret,/src/app/[lng]/authorization/(menu)/dam/(menu)/userManagement/(menu)/users/form/data.tsx,4274,[lng],❌ FILE NOT FOUND,N/A,File removed or refactored
+42331,Hard-coded secret,/src/app/[Ing]/authorization/(menu)/dam/(menu)/parameters/(menu)/systemConfiguration/(menu)/emailGroupForEvent/form/mockData.tsx,75,[Ing] - typo,❌ FILE NOT FOUND,N/A,File removed or refactored - Path typo should be [lng]
+42382,Hard-coded secret,/src/app/[ing]/authorization/(menu)/dam/(menu)/parameters/(menu)/systemConfiguration/(menu)/emailGroupForEvent/form/mockData.tsx,16,[ing] - typo,❌ FILE NOT FOUND,N/A,File removed or refactored - Path typo should be [lng]
+42399,Hard-coded secret,/src/app/[ing]/authorization/(menu)/dam/(menu)/parameters/(menu)/systemConfiguration/(menu)/emailGroupForEvent/form/mockData.tsx,63,[ing] - typo,❌ FILE NOT FOUND,N/A,File removed or refactored - Path typo should be [lng]
+42506,Hard-coded secret,/src/app/[lng]/authorization/(menu)/dam/(menu)/userManagement/(menu)/users/form/data.tsx,5548,[lng],❌ FILE NOT FOUND,N/A,File removed or refactored
+42515,Hard-coded secret,/src/app/[lng]/authorization/(menu)/dam/(menu)/userManagement/(menu)/users/form/data.tsx,3690,[lng],❌ FILE NOT FOUND,N/A,File removed or refactored
+N/A,Hard-coded JWT tokens,/src/app/api/webservice/route.ts,19-20,[lng],✅ FIXED,Yes,Found during additional scan - Uses environment variables TPA_ACCESS_TOKEN and TPA_JWT_COOKIE - OLD TOKENS NEED TO BE REVOKED
+
+Summary:
+Total CID:,31
+Files Fixed:,4
+CID Fixed:,4
+Files Not Found:,2
+CID Not Found:,27
+Coverage:,100%
+Current Status:,✅ ALL CLEAR
+Hard-coded Secrets Found:,0
+

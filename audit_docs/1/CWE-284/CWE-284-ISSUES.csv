@@ -1,0 +1,17 @@
+Issue ID,Severity,CWE,File Path,Line Numbers,Issue Description,Fix Status,Priority
+AC-001,CRITICAL,CWE-284,/src/middleware.ts,12-150,"No server-side authentication or authorization validation in middleware",TODO,P0
+AC-002,CRITICAL,CWE-284,/src/utils/checkRestrictedPage.tsx,16-39,"Client-side only route protection using localStorage data",TODO,P0
+AC-003,CRITICAL,CWE-862,Multiple (120 files),Various,"Permission checks rely on localStorage data (k3a9r2b6m7t0x5w1s8j) without server validation",TODO,P0
+AC-004,CRITICAL,CWE-306,/src/app/api/webservice/route.ts,16-54,"API endpoint lacks authentication and authorization checks",TODO,P0
+AC-005,HIGH,CWE-306,/src/app/api/notifications/route.ts,3-103,"API endpoint has minimal authentication, no permission validation",TODO,P1
+AC-006,HIGH,CWE-285,/src/utils/generalFormatter.ts,2956-2997,"Permission generation based on client-side data (generateUserPermission)",TODO,P1
+AC-007,HIGH,CWE-942,/src/app/api/webservice/route.ts,8-41,"Overly permissive CORS policy (Access-Control-Allow-Origin: *)",TODO,P1
+AC-008,MEDIUM,CWE-862,/src/app/[lng]/authorization/(menu)/dam/(menu)/userManagement/(menu)/systemLogin/page.tsx,47-64,"Permission validation pattern uses localStorage without server verification",TODO,P2
+AC-009,MEDIUM,CWE-862,/src/app/[lng]/authorization/(menu)/dam/(menu)/userManagement/(menu)/roles/page.tsx,51-68,"Permission validation pattern uses localStorage without server verification",TODO,P2
+AC-010,MEDIUM,CWE-862,/src/app/[lng]/authorization/(menu)/dam/(menu)/userManagement/(menu)/users/page.tsx,Various,"Permission validation pattern uses localStorage without server verification",TODO,P2
+AC-011,MEDIUM,CWE-862,/src/app/[lng]/authorization/(menu)/booking/(menu)/pathManagement/page.tsx,48-65,"Permission validation pattern uses localStorage without server verification",TODO,P2
+AC-012,MEDIUM,CWE-862,/src/app/[lng]/authorization/(menu)/nominations/(menu)/parkingAllocation/page.tsx,42-59,"Permission validation pattern uses localStorage without server verification",TODO,P2
+AC-013,MEDIUM,CWE-862,"118 additional files",Various,"Same permission validation pattern repeated across codebase",TODO,P2
+AC-014,MEDIUM,CWE-862,/src/components/other/btnGeneral.tsx,121-130,"UI component permissions checked client-side only (can_view, can_create, can_export)",TODO,P2
+AC-015,LOW,CWE-284,/src/middleware.ts,117-123,"Authentication code exists but is commented out",TODO,P3
+

@@ -1,0 +1,37 @@
+CID,Issue Type,Source File,Line Number,Status,Fix Applied,Storage Type Used
+41819,localStorage write,/src/app/[lng]/authorization/(menu)/nominations/(menu)/submissionFile/page.tsx,267,FIXED,secureSessionStorage with encryption,sessionStorage
+41841,localStorage write,/src/utils/generalFormatter.ts,2899,NOT APPLICABLE,Not sensitive data - column width calculation,N/A
+41854,localStorage write,/src/app/[lng]/authorization/(menu)/booking/(menu)/capacity/(menu)/CapReqMgn/page.tsx,802,FIXED,secureSessionStorage with encryption,sessionStorage
+41877,localStorage write,/src/app/[lng]/authorization/(menu)/nominations/(menu)/dailyManagement/page.tsx,187,FIXED,secureSessionStorage without encryption,sessionStorage
+41955,localStorage write,/src/components/other/backup/InactivityTracker_20250826.tsx,289,FILE NOT FOUND,Backup file - ignored,N/A
+41987,localStorage write,/src/app/[lng]/(authentication)/signin/page.tsx,145,FIXED,secureSessionStorage with encryption,sessionStorage
+41990,localStorage write,/src/components/layout/NavMenu.tsx,135,FIXED,secureSessionStorage with encryption,sessionStorage
+42022,localStorage write,/src/app/[lng]/authorization/(menu)/booking/(menu)/capacity/(menu)/CapReqMgn/page.tsx,557,FIXED,secureSessionStorage without encryption,sessionStorage
+42032,localStorage write,/src/app/[lng]/authorization/(menu)/profile/page.tsx,42,FIXED,secureSessionStorage with encryption,sessionStorage
+42039,localStorage write,/src/components/other/notifyStorage.tsx,26,FIXED,secureLocalStorage without encryption,localStorage
+42048,localStorage write,/src/components/other/notifyStorage.tsx,43,FIXED,secureLocalStorage without encryption,localStorage
+42101,localStorage write,/src/components/other/notifyStorage.tsx,35,FIXED,secureLocalStorage without encryption,localStorage
+42119,localStorage write,/src/app/[lng]/authorization/(menu)/nominations/(menu)/dailyManagement/nomCodeView/nomCodeView.tsx,592,FIXED,secureSessionStorage with encryption,sessionStorage
+42132,localStorage write,/src/app/[lng]/(authentication)/signin/page.tsx,260,FIXED,secureSessionStorage with encryption,sessionStorage
+42154,localStorage write,/src/components/headers/tempMenu.tsx,100,FIXED,secureSessionStorage with encryption,sessionStorage
+42171,localStorage write,/src/app/[lng]/authorization/(menu)/profile/page.tsx,456,FIXED,secureSessionStorage with encryption,sessionStorage
+42211,localStorage write,/src/app/[lng]/authorization/(menu)/booking/(menu)/capacity/(menu)/CapReqMgn/page.tsx,3120,FIXED,secureSessionStorage with encryption,sessionStorage
+42224,localStorage write,/src/components/other/modalProfile/modalProfile.tsx,89,FIXED,secureSessionStorage with encryption,sessionStorage
+42238,localStorage write,/src/app/[lng]/authorization/(menu)/nominations/(menu)/nominationsDashboard/form/table.tsx,75,FIXED,secureSessionStorage without encryption,sessionStorage
+42245,localStorage write,/src/app/[lng]/authorization/(menu)/nominations/(menu)/nominationsDashboard/form/table.tsx,109,FIXED,secureSessionStorage without encryption,sessionStorage
+42279,localStorage write,/src/components/other/InactivityTracker.tsx,203,FIXED,memoryStorage for activity tracking,memory
+42319,localStorage write,/src/components/other/backup/InactivityTracker_20250826.tsx,63,FILE NOT FOUND,Backup file - ignored,N/A
+42333,localStorage write,/src/components/other/backup/InactivityTracker_20250826.tsx,120,FILE NOT FOUND,Backup file - ignored,N/A
+42337,localStorage write,/src/components/other/notifyStorage.tsx,16,FIXED,secureLocalStorage without encryption,localStorage
+42431,localStorage write,/src/app/[lng]/authorization/(menu)/booking/(menu)/capacity/(menu)/CapReqMgn/page.tsx,974,FIXED,secureSessionStorage with encryption,sessionStorage
+42432,localStorage write,/src/app/[lng]/authorization/(menu)/nominations/(menu)/nominationsDashboard/form/table.tsx,129,FIXED,secureSessionStorage without encryption,sessionStorage
+42528,localStorage write,/src/app/[lng]/authorization/(menu)/booking/(menu)/capacity/(menu)/CapReqMgn/page.tsx,823,FIXED,secureSessionStorage without encryption,sessionStorage
+
+
+
+
+
+
+
+
+

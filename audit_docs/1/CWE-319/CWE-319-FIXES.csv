@@ -1,0 +1,4 @@
+CID,Issue Type,File,Line,Status,Fix Description,Date Fixed,Risk Before,Risk After
+42227,Missing TLS,src/utils/axiosInstance.ts,24,Fixed,"Changed baseURL from HTTP to HTTPS, added environment variable support",2025-10-29,HIGH,LOW
+42082,Cleartext Transmission,src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/masterData/(menu)/meteredPoint/page.tsx,657,Fixed,"Added HTTPS validation, implemented security checks, improved error handling",2025-10-29,HIGH,LOW
+

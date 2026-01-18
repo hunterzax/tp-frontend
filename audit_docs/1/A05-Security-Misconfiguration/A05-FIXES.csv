@@ -1,0 +1,14 @@
+Issue ID,Category,CWE,Severity,File,Line Numbers,Description,Status,Fix Date,Fix Summary
+A05-001,CORS Policy,CWE-942,Medium,src/app/api/webservice/route.ts,"8, 41",Overly permissive CORS policy with wildcard (*) allows any origin,✅ Fixed,2025-10-29,Replaced wildcard with environment-based whitelist
+A05-002,Security Headers,CWE-693,Low,src/middleware.ts,159-177,"Missing security headers: X-XSS-Protection, Permissions-Policy, HSTS",✅ Fixed,2025-10-29,Added X-XSS-Protection and Permissions-Policy headers; enabled HSTS in production
+A05-003,CSP Policy,CWE-1021,Medium,src/middleware.ts,154-157,Weak Content Security Policy allows embedding from any origin,✅ Fixed,2025-10-29,Restricted frame-ancestors to configurable whitelist; re-enabled X-Frame-Options
+A05-004,Cookie Security,CWE-614,Medium,src/utils/cookie.ts,26-39,"Missing cookie security flags: Secure, HttpOnly, SameSite",✅ Fixed,2025-10-29,Added Secure flag (HTTPS) and SameSite=Strict; documented HttpOnly limitation
+
+
+
+
+
+
+
+
+

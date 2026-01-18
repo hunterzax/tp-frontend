@@ -1,0 +1,394 @@
+{
+  "@babel/plugin-transform-private-methods": {
+    "current": "7.25.9",
+    "wanted": "7.27.1",
+    "latest": "7.27.1",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/@babel/plugin-transform-private-methods"
+  },
+  "@headlessui/react": {
+    "current": "2.2.0",
+    "wanted": "2.2.9",
+    "latest": "2.2.9",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/@headlessui/react"
+  },
+  "@mui/icons-material": {
+    "current": "5.16.14",
+    "wanted": "5.18.0",
+    "latest": "7.3.4",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/@mui/icons-material"
+  },
+  "@react-google-maps/api": {
+    "current": "2.20.5",
+    "wanted": "2.20.7",
+    "latest": "2.20.7",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/@react-google-maps/api"
+  },
+  "@reduxjs/toolkit": {
+    "current": "2.5.1",
+    "wanted": "2.9.2",
+    "latest": "2.9.2",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/@reduxjs/toolkit"
+  },
+  "@sentry/nextjs": {
+    "current": "8.52.1",
+    "wanted": "8.55.0",
+    "latest": "10.22.0",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/@sentry/nextjs"
+  },
+  "@tanstack/react-query": {
+    "current": "5.66.0",
+    "wanted": "5.90.5",
+    "latest": "5.90.5",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/@tanstack/react-query"
+  },
+  "@tanstack/react-query-devtools": {
+    "current": "5.66.0",
+    "wanted": "5.90.2",
+    "latest": "5.90.2",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/@tanstack/react-query-devtools"
+  },
+  "@testing-library/jest-dom": {
+    "current": "6.6.3",
+    "wanted": "6.9.1",
+    "latest": "6.9.1",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/@testing-library/jest-dom"
+  },
+  "@testing-library/react": {
+    "current": "16.2.0",
+    "wanted": "16.3.0",
+    "latest": "16.3.0",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/@testing-library/react"
+  },
+  "@types/cookies": {
+    "current": "0.9.0",
+    "wanted": "0.9.2",
+    "latest": "0.9.2",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/@types/cookies"
+  },
+  "@types/jsonwebtoken": {
+    "current": "9.0.8",
+    "wanted": "9.0.10",
+    "latest": "9.0.10",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/@types/jsonwebtoken"
+  },
+  "@types/leaflet": {
+    "current": "1.9.16",
+    "wanted": "1.9.21",
+    "latest": "1.9.21",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/@types/leaflet"
+  },
+  "@types/lodash": {
+    "current": "4.17.18",
+    "wanted": "4.17.20",
+    "latest": "4.17.20",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/@types/lodash"
+  },
+  "@types/node": {
+    "current": "20.17.16",
+    "wanted": "20.19.24",
+    "latest": "24.9.2",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/@types/node"
+  },
+  "@types/react": {
+    "current": "18.2.42",
+    "wanted": "18.2.42",
+    "latest": "19.2.2",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/@types/react"
+  },
+  "@types/react-date-range": {
+    "current": "1.4.9",
+    "wanted": "1.4.10",
+    "latest": "1.4.10",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/@types/react-date-range"
+  },
+  "@types/react-dom": {
+    "current": "18.3.5",
+    "wanted": "18.3.7",
+    "latest": "19.2.2",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/@types/react-dom"
+  },
+  "@xyflow/react": {
+    "current": "12.4.2",
+    "wanted": "12.9.1",
+    "latest": "12.9.1",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/@xyflow/react"
+  },
+  "axios": {
+    "current": "1.7.9",
+    "wanted": "1.13.1",
+    "latest": "1.13.1",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/axios"
+  },
+  "babel-jest": {
+    "current": "29.7.0",
+    "wanted": "29.7.0",
+    "latest": "30.2.0",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/babel-jest"
+  },
+  "chart.js": {
+    "current": "4.4.7",
+    "wanted": "4.5.1",
+    "latest": "4.5.1",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/chart.js"
+  },
+  "date-fns": {
+    "current": "3.6.0",
+    "wanted": "3.6.0",
+    "latest": "4.1.0",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/date-fns"
+  },
+  "dayjs": {
+    "current": "1.11.13",
+    "wanted": "1.11.18",
+    "latest": "1.11.18",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/dayjs"
+  },
+  "dependency-cruiser": {
+    "current": "11.18.0",
+    "wanted": "11.18.0",
+    "latest": "17.2.0",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/dependency-cruiser"
+  },
+  "driver.js": {
+    "current": "1.3.1",
+    "wanted": "1.3.6",
+    "latest": "1.3.6",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/driver.js"
+  },
+  "i18next": {
+    "current": "23.16.8",
+    "wanted": "23.16.8",
+    "latest": "25.6.0",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/i18next"
+  },
+  "i18next-browser-languagedetector": {
+    "current": "8.0.2",
+    "wanted": "8.2.0",
+    "latest": "8.2.0",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/i18next-browser-languagedetector"
+  },
+  "ioredis": {
+    "current": "5.4.2",
+    "wanted": "5.8.2",
+    "latest": "5.8.2",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/ioredis"
+  },
+  "jest": {
+    "current": "29.7.0",
+    "wanted": "29.7.0",
+    "latest": "30.2.0",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/jest"
+  },
+  "jest-environment-jsdom": {
+    "current": "29.7.0",
+    "wanted": "29.7.0",
+    "latest": "30.2.0",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/jest-environment-jsdom"
+  },
+  "kbar": {
+    "current": "0.1.0-beta.45",
+    "wanted": "0.1.0-beta.48",
+    "latest": "0.1.0-beta.48",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/kbar"
+  },
+  "next": {
+    "current": "14.2.5",
+    "wanted": "14.2.5",
+    "latest": "16.0.1",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/next"
+  },
+  "next-intl": {
+    "current": "3.26.3",
+    "wanted": "3.26.5",
+    "latest": "4.4.0",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/next-intl"
+  },
+  "next-themes": {
+    "current": "0.3.0",
+    "wanted": "0.3.0",
+    "latest": "0.4.6",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/next-themes"
+  },
+  "node-cron": {
+    "current": "3.0.3",
+    "wanted": "3.0.3",
+    "latest": "4.2.1",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/node-cron"
+  },
+  "pdfjs-dist": {
+    "current": "3.11.174",
+    "wanted": "3.11.174",
+    "latest": "5.4.296",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/pdfjs-dist"
+  },
+  "postcss": {
+    "current": "8.5.1",
+    "wanted": "8.5.6",
+    "latest": "8.5.6",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/postcss"
+  },
+  "react": {
+    "current": "18.3.1",
+    "wanted": "18.3.1",
+    "latest": "19.2.0",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/react"
+  },
+  "react-chartjs-2": {
+    "current": "5.3.0",
+    "wanted": "5.3.1",
+    "latest": "5.3.1",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/react-chartjs-2"
+  },
+  "react-cookie": {
+    "current": "7.2.2",
+    "wanted": "7.2.2",
+    "latest": "8.0.1",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/react-cookie"
+  },
+  "react-datepicker": {
+    "current": "7.6.0",
+    "wanted": "7.6.0",
+    "latest": "8.8.0",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/react-datepicker"
+  },
+  "react-dom": {
+    "current": "18.3.1",
+    "wanted": "18.3.1",
+    "latest": "19.2.0",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/react-dom"
+  },
+  "react-hook-form": {
+    "current": "7.54.2",
+    "wanted": "7.65.0",
+    "latest": "7.65.0",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/react-hook-form"
+  },
+  "react-i18next": {
+    "current": "14.1.3",
+    "wanted": "14.1.3",
+    "latest": "16.2.1",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/react-i18next"
+  },
+  "react-number-format": {
+    "current": "5.4.3",
+    "wanted": "5.4.4",
+    "latest": "5.4.4",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/react-number-format"
+  },
+  "react-pdf": {
+    "current": "9.2.1",
+    "wanted": "9.2.1",
+    "latest": "10.2.0",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/react-pdf"
+  },
+  "react-to-pdf": {
+    "current": "1.0.1",
+    "wanted": "1.0.1",
+    "latest": "2.0.1",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/react-to-pdf"
+  },
+  "react-tooltip": {
+    "current": "5.28.0",
+    "wanted": "5.30.0",
+    "latest": "5.30.0",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/react-tooltip"
+  },
+  "redis": {
+    "current": "4.7.0",
+    "wanted": "4.7.1",
+    "latest": "5.9.0",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/redis"
+  },
+  "sharp": {
+    "current": "0.34.3",
+    "wanted": "0.34.4",
+    "latest": "0.34.4",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/sharp"
+  },
+  "sweetalert2": {
+    "current": "11.15.10",
+    "wanted": "11.26.3",
+    "latest": "11.26.3",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/sweetalert2"
+  },
+  "swr": {
+    "current": "2.3.0",
+    "wanted": "2.3.6",
+    "latest": "2.3.6",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/swr"
+  },
+  "tailwindcss": {
+    "current": "3.4.17",
+    "wanted": "3.4.18",
+    "latest": "4.1.16",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/tailwindcss"
+  },
+  "tanstack-table-header-rowspan": {
+    "current": "1.0.3",
+    "wanted": "1.0.5",
+    "latest": "1.0.5",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/tanstack-table-header-rowspan"
+  },
+  "typescript": {
+    "current": "5.7.3",
+    "wanted": "5.9.3",
+    "latest": "5.9.3",
+    "dependent": "TPA-FRONT-END",
+    "location": "/Users/zax/Documents/Project_TPA_SCAN/VA146/TPA-FRONT-END/node_modules/typescript"
+  }
+}

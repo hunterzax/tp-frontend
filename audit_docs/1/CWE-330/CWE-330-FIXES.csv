@@ -1,0 +1,15 @@
+CID,Issue Type,Source File,Line Number,Status,Fix Description,Date Fixed
+41803,Cryptographically weak PRNG,/src/components/library/localCaptcha/localCapcha.tsx,26,FIXED,"Replaced Math.random() with crypto.getRandomValues() in generateRandomLetter()",2025-10-29
+42291,Cryptographically weak PRNG,/src/components/library/localCaptcha/localCapcha.tsx,64,FIXED,"Replaced Math.random() with crypto.getRandomValues() in drawCaptcha()",2025-10-29
+41944,Cryptographically weak PRNG,/src/utils/randomColor.ts,5,FIXED,"Replaced Math.random() with crypto.getRandomValues() in getRandomColor()",2025-10-29
+42287,Cryptographically weak PRNG,/src/utils/generalFormatter.ts,59,FIXED,"Replaced Math.random() with crypto.getRandomValues() in getRandomColor()",2025-10-29
+42400,Cryptographically weak PRNG,/src/utils/generalFormatter.ts,47,FIXED,"Replaced Math.random() with crypto.getRandomValues() in getRandomColorForGroupInChart()",2025-10-29
+42066,Cryptographically weak PRNG,/src/utils/generalFormatter.ts,6633,FIXED,"Replaced Math.random() with crypto.getRandomValues() in generateRandomId()",2025-10-29
+42098,Cryptographically weak PRNG,/src/components/material_custom/ChartSkeleton.tsx,21,FIXED,"Replaced Math.random() with crypto.getRandomValues() for skeleton height",2025-10-29
+41848,Cryptographically weak PRNG,/src/app/[lng]/authorization/(menu)/nominations/(menu)/weeklyManagement/nomCodeView/nomCodeView.tsx,472,FIXED,"Replaced Math.random() with crypto.getRandomValues() for zone button ID",2025-10-29
+N/A,Cryptographically weak PRNG,/src/app/[lng]/authorization/(menu)/nominations/(menu)/dailyManagement/nomCodeView/nomCodeView.tsx,477,FIXED,"Replaced Math.random() with crypto.getRandomValues() for zone button ID",2025-10-29
+41943,Cryptographically weak PRNG,/src/app/[lng]/authorization/(menu)/dam/(menu)/parameters/(menu)/masterData/(menu)/configMasterPath/form/flow.tsx,177,FIXED,"Replaced Math.random() with crypto.getRandomValues() for node position",2025-10-29
+42133,Cryptographically weak PRNG,/src/app/[ing]/authorization/(menu)/balancing/(menu)/intradayBaseinventory/form/mockData.tsx,705,NOT_FOUND,"File not found - may have been deleted or renamed",2025-10-29
+42284,Cryptographically weak PRNG,/src/app/[lng]/authorization/(menu)/balancing/(menu)/intradayBaseInventory/form/mockData.tsx,730,NOT_FOUND,"File not found - may have been deleted or renamed",2025-10-29
+42523,Cryptographically weak PRNG,/src/app/[lng]/authorization/(menu)/booking/(menu)/pathManagement/form/modalHistory.tsx,291,NOT_FOUND,"Math.random() not found in file - may have been fixed previously",2025-10-29
+

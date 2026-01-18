@@ -1,0 +1,6 @@
+CID,Issue Type,File Path,Line,Function,Vulnerability,Fix Applied,Status,Severity
+41942,HTTP Header Injection,/src/hook/hookData.ts,22-40,fetchDivisionMasterX,"Token parameter used directly in Authorization header without validation, allowing CRLF injection","Added buildSafeAuthHeader() to validate and sanitize token, reject invalid tokens with error",Fixed,High
+42221,HTTP Header Injection,/src/utils/exportFunc.ts,2230-2273,postExport,"Cookie value used directly in Authorization header without validation, potential for header injection","Added buildSafeAuthHeader() to validate token from cookie, reject invalid tokens with error",Fixed,High
+42221-2,HTTP Header Injection,/src/utils/exportFunc.ts,2310-2351,postExportAllocMonthlyReport,"Content-Type header without sanitization, potential for header injection","Added sanitizeContentType() to validate and whitelist allowed content types",Fixed,Medium
+42516,HTTP Header Injection,/src/app/api/notifications/route.ts,27-70,GET handler,"Environment variable token used directly in Authorization header without validation, also had syntax error with gotifyResponse variable scope","Added buildSafeAuthHeader() to validate env token, fixed variable scope by declaring outside try-catch",Fixed,High
+

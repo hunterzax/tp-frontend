@@ -1,0 +1,777 @@
+{
+  "auditReportVersion": 2,
+  "vulnerabilities": {
+    "@babel/helpers": {
+      "name": "@babel/helpers",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1104001,
+          "name": "@babel/helpers",
+          "dependency": "@babel/helpers",
+          "title": "Babel has inefficient RegExp complexity in generated code with .replace when transpiling named capturing groups",
+          "url": "https://github.com/advisories/GHSA-968p-4wvh-cqc8",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-1333"
+          ],
+          "cvss": {
+            "score": 6.2,
+            "vectorString": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": "<7.26.10"
+        }
+      ],
+      "effects": [],
+      "range": "<7.26.10",
+      "nodes": [
+        "node_modules/@babel/helpers"
+      ],
+      "fixAvailable": true
+    },
+    "@react-pdf-viewer/core": {
+      "name": "@react-pdf-viewer/core",
+      "severity": "high",
+      "isDirect": true,
+      "via": [
+        "pdfjs-dist"
+      ],
+      "effects": [],
+      "range": "*",
+      "nodes": [
+        "node_modules/@react-pdf-viewer/core"
+      ],
+      "fixAvailable": false
+    },
+    "axios": {
+      "name": "axios",
+      "severity": "high",
+      "isDirect": true,
+      "via": [
+        {
+          "source": 1103618,
+          "name": "axios",
+          "dependency": "axios",
+          "title": "axios Requests Vulnerable To Possible SSRF and Credential Leakage via Absolute URL",
+          "url": "https://github.com/advisories/GHSA-jr5f-v2jv-69x6",
+          "severity": "high",
+          "cwe": [
+            "CWE-918"
+          ],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": ">=1.0.0 <1.8.2"
+        },
+        {
+          "source": 1108263,
+          "name": "axios",
+          "dependency": "axios",
+          "title": "Axios is vulnerable to DoS attack through lack of data size check",
+          "url": "https://github.com/advisories/GHSA-4hjh-wcwx-xvwj",
+          "severity": "high",
+          "cwe": [
+            "CWE-770"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": ">=1.0.0 <1.12.0"
+        }
+      ],
+      "effects": [],
+      "range": "1.0.0 - 1.11.0",
+      "nodes": [
+        "node_modules/axios"
+      ],
+      "fixAvailable": true
+    },
+    "brace-expansion": {
+      "name": "brace-expansion",
+      "severity": "low",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1105443,
+          "name": "brace-expansion",
+          "dependency": "brace-expansion",
+          "title": "brace-expansion Regular Expression Denial of Service vulnerability",
+          "url": "https://github.com/advisories/GHSA-v6h2-p8h4-qcjw",
+          "severity": "low",
+          "cwe": [
+            "CWE-400"
+          ],
+          "cvss": {
+            "score": 3.1,
+            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:L"
+          },
+          "range": ">=1.0.0 <=1.1.11"
+        },
+        {
+          "source": 1105444,
+          "name": "brace-expansion",
+          "dependency": "brace-expansion",
+          "title": "brace-expansion Regular Expression Denial of Service vulnerability",
+          "url": "https://github.com/advisories/GHSA-v6h2-p8h4-qcjw",
+          "severity": "low",
+          "cwe": [
+            "CWE-400"
+          ],
+          "cvss": {
+            "score": 3.1,
+            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:L"
+          },
+          "range": ">=2.0.0 <=2.0.1"
+        }
+      ],
+      "effects": [],
+      "range": "1.0.0 - 1.1.11 || 2.0.0 - 2.0.1",
+      "nodes": [
+        "node_modules/@jest/reporters/node_modules/brace-expansion",
+        "node_modules/@mapbox/node-pre-gyp/node_modules/brace-expansion",
+        "node_modules/brace-expansion",
+        "node_modules/del/node_modules/brace-expansion",
+        "node_modules/fork-ts-checker-webpack-plugin/node_modules/brace-expansion",
+        "node_modules/jake/node_modules/brace-expansion",
+        "node_modules/jest-config/node_modules/brace-expansion",
+        "node_modules/jest-runtime/node_modules/brace-expansion",
+        "node_modules/recursive-readdir/node_modules/brace-expansion",
+        "node_modules/rimraf/node_modules/brace-expansion",
+        "node_modules/test-exclude/node_modules/brace-expansion",
+        "node_modules/workbox-build/node_modules/brace-expansion"
+      ],
+      "fixAvailable": true
+    },
+    "canvg": {
+      "name": "canvg",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1103216,
+          "name": "canvg",
+          "dependency": "canvg",
+          "title": "canvg Prototype Pollution vulnerability",
+          "url": "https://github.com/advisories/GHSA-v2mw-5mch-w8c5",
+          "severity": "high",
+          "cwe": [
+            "CWE-1321"
+          ],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": "<3.0.11"
+        }
+      ],
+      "effects": [],
+      "range": "<3.0.11",
+      "nodes": [
+        "node_modules/canvg"
+      ],
+      "fixAvailable": true
+    },
+    "dependency-cruiser": {
+      "name": "dependency-cruiser",
+      "severity": "high",
+      "isDirect": true,
+      "via": [
+        "json5"
+      ],
+      "effects": [],
+      "range": "9.4.0-beta-1 - 12.1.0",
+      "nodes": [
+        "node_modules/dependency-cruiser"
+      ],
+      "fixAvailable": {
+        "name": "dependency-cruiser",
+        "version": "17.2.0",
+        "isSemVerMajor": true
+      }
+    },
+    "dompurify": {
+      "name": "dompurify",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1105772,
+          "name": "dompurify",
+          "dependency": "dompurify",
+          "title": "DOMPurify allows Cross-site Scripting (XSS)",
+          "url": "https://github.com/advisories/GHSA-vhxf-7vqr-mrjg",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-79"
+          ],
+          "cvss": {
+            "score": 4.5,
+            "vectorString": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:C/C:L/I:L/A:N"
+          },
+          "range": "<3.2.4"
+        }
+      ],
+      "effects": [
+        "jspdf"
+      ],
+      "range": "<3.2.4",
+      "nodes": [
+        "node_modules/dompurify"
+      ],
+      "fixAvailable": {
+        "name": "react-to-pdf",
+        "version": "2.0.1",
+        "isSemVerMajor": true
+      }
+    },
+    "form-data": {
+      "name": "form-data",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1106507,
+          "name": "form-data",
+          "dependency": "form-data",
+          "title": "form-data uses unsafe random function in form-data for choosing boundary",
+          "url": "https://github.com/advisories/GHSA-fjxv-7rqg-78g4",
+          "severity": "critical",
+          "cwe": [
+            "CWE-330"
+          ],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": ">=4.0.0 <4.0.4"
+        }
+      ],
+      "effects": [],
+      "range": "4.0.0 - 4.0.3",
+      "nodes": [
+        "node_modules/form-data"
+      ],
+      "fixAvailable": true
+    },
+    "json5": {
+      "name": "json5",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1096544,
+          "name": "json5",
+          "dependency": "json5",
+          "title": "Prototype Pollution in JSON5 via Parse Method",
+          "url": "https://github.com/advisories/GHSA-9c47-m6qq-7p4h",
+          "severity": "high",
+          "cwe": [
+            "CWE-1321"
+          ],
+          "cvss": {
+            "score": 7.1,
+            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:L/A:H"
+          },
+          "range": ">=2.0.0 <2.2.2"
+        }
+      ],
+      "effects": [
+        "dependency-cruiser"
+      ],
+      "range": "2.0.0 - 2.2.1",
+      "nodes": [
+        "node_modules/dependency-cruiser/node_modules/json5"
+      ],
+      "fixAvailable": {
+        "name": "dependency-cruiser",
+        "version": "17.2.0",
+        "isSemVerMajor": true
+      }
+    },
+    "jspdf": {
+      "name": "jspdf",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1103308,
+          "name": "jspdf",
+          "dependency": "jspdf",
+          "title": "jsPDF Bypass Regular Expression Denial of Service (ReDoS)",
+          "url": "https://github.com/advisories/GHSA-w532-jxjh-hjhj",
+          "severity": "high",
+          "cwe": [
+            "CWE-400",
+            "CWE-770"
+          ],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": "<3.0.1"
+        },
+        {
+          "source": 1107412,
+          "name": "jspdf",
+          "dependency": "jspdf",
+          "title": "jsPDF Denial of Service (DoS)",
+          "url": "https://github.com/advisories/GHSA-8mvj-3j78-4qmw",
+          "severity": "high",
+          "cwe": [
+            "CWE-20",
+            "CWE-835"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": "<=3.0.1"
+        },
+        "dompurify"
+      ],
+      "effects": [
+        "react-to-pdf"
+      ],
+      "range": "<=3.0.1",
+      "nodes": [
+        "node_modules/jspdf"
+      ],
+      "fixAvailable": {
+        "name": "react-to-pdf",
+        "version": "2.0.1",
+        "isSemVerMajor": true
+      }
+    },
+    "jszip": {
+      "name": "jszip",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1094050,
+          "name": "jszip",
+          "dependency": "jszip",
+          "title": "jszip Vulnerable to Prototype Pollution",
+          "url": "https://github.com/advisories/GHSA-jg8v-48h5-wgxg",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-1321"
+          ],
+          "cvss": {
+            "score": 5.3,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+          },
+          "range": "<2.7.0"
+        },
+        {
+          "source": 1100538,
+          "name": "jszip",
+          "dependency": "jszip",
+          "title": "JSZip contains Path Traversal via loadAsync",
+          "url": "https://github.com/advisories/GHSA-36fh-84j7-cv5h",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-22"
+          ],
+          "cvss": {
+            "score": 7.3,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L"
+          },
+          "range": "<3.8.0"
+        }
+      ],
+      "effects": [
+        "xlsx-style"
+      ],
+      "range": "<=3.7.1",
+      "nodes": [
+        "node_modules/jszip"
+      ],
+      "fixAvailable": false
+    },
+    "next": {
+      "name": "next",
+      "severity": "critical",
+      "isDirect": true,
+      "via": [
+        {
+          "source": 1099638,
+          "name": "next",
+          "dependency": "next",
+          "title": "Next.js Cache Poisoning",
+          "url": "https://github.com/advisories/GHSA-gp8f-8m3g-qvj9",
+          "severity": "high",
+          "cwe": [
+            "CWE-349",
+            "CWE-639"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": ">=14.0.0 <14.2.10"
+        },
+        {
+          "source": 1100421,
+          "name": "next",
+          "dependency": "next",
+          "title": "Denial of Service condition in Next.js image optimization",
+          "url": "https://github.com/advisories/GHSA-g77x-44xx-532m",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-674"
+          ],
+          "cvss": {
+            "score": 5.9,
+            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": ">=10.0.0 <14.2.7"
+        },
+        {
+          "source": 1101438,
+          "name": "next",
+          "dependency": "next",
+          "title": "Next.js Allows a Denial of Service (DoS) with Server Actions",
+          "url": "https://github.com/advisories/GHSA-7m27-7ghc-44w9",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-770"
+          ],
+          "cvss": {
+            "score": 5.3,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+          },
+          "range": ">=14.0.0 <14.2.21"
+        },
+        {
+          "source": 1105461,
+          "name": "next",
+          "dependency": "next",
+          "title": "Information exposure in Next.js dev server due to lack of origin verification",
+          "url": "https://github.com/advisories/GHSA-3h52-269p-cp9r",
+          "severity": "low",
+          "cwe": [
+            "CWE-1385"
+          ],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": ">=13.0 <14.2.30"
+        },
+        {
+          "source": 1107226,
+          "name": "next",
+          "dependency": "next",
+          "title": "Next.js Affected by Cache Key Confusion for Image Optimization API Routes",
+          "url": "https://github.com/advisories/GHSA-g5qg-72qw-gw5v",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-524"
+          ],
+          "cvss": {
+            "score": 6.2,
+            "vectorString": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+          },
+          "range": ">=0.9.9 <14.2.31"
+        },
+        {
+          "source": 1107420,
+          "name": "next",
+          "dependency": "next",
+          "title": "Next.js authorization bypass vulnerability",
+          "url": "https://github.com/advisories/GHSA-7gfc-8cq8-jh5f",
+          "severity": "high",
+          "cwe": [
+            "CWE-285",
+            "CWE-863"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+          },
+          "range": ">=9.5.5 <14.2.15"
+        },
+        {
+          "source": 1107512,
+          "name": "next",
+          "dependency": "next",
+          "title": "Next.js Improper Middleware Redirect Handling Leads to SSRF",
+          "url": "https://github.com/advisories/GHSA-4342-x723-ch2f",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-918"
+          ],
+          "cvss": {
+            "score": 6.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:L/A:N"
+          },
+          "range": ">=0.9.9 <14.2.32"
+        },
+        {
+          "source": 1107513,
+          "name": "next",
+          "dependency": "next",
+          "title": "Next.js Content Injection Vulnerability for Image Optimization",
+          "url": "https://github.com/advisories/GHSA-xv57-4mr9-wg8v",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-20"
+          ],
+          "cvss": {
+            "score": 4.3,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N"
+          },
+          "range": ">=0.9.9 <14.2.31"
+        },
+        {
+          "source": 1108291,
+          "name": "next",
+          "dependency": "next",
+          "title": "Next.js Race Condition to Cache Poisoning",
+          "url": "https://github.com/advisories/GHSA-qpjv-v59x-3qc4",
+          "severity": "low",
+          "cwe": [
+            "CWE-362"
+          ],
+          "cvss": {
+            "score": 3.7,
+            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N"
+          },
+          "range": ">=0.9.9 <14.2.24"
+        },
+        {
+          "source": 1108953,
+          "name": "next",
+          "dependency": "next",
+          "title": "Authorization Bypass in Next.js Middleware",
+          "url": "https://github.com/advisories/GHSA-f82v-jwr5-mffw",
+          "severity": "critical",
+          "cwe": [
+            "CWE-285",
+            "CWE-863"
+          ],
+          "cvss": {
+            "score": 9.1,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N"
+          },
+          "range": ">=14.0.0 <14.2.25"
+        }
+      ],
+      "effects": [],
+      "range": "0.9.9 - 14.2.31",
+      "nodes": [
+        "node_modules/next"
+      ],
+      "fixAvailable": {
+        "name": "next",
+        "version": "14.2.33",
+        "isSemVerMajor": false
+      }
+    },
+    "pdfjs-dist": {
+      "name": "pdfjs-dist",
+      "severity": "high",
+      "isDirect": true,
+      "via": [
+        {
+          "source": 1104044,
+          "name": "pdfjs-dist",
+          "dependency": "pdfjs-dist",
+          "title": "PDF.js vulnerable to arbitrary JavaScript execution upon opening a malicious PDF",
+          "url": "https://github.com/advisories/GHSA-wgrm-67xf-hhpq",
+          "severity": "high",
+          "cwe": [
+            "CWE-754"
+          ],
+          "cvss": {
+            "score": 8.8,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+          },
+          "range": "<=4.1.392"
+        }
+      ],
+      "effects": [
+        "@react-pdf-viewer/core"
+      ],
+      "range": "<=4.1.392",
+      "nodes": [
+        "node_modules/pdfjs-dist"
+      ],
+      "fixAvailable": false
+    },
+    "react-to-pdf": {
+      "name": "react-to-pdf",
+      "severity": "high",
+      "isDirect": true,
+      "via": [
+        "jspdf"
+      ],
+      "effects": [],
+      "range": "<=1.0.1",
+      "nodes": [
+        "node_modules/react-to-pdf"
+      ],
+      "fixAvailable": {
+        "name": "react-to-pdf",
+        "version": "2.0.1",
+        "isSemVerMajor": true
+      }
+    },
+    "sweetalert2": {
+      "name": "sweetalert2",
+      "severity": "low",
+      "isDirect": true,
+      "via": [
+        {
+          "source": 1106928,
+          "name": "sweetalert2",
+          "dependency": "sweetalert2",
+          "title": "sweetalert2 contains potentially undesirable behavior",
+          "url": "https://github.com/advisories/GHSA-mrr8-v49w-3333",
+          "severity": "low",
+          "cwe": [
+            "CWE-440"
+          ],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": ">=11.6.14 <11.22.4"
+        }
+      ],
+      "effects": [],
+      "range": "11.6.14 - 11.22.3",
+      "nodes": [
+        "node_modules/sweetalert2"
+      ],
+      "fixAvailable": true
+    },
+    "tar-fs": {
+      "name": "tar-fs",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1106930,
+          "name": "tar-fs",
+          "dependency": "tar-fs",
+          "title": "tar-fs can extract outside the specified dir with a specific tarball",
+          "url": "https://github.com/advisories/GHSA-8cj5-5rvv-wf4v",
+          "severity": "high",
+          "cwe": [
+            "CWE-22"
+          ],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": ">=2.0.0 <2.1.3"
+        },
+        {
+          "source": 1108293,
+          "name": "tar-fs",
+          "dependency": "tar-fs",
+          "title": "tar-fs has a symlink validation bypass if destination directory is predictable with a specific tarball",
+          "url": "https://github.com/advisories/GHSA-vj76-c3g6-qr5v",
+          "severity": "high",
+          "cwe": [
+            "CWE-22",
+            "CWE-61"
+          ],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": ">=2.0.0 <2.1.4"
+        }
+      ],
+      "effects": [],
+      "range": "2.0.0 - 2.1.3",
+      "nodes": [
+        "node_modules/tar-fs"
+      ],
+      "fixAvailable": true
+    },
+    "xlsx": {
+      "name": "xlsx",
+      "severity": "high",
+      "isDirect": true,
+      "via": [
+        {
+          "source": 1108110,
+          "name": "xlsx",
+          "dependency": "xlsx",
+          "title": "Prototype Pollution in sheetJS",
+          "url": "https://github.com/advisories/GHSA-4r6h-8v6p-xvw6",
+          "severity": "high",
+          "cwe": [
+            "CWE-1321"
+          ],
+          "cvss": {
+            "score": 7.8,
+            "vectorString": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+          },
+          "range": "<0.19.3"
+        },
+        {
+          "source": 1108111,
+          "name": "xlsx",
+          "dependency": "xlsx",
+          "title": "SheetJS Regular Expression Denial of Service (ReDoS)",
+          "url": "https://github.com/advisories/GHSA-5pgg-2g8v-p4x9",
+          "severity": "high",
+          "cwe": [
+            "CWE-1333"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": "<0.20.2"
+        }
+      ],
+      "effects": [],
+      "range": "*",
+      "nodes": [
+        "node_modules/xlsx"
+      ],
+      "fixAvailable": false
+    },
+    "xlsx-style": {
+      "name": "xlsx-style",
+      "severity": "moderate",
+      "isDirect": true,
+      "via": [
+        "jszip"
+      ],
+      "effects": [],
+      "range": "*",
+      "nodes": [
+        "node_modules/xlsx-style"
+      ],
+      "fixAvailable": false
+    }
+  },
+  "metadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 2,
+      "moderate": 4,
+      "high": 10,
+      "critical": 2,
+      "total": 18
+    },
+    "dependencies": {
+      "prod": 962,
+      "dev": 337,
+      "optional": 130,
+      "peer": 70,
+      "peerOptional": 0,
+      "total": 1478
+    }
+  }
+}
