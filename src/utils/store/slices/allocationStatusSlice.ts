@@ -7,7 +7,7 @@ const token = getCookieValue("v4r2d9z5m3h0c1p0x7l");
 
 export const fetchAllocationStatusMaster = createAsyncThunk(
     'allocation/fetchAllocationStatusMaster',
-    async () => {
+    async (_, thunkAPI) => {
         // CWE-918 Fix: Validate URL path before making request
         const apiPath = '/master/allocation/allocation-status';
         if (!isValidApiPath(apiPath)) {

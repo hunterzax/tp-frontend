@@ -32,7 +32,7 @@ const TableParameter: React.FC<TableProps> = ({ openEditForm, openViewForm, open
     useEffect(() => {
         if (tableData && tableData.length > 0) {
             setSortedData(tableData);
-        }else{
+        } else {
             setSortedData([]);
         }
 
@@ -49,7 +49,7 @@ const TableParameter: React.FC<TableProps> = ({ openEditForm, openViewForm, open
     const popoverRef = useRef<HTMLDivElement>(null);
 
     const togglePopover = (id: any) => {
-         
+
         if (openPopoverId === id) {
             setOpenPopoverId(null); // Close the popover if it's already open
         } else {
@@ -100,7 +100,8 @@ const TableParameter: React.FC<TableProps> = ({ openEditForm, openViewForm, open
             const validUrl = url.startsWith('http://') || url.startsWith('https://')
                 ? url : `https://${url}`;
 
-            window.open(validUrl, '_blank');
+            const newWindow = window.open(validUrl, '_blank');
+            if (newWindow) newWindow.opener = null;
         } else {
             // The file URL is not valid or unavailable
         }

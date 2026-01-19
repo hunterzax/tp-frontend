@@ -163,9 +163,9 @@ const FatherTable: React.FC<any> = ({
     try {
         let jsonString: any
         if (originOrSum == "ORIGINAL") {
-            jsonString = dataTable?.booking_full_json[0]?.data_temp;
+            jsonString = dataTable?.booking_full_json?.[0]?.data_temp;
         } else if (originOrSum == "SUMMARY") {
-            jsonString = dataTable?.booking_full_json_release[0]?.data_temp ? dataTable?.booking_full_json_release[0]?.data_temp : dataTable?.booking_full_json[0]?.data_temp;
+            jsonString = (dataTable?.booking_full_json_release?.[0]?.data_temp) ? dataTable.booking_full_json_release[0].data_temp : dataTable?.booking_full_json?.[0]?.data_temp;
         }
         if (jsonString) {
             data_table_val = JSON.parse(jsonString);
@@ -185,7 +185,7 @@ const FatherTable: React.FC<any> = ({
     }, [checkedRender, isValidData])
 
     const processingData = async (data: any) => {
-        if (!data) return;
+        if (!data || !data["headerEntry"]) return;
         const changeArr = Object.entries(data["headerEntry"]).map(([txt, data]: any) => {
             let dataArr: any = Object.entries(data).map(([date, values]: any) => {
                 return { key: formatDateToMonthYear(date) }
@@ -299,6 +299,7 @@ const FatherTable: React.FC<any> = ({
         // Helper to generate monthly range in "DD/MM/YYYY" format
 
         // const newDates = generateMonthlyRange(fromDate, toDate);
+        if (!fromDate || !toDate) return headerss;
         let newDates: any
         if (dataContractTermType?.id === 4) { // 4 คือ short term non-firm
             // daily
@@ -338,8 +339,10 @@ const FatherTable: React.FC<any> = ({
     function updateHeadersLastTwo(headerss: any[], fromDate: string, toDate: string) {
         let newDates: any;
 
+        if (!fromDate || !toDate) return headerss;
         // ✅ เพิ่ม: ปรับ toDate ให้ครอบคลุมเดือนสุดท้าย
         const [d, m, y] = toDate.split('/').map(Number);
+        if (!d || !m || !y) return headerss;
         const toDateObj = new Date(y, m - 1, d);
         toDateObj.setMonth(toDateObj.getMonth() + 1);
         const extendedToDate = toDateObj.toLocaleDateString('en-GB'); // '22/01/2026' เป็นต้น

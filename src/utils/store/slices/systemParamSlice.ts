@@ -9,7 +9,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL
 
 export const fetchSystemParamMaster = createAsyncThunk(
     'systemparam/fetchSystemParamMaster',
-    async () => {
+    async (_, thunkAPI) => {
         try {
             const token = Cookies.get("v4r2d9z5m3h0c1p0x7l");
             if (!token) {
@@ -27,7 +27,7 @@ export const fetchSystemParamMaster = createAsyncThunk(
                 throw new Error('Failed to construct safe URL');
             }
 
-            const response:any = await axios.get(safeUrl, {
+            const response: any = await axios.get(safeUrl, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${token}`,
@@ -36,7 +36,7 @@ export const fetchSystemParamMaster = createAsyncThunk(
             });
             return response.data;
         } catch (error: any) {
-            // fetch error
+            return thunkAPI.rejectWithValue(error.message);
         }
     }
 );

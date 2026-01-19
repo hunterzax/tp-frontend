@@ -9,7 +9,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL
 
 export const fetchTypeConceptPoint = createAsyncThunk(
     'typeconceptpoint/fetchTypeConceptPoint',
-    async () => {
+    async (_, thunkAPI) => {
         try {
             const token = Cookies.get("v4r2d9z5m3h0c1p0x7l");
 
@@ -37,7 +37,7 @@ export const fetchTypeConceptPoint = createAsyncThunk(
             });
             return response.data;
         } catch (error: any) {
-            // fetch error
+            return thunkAPI.rejectWithValue(error.message);
         }
     }
 );

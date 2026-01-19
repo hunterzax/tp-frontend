@@ -123,7 +123,7 @@ export const assignColorsToGroups = (groupData?: any[]) => {
 // เอาไว้หาว่า user มีสิทธิในเมนูนั้น ๆ หรือเปล่า
 // โยน menu_name ชื่อเต็มและ userDT เข้ามา
 export const findRightByMenuName = (menu_name: string, user_dt: any) => {
-    const find_role_menu = user_dt?.account_manage[0]?.account_role[0]?.role?.menus_config.find((item: any) => item.menus.name == menu_name)
+    const find_role_menu = user_dt?.account_manage?.[0]?.account_role?.[0]?.role?.menus_config?.find((item: any) => item.menus?.name == menu_name)
     if (find_role_menu) {
         return find_role_menu.b_manage
     } else {
@@ -135,7 +135,7 @@ export const findRightByMenuName = (menu_name: string, user_dt: any) => {
 // แล้ว return เป็นสิทธิของหน้าเมนูไป
 // จริง ๆ มันเหมือนอันข้างบนเลยแฮะ
 export const findRoleConfigByMenuName = (menu_name: string, user_dt: any) => {
-    const find_role_menu = user_dt?.account_manage[0]?.account_role[0]?.role?.menus_config.find((item: any) => item.menus.name == menu_name)
+    const find_role_menu = user_dt?.account_manage?.[0]?.account_role?.[0]?.role?.menus_config?.find((item: any) => item.menus?.name == menu_name)
     if (find_role_menu) {
         return {
             ...find_role_menu,
@@ -154,7 +154,7 @@ export const findRoleConfigByMenuName = (menu_name: string, user_dt: any) => {
 }
 
 export const findRoleConfigByMenuId = (menu_id: number, user_dt: any) => {
-    const find_role_menu = user_dt?.account_manage[0]?.account_role[0]?.role?.menus_config.find((item: any) => item.menus.id == menu_id)
+    const find_role_menu = user_dt?.account_manage?.[0]?.account_role?.[0]?.role?.menus_config?.find((item: any) => item.menus?.id == menu_id)
     if (find_role_menu) {
         return {
             ...find_role_menu,
@@ -540,8 +540,8 @@ export const exportToExcelDailyAdjustReport = (data_current: any, data_filter: a
             }
             const columnWidths = Object.keys(exportData2[0] || {}).map((key) => ({
                 wch: Math.max(
-                    key.length, // Header width
-                    ...exportData2.map((row?: any) => row[key] ? row[key].toString().length : 0) // Max content width
+                    String(key || "").length, // Header width
+                    ...exportData2.map((row?: any) => row?.[key] ? String(row[key]).length : 0) // Max content width
                 )
             }));
             newWorksheet1["!cols"] = columnWidths; // Set column widths
@@ -590,10 +590,10 @@ export const exportToExcelDailyAdjustReportTabDetail = (data_current: any, data_
         XLSXStyle.writeFile(workbook, `${name}.xlsx`);
         return;
     }
-    const columnWidths = Object.keys(exportData[0]).map((key) => ({
+    const columnWidths = Object.keys(exportData[0] || {}).map((key) => ({
         wch: Math.max(
-            key.length, // Header width
-            ...exportData.map((row?: any) => row?.[key] ? row[key].toString().length : 0) // Max content width
+            String(key || "").length, // Header width
+            ...exportData.map((row?: any) => row?.[key] ? String(row[key]).length : 0) // Max content width
         )
     }));
     newWorksheet["!cols"] = columnWidths; // Set column widths
@@ -1839,46 +1839,11 @@ export const exportToExcel = (data: any, name: any, column?: any, extra_obj?: an
         // XLSX.utils.book_append_sheet(workbook, worksheet, "Sheet1");
         // XLSX.writeFile(workbook, `${name}.xlsx`);
 
-        // ================================================================================
-
-        // originalExport(exportData, name);
         exportToXlsxWithNumericDetection(exportData, name);
 
     }
 };
 
-const originalExport = (exportData: any[], name = "Export.xlsx") => {
-    // Create worksheet from JSON data
-    const worksheet = XLSXStyle.utils.json_to_sheet(exportData, { skipHeader: false });
-
-    // Convert worksheet to array format
-    const sheetData: any = XLSXStyle.utils.sheet_to_json(worksheet, { header: 1 });
-
-    // Insert a blank row at the first position
-    // sheetData.unshift([]); // Adds an empty row at the beginning
-
-    // Convert array back to worksheet
-    const newWorksheet = XLSXStyle.utils.aoa_to_sheet(sheetData);
-    const workbook: any = XLSXStyle.utils.book_new();
-
-    // Auto adjust column widths
-    if (!exportData || !Array.isArray(exportData) || exportData.length === 0 || !exportData[0]) {
-        XLSXStyle.utils.book_append_sheet(workbook, newWorksheet, "Sheet1");
-        XLSXStyle.writeFile(workbook, `${name}.xlsx`);
-        return;
-    }
-    const columnWidths = Object.keys(exportData[0]).map((key) => ({
-        wch: Math.max(
-            key.length, // Header width
-            ...exportData.map((row?: any) => row?.[key] ? row[key].toString().length : 0) // Max content width
-        )
-    }));
-    newWorksheet["!cols"] = columnWidths; // Set column widths
-
-    XLSXStyle.utils.book_append_sheet(workbook, newWorksheet, "Sheet1");
-    XLSXStyle.writeFile(workbook, `${name}.xlsx`);
-
-}
 
 export const exportToXlsxWithNumericDetection = (exportData: any[], name = "Export.xlsx") => {
     if (!Array.isArray(exportData) || exportData.length === 0) return;
@@ -1936,7 +1901,8 @@ export const exportToXlsxWithNumericDetection = (exportData: any[], name = "Expo
                 continue;
             }
 
-            const isNumericCol = exportData.every((row: any) => isNumericLike(row?.[h]));
+            if (!headers || !Array.isArray(headers) || !exportData || !Array.isArray(exportData)) continue;
+            const isNumericCol = exportData?.every((row: any) => isNumericLike(row?.[h])) ?? false;
             let maxFrac = 0;
 
             if (isNumericCol) {
@@ -2196,8 +2162,8 @@ export const exportCyberpunk = (data_to_export?: any) => {
 
     // Fill data rows
     const rows: any = [];
-    data_to_export.forEach((entry: any) => {
-        const row = [entry.gas_day];
+    (data_to_export ?? []).forEach((entry: any) => {
+        const row = [entry?.gas_day];
         if (pointHeaders && Array.isArray(pointHeaders)) {
             pointHeaders.forEach(({ point, shipper, type }: any) => {
                 const foundPoint = entry?.nomPoint && Array.isArray(entry.nomPoint) ? entry.nomPoint.find((p: any) => p?.point === point) : null;
@@ -2240,8 +2206,12 @@ export const exportCyberpunk2 = (data?: any) => {
     const points: any = {};
     data?.forEach((entry: any) => {
         entry?.nomPoint?.forEach((point: any) => {
-            if (!points[point.point]) points[point.point] = new Set();
-            point.data.forEach((d: any) => points[point.point].add(d.shipper_name));
+            if (point && point.point) {
+                if (!points[point.point]) points[point.point] = new Set();
+                point.data?.forEach((d: any) => {
+                    if (d?.shipper_name) points[point.point].add(d.shipper_name);
+                });
+            }
         });
     });
 
@@ -4413,7 +4383,7 @@ export const createNodeEdges = (revised_capacity_path: any, revised_capacity_pat
     let currentNodeId = startNode?.area?.id;
     while (currentNodeId) {
         // ดึงข้อมูล node ปัจจุบัน
-        const currentNode = revised_capacity_path.find(
+        const currentNode = revised_capacity_path?.find(
             (area: any) => area?.area?.id === currentNodeId
         );
 
@@ -6958,11 +6928,11 @@ export const splitByGroupCopyCat = (data_origin?: any) => {
     if (!data_origin || !Array.isArray(data_origin)) return output;
 
     for (const entry of data_origin) {
+        if (!entry) continue;
         const groupMap: any = {};
         if (Array.isArray(entry?.groupedByWeekly)) {
-
-            for (const item of entry?.groupedByWeekly) {
-
+            for (const item of entry.groupedByWeekly) {
+                if (!item) continue;
                 if (!groupMap[item.group]) {
                     groupMap[item.group] = [];
                 }
@@ -7007,14 +6977,14 @@ export const separateTimeShow = (data_origin?: any) => {
         for (const [group, items] of Object.entries(groupMap)) {
 
             output.push({
-                dailyAdjustFindPoint: entry.dailyAdjustFindPoint,
-                adjustment: entry.adjustment,
-                rowId: entry.rowId,
-                nomination_code: entry.nomination_code,
-                HV: entry.HV,
-                contract: entry.contract,
-                gasDayUse: entry.gasDayUse,
-                shipper_name: entry.shipper_name,
+                dailyAdjustFindPoint: entry?.dailyAdjustFindPoint,
+                adjustment: entry?.adjustment,
+                rowId: entry?.rowId,
+                nomination_code: entry?.nomination_code,
+                HV: entry?.HV,
+                contract: entry?.contract,
+                gasDayUse: entry?.gasDayUse,
+                shipper_name: entry?.shipper_name,
                 zone_text: entry.zone_text,
                 area_text: entry.area_text,
                 unit: entry.unit,
@@ -7050,12 +7020,12 @@ export const getLatestPerShipper = (data: any[]): any[] => {
             for (const shipperGroup of entry.shipperData) {
                 if (Array.isArray(shipperGroup?.contractData)) {
                     for (const contract of shipperGroup.contractData) {
-                        const shipper = contract?.shipper;
+                        const shipper = contract?.shipper ?? null;
                         if (!shipper) continue;
-                        const current = shipperMap.get(shipper);
+                        const current = shipperMap.get(String(shipper));
 
-                        if (!current || timestamp > current.entry.execute_timestamp) {
-                            shipperMap.set(shipper, {
+                        if (!current || (timestamp > current.entry?.execute_timestamp)) {
+                            shipperMap.set(String(shipper), {
                                 entry,
                                 shipperGroup,
                             });
@@ -9748,10 +9718,10 @@ export const sumFromKey7 = (arr: any[]) => {
 
 
 export const sumFromKey7AllKey = (arr: any[]) => {
-    return arr.reduce((sum, obj) => {
-        const keys = Object.keys(obj).filter(k => Number(k) >= 7);
+    return (arr ?? []).reduce((sum, obj) => {
+        const keys = Object.keys(obj ?? {}).filter(k => Number(k) >= 7);
         for (const key of keys) {
-            const val = parseFloat(obj[key]);
+            const val = parseFloat(obj?.[key]);
             if (!isNaN(val)) {
                 sum += val;
             }
@@ -10236,7 +10206,8 @@ export function filterSortedDataByDisable(
     const kept: RowLike[] = [];
     const removed: RowLike[] = [];
 
-    for (const row of sortedData) {
+    for (const row of sortedData ?? []) {
+        if (!row) continue;
         if (isRowDisabled(row)) removed.push(row);
         else kept.push(row);
     }
@@ -11502,7 +11473,7 @@ export function mapShipperNames(
 
                 return {
                     ...row,
-                    shipper_name: prettyName ?? row.shipper_name, // ถ้าไม่เจอ ให้คงค่าเดิม
+                    shipper_name: prettyName ?? row?.shipper_name, // ถ้าไม่เจอ ให้คงค่าเดิม
                 };
             }),
         })),

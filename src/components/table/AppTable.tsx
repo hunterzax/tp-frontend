@@ -276,7 +276,7 @@ export default function AppTable({ data, columns, isLoading, isTableLoading, exp
                                                         const canSort = header.column.getCanSort()
                                                         const enableSorting = canSort || header?.column?.columnDef?.enableSorting == true;
                                                         const size = header.getSize() == 150 ? undefined : header.getSize() // 150 is default size of column
-                                                        const meta = header.column.columnDef.meta as any
+                                                        const meta = header?.column?.columnDef?.meta as any
                                                         const width = getStyle?.width ? getStyle?.width : size ? size : meta?.width ? meta?.width : '100%'
                                                         const align = getStyle?.align ? getStyle?.align : meta?.align ? meta?.align : 'left'
                                                         return (
@@ -317,7 +317,7 @@ export default function AppTable({ data, columns, isLoading, isTableLoading, exp
                                                 <tr key={row?.id} className="border-b-[1px] ">
                                                     {row?.getVisibleCells().map((cell: any, index: any) => {
                                                         const getStyle: any = columns?.find((item: any) => item?.accessorKey == cell?.column?.columnDef?.accessorKey);
-                                                        const meta = cell.column.columnDef.meta as any
+                                                        const meta = cell?.column?.columnDef?.meta as any
                                                         return (
                                                             <td key={cell.id} className="border px-4 py-2 text-[#464255] bg-white border-none h-[53px]"
                                                                 style={{

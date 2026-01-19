@@ -9,7 +9,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL
 
 export const fetchContractPoint = createAsyncThunk(
     'contractpoint/fetchContractPoint',
-    async () => {
+    async (_, thunkAPI) => {
         // const response:any = await fetch(`${API_URL}/master/asset/contract-point`, {
         //     method: 'GET',
         //     headers: {
@@ -38,7 +38,7 @@ export const fetchContractPoint = createAsyncThunk(
                 throw new Error('Failed to construct safe URL');
             }
 
-            const response:any = await axios.get(safeUrl, {
+            const response: any = await axios.get(safeUrl, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${token}`,
@@ -47,7 +47,7 @@ export const fetchContractPoint = createAsyncThunk(
             });
             return response.data;
         } catch (error: any) {
-            // fetch error
+            return thunkAPI.rejectWithValue(error.message);
         }
     }
 );

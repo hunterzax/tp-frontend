@@ -155,12 +155,9 @@ const ClientPage: React.FC<ClientProps> = () => {
         let res_filtered: any = res_main_data?.data
         if (userDT?.account_manage?.[0]?.user_type_id == 3) {
             res_filtered = (Array.isArray(res_main_data?.data) ? res_main_data?.data : []).filter((item: any) => item?.shipper?.id === userDT?.account_manage?.[0]?.group?.id).filter((itemx: any) => itemx?.tariff_invoice_sent_id == 1)
-        }
-
-        if (userDT?.account_manage?.[0]?.user_type_id == 3) {
-            setDataTableTotal(res_filtered?.length)
+            setDataTableTotal(res_filtered?.length || 0)
         } else {
-            setDataTableTotal(res_main_data.total)
+            setDataTableTotal(res_main_data?.total || 0)
         }
 
         // setDataTableTotal(res_filtered?.length)

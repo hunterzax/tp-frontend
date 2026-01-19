@@ -113,7 +113,7 @@ const ClientPage: React.FC<ClientProps> = () => {
         setDataTableTotal(res_main_data?.total)
         // setDataTable(res_main_data?.data)
         // setFilteredDataTable(res_main_data?.data)
-        let result_filter_type: any = res_main_data?.data
+        let result_filter_type: any = res_main_data?.data || []
 
         setDataTable(result_filter_type)
         setFilteredDataTable(result_filter_type)

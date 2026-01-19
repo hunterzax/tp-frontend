@@ -29,7 +29,14 @@ class SecureStorageManager {
     // Use sessionStorage by default for better security (data cleared when tab closes)
     this.storage = typeof window !== 'undefined'
       ? (storageType === 'sessionStorage' ? window.sessionStorage : window.localStorage)
-      : {} as Storage;
+      : {
+        getItem: () => null,
+        setItem: () => { },
+        removeItem: () => { },
+        clear: () => { },
+        key: () => null,
+        length: 0
+      } as Storage;
     this.memoryCache = new Map();
   }
 

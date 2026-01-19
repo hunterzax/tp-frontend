@@ -282,8 +282,7 @@ const ClientPage: React.FC<ClientProps> = () => {
     const openHistoryForm = async (id: any) => {
         try {
             const response: any = await getService(`/master/account-manage/history?type=system-parameter&method=all&id_value=${id}`);
-
-            const valuesArray = response.map((item: any) => item.value);
+            const valuesArray = (Array.isArray(response) ? response : []).map((item: any) => item.value);
 
 
             // ปั้น data ลบคีย์

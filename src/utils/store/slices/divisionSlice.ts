@@ -9,7 +9,7 @@ const token = getCookieValue("v4r2d9z5m3h0c1p0x7l");
 // Async action to fetch division data
 export const fetchDivisionMaster = createAsyncThunk(
   'division/fetchDivisionMaster',
-  async () => {
+  async (_, thunkAPI) => {
     if (!token) {
       throw new Error('Token is not available');
     }

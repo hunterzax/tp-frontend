@@ -18,7 +18,7 @@ const ModalPassword: React.FC<FormExampleProps> = ({
     data,
 }) => {
     const inputClass = "text-sm block md:w-full py-2 p-2 ps-5 pe-10 h-[40px] rounded-lg border-[1px] bg-white border-[#DFE4EA] outline-none bg-opacity-100 focus:border-[#00ADEF]"
-    const [passwordValue, setPasswordValue] = useState(data.password_gen_flag && data.password_gen_origin);
+    const [passwordValue, setPasswordValue] = useState(data?.password_gen_flag && data?.password_gen_origin);
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
     const [isCopied, setIsCopied] = useState(false);
     const [isGenerate, setIsGenerate] = useState(false);
@@ -28,32 +28,11 @@ const ModalPassword: React.FC<FormExampleProps> = ({
         setIsGenerate(data?.password_gen_flag && true)
     }, [data])
 
-    // const handleFormSubmitEmail = async (data: any) => {
-    //     const resultLink: any = await postService('/master/account-manage/get-link', data);
-
-    //     if (resultLink?.link) {
-    //         const bodyMail = await TemplateMail({
-    //             header: "Reset Your Password",
-    //             description: "A request has been received to reset the password for your account. <br/> Please click the button below to reset your password",
-    //             btntxt: "Reset Password",
-    //             url: resultLink?.link,
-    //             mode: "resetmail"
-    //         });
-
-    //         let body: any = {
-    //             "to": data?.email,
-    //             "subject": "Reset Your Password",
-    //             "body": JSON.parse(bodyMail)
-    //         }
-    //         await postService('/mail/send-email', body);
-
-    //     }
-    // };
 
     const fetchData = async () => {
         try {
             // Group (2 = TSO, 3 = Shipper, 4 = Other)
-            const response: any = await patchService(`/master/account-manage/account-local-gen-password/${data.id}`);
+            const response: any = await patchService(`/master/account-manage/account-local-gen-password/${data?.id}`);
             setPasswordValue(response?.password_gen_origin)
             setIsGenerate(true)
 
@@ -180,24 +159,6 @@ const ModalPassword: React.FC<FormExampleProps> = ({
                             </div>
                         </div>
 
-                        {/* <div className="mb-4 w-[100%]"> */}
-                        {/* {data?.map((item: any) => (
-                            <div key={item.id} className="w-full h-auto mb-2 p-2 border rounded-lg">
-                                <div className="flex flex-col p-2">
-
-                                <div className="mb-2 flex justify-between">
-                                    <span className='font-light'>By <span className="font-bold"> {item.account_id}</span></span>
-                                    <span className="text-gray-500">{formatDate(item.create_date)}</span> 
-                                </div>
-
-                                <div className="w-full h-[50px] border rounded-lg mb-2 p-4">
-                                    <p>{item.reason || '-'}</p>
-                                </div>
-
-                                </div>
-                            </div>
-                        ))} */}
-                        {/* </div> */}
 
                         <div className="w-full flex justify-end pt-8">
                             <button

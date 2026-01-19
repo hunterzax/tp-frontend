@@ -85,11 +85,11 @@ const MotherTable2: React.FC<any> = ({ columnVisibility, setcolumnVisibility, in
     try {
         let jsonString: any
         if (originOrSum == "ORIGIN") {
-            jsonString = dataTable?.booking_full_json[0]?.data_temp;
+            jsonString = dataTable?.booking_full_json?.[0]?.data_temp;
         } else if (originOrSum == "SUMMARY") {
             // ถ้ายังไม่ได้กด release ให้เอา dataTable?.booking_full_json ไปแสดงก่อน
             const booking_full_json_release: any[] = dataTable?.booking_full_json_release?.filter((item: any) => item?.flag_use == true) || []
-            jsonString = booking_full_json_release.length > 0 && booking_full_json_release[0]?.data_temp ? booking_full_json_release[0]?.data_temp : dataTable?.booking_full_json[0]?.data_temp;
+            jsonString = (booking_full_json_release?.[0]?.data_temp) ? booking_full_json_release[0].data_temp : dataTable?.booking_full_json?.[0]?.data_temp;
         }
 
         if (jsonString) {
@@ -110,7 +110,7 @@ const MotherTable2: React.FC<any> = ({ columnVisibility, setcolumnVisibility, in
     }, [checkedRender, isValidData])
 
     const processingData = async (data: any) => {
-        if (!data) return;
+        if (!data || !data_table_val?.["headerEntry"]) return;
         const changeArr = Object.entries(data_table_val["headerEntry"]).map(([txt, data]: any) => {
             let dataArr: any = Object.entries(data).map(([date, values]: any) => {
                 return { key: formatDateToMonthYear(date) }
@@ -153,23 +153,27 @@ const MotherTable2: React.FC<any> = ({ columnVisibility, setcolumnVisibility, in
     }, [group_row_json])
 
     useEffect(() => {
-        let groupedByEntryExitId: any = dataTable?.booking_row_json?.reduce((acc: any, item: any) => {
+        let groupedByEntryExitId: any = (dataTable?.booking_row_json || []).reduce((acc: any, item: any) => {
             const { entry_exit_id } = item;
-            if (!acc[entry_exit_id]) {
-                acc[entry_exit_id] = [];
+            if (entry_exit_id) {
+                if (!acc[entry_exit_id]) {
+                    acc[entry_exit_id] = [];
+                }
+                acc[entry_exit_id].push(item);
             }
-            acc[entry_exit_id].push(item);
             return acc;
         }, {});
 
         if (originOrSum == "SUMMARY") {
             const booking_row_json_release: any[] = dataTable?.booking_row_json_release?.filter((item: any) => item?.flag_use == true) || []
-            groupedByEntryExitId = booking_row_json_release.length > 0 ? booking_row_json_release.reduce((acc: any, item: any) => {
+            groupedByEntryExitId = booking_row_json_release.length > 0 ? (booking_row_json_release || []).reduce((acc: any, item: any) => {
                 const { entry_exit_id } = item;
-                if (!acc[entry_exit_id]) {
-                    acc[entry_exit_id] = [];
+                if (entry_exit_id) {
+                    if (!acc[entry_exit_id]) {
+                        acc[entry_exit_id] = [];
+                    }
+                    acc[entry_exit_id].push(item);
                 }
-                acc[entry_exit_id].push(item);
                 return acc;
             }, {}) : groupedByEntryExitId
         }
@@ -178,8 +182,8 @@ const MotherTable2: React.FC<any> = ({ columnVisibility, setcolumnVisibility, in
         group_row_json = Object.entries(groupedByEntryExitId).map(([entry_exit_id, items]: any) => ({
             entry_exit_id: parseInt(entry_exit_id, 10),
             data: items.map((item: any) => {
-                let item_data_temp = JSON.parse(item?.data_temp);
-                const filter_contract_point = contractPointData?.data?.find((item: any) => item.contract_point === item_data_temp["0"].trim());
+                let item_data_temp = item?.data_temp ? JSON.parse(item.data_temp) : {};
+                const filter_contract_point = contractPointData?.data?.find((item: any) => item.contract_point === (item_data_temp["0"]?.trim?.()));
                 return (
                     {
                         id: item.id,
@@ -299,13 +303,14 @@ const MotherTable2: React.FC<any> = ({ columnVisibility, setcolumnVisibility, in
         // const newDates = generateMonthlyRange(fromDate, toDate); // ถ้าเป็น case short term ไม่ต้อง generateMonthlyRange
         // const newDates = generateDailyRange(fromDate, toDate); // ถ้าเป็น short term non-firm ใช้ generateDailyRange
 
+        if (!fromDate || !toDate) return headerss;
         let newDates: any
         if (dataContractTermType?.id === 4) { // 4 คือ short term non-firm
             newDates = generateDailyRange(fromDate, toDate);
         } else {
             newDates = generateMonthlyRange(fromDate, toDate);
         }
-        let differentDates = newDates.filter((date: any) => !headerss?.[3]?.dates.includes(date));
+        let differentDates = (newDates || []).filter((date: any) => !(headerss?.[3]?.dates || []).includes(date));
 
         let keyCounter = 7; // original 35 ---> new 7 เริ่ม key ที่มี value
         const updatedHeaders = headerss.map((header, index) => {
