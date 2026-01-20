@@ -31,8 +31,8 @@ const BtnExport: React.FC<BtnExportProps> = ({ path, data, data2, textRender, ca
     return (
         can_export ? (
             <Button
-                className={`${modified_k} ${data?.length <= 0 && 'bg-[#5e5e5e]'} ${disable && 'bg-[#5e5e5e]'}`}
-                disabled={data?.length <= 0 || disable}
+                className={`${modified_k} ${(data?.length || 0) <= 0 && 'bg-[#5e5e5e]'} ${disable && 'bg-[#5e5e5e]'}`}
+                disabled={(data?.length || 0) <= 0 || disable}
                 onClick={() => {
                     if (specificMenu === 'release_cap_submission') {
                         exportSpecific(path, data, columnVisibility, initialColumns, specificData);

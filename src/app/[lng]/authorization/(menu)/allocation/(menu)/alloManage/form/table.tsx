@@ -180,7 +180,7 @@ const TableAlloManage: React.FC<TableProps> = ({ openEditForm, openViewForm, tab
                 if (!currentData || !Array.isArray(currentData)) {
                     continue;
                 }
-                
+
                 let checkedShipper: any = currentData.filter((item: any) => item?.allocation_status?.id == 2);
 
                 if (checkedShipper?.length > 0) {
@@ -216,7 +216,7 @@ const TableAlloManage: React.FC<TableProps> = ({ openEditForm, openViewForm, tab
                     if (!currentData || !Array.isArray(currentData)) {
                         continue;
                     }
-                    
+
                     let checkedShipper: any = currentData.filter((item: any) => item?.allocation_status?.id == 2);
                     if (checkedShipper?.length > 0) {
                         for (let i2 = 0; i2 < currentData.length; i2++) {
@@ -497,7 +497,7 @@ const TableAlloManage: React.FC<TableProps> = ({ openEditForm, openViewForm, tab
                                                                     } else if (e?.target?.checked == false) {
                                                                         let newItem: any = selectedItem;
                                                                         let findIDX: any = selectedItem?.findIndex((item: any) => item?.id == itemChange?.id);
-                                                                        if (findIDX !== -1 || findIDX) {
+                                                                        if (findIDX !== -1) {
                                                                             newItem?.splice(findIDX, 1);
                                                                             setselectedItem((pre: any) => [...newItem]);
                                                                         }
@@ -687,7 +687,7 @@ const TableAlloManage: React.FC<TableProps> = ({ openEditForm, openViewForm, tab
                                                                                 if (findIDX !== -1 && findIDX !== null && findIDX !== undefined) {
                                                                                     if (newItem && Array.isArray(newItem)) {
                                                                                         newItem.splice(findIDX, 1);
-                                                                                    setselectedItem((pre: any) => [...newItem]);
+                                                                                        setselectedItem((pre: any) => [...newItem]);
                                                                                     }
                                                                                 }
                                                                             }

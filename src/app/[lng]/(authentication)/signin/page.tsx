@@ -35,7 +35,7 @@ interface HomeProps {
 
 const SignInPage: React.FC<HomeProps> = (props) => {
   const params = use(props.params);
-  const { lng } = params;
+  const { lng } = params || {};
   // const { t } = useTranslation(lng);
   const { mutateLogout } = useLogout();
   const [mode, setmode] = useState("mode1");

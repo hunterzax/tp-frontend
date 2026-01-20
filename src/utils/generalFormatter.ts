@@ -462,6 +462,8 @@ const generateDataExportForDailyAdjustReport = (data_export: any) => {
 
 
 export const exportToExcelDailyAdjustReport = (data_current: any, data_filter: any, name: any, column?: any, extra_obj?: any) => {
+    if (!data_current && !data_filter) return;
+
     let exportDataCurrent = data_current; // ตารางบน
     let exportDataFilter = data_filter; // ตารางล่าง
 
@@ -2793,6 +2795,7 @@ export const exportALLOShipperREPORT = (data?: any) => {
 
 // Medium Term
 const exportChartPlanning = (data_to_export?: any) => {
+    if (!data_to_export) return;
     const exportData: any[] = [];
 
     if (data_to_export?.length >= 1) {
@@ -4354,6 +4357,8 @@ export const calculateMonthRange = (startDate: Date, endDate: Date) => {
 
 // เอาไว้เรียง node กะ edges 
 export const createNodeEdges = (revised_capacity_path: any, revised_capacity_path_edges: any) => {
+    if (!revised_capacity_path || !Array.isArray(revised_capacity_path)) return { nodes: [], edges: [] };
+    if (!revised_capacity_path_edges || !Array.isArray(revised_capacity_path_edges)) return { nodes: [], edges: [] };
 
     // ดึง node เริ่มต้นที่ area.entry_exit_id === 1
     const startNode = revised_capacity_path?.find(
@@ -10127,6 +10132,15 @@ export function isDisabledByContractEnd(
     dataNomCode: DataNomCode,
     tzOffsetHours = 7
 ): CheckResult {
+    if (!dataNomCode) {
+        return {
+            isDisableAction: false,
+            endDateKey: null,
+            endDateISO: null,
+            gasDayLocalDate: "",
+            endDateLocalDate: null,
+        };
+    }
     const cc = dataNomCode?.contract_code ?? null;
 
     // เลือกคีย์ตาม priority

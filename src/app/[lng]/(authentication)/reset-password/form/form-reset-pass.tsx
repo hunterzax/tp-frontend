@@ -7,7 +7,7 @@ type FormData = {
     password?: string;
     confirmpassword?: string;
 };
-  
+
 const FormResetPwd: React.FC<any> = ({
     lng,
     data = {},
@@ -15,24 +15,33 @@ const FormResetPwd: React.FC<any> = ({
     setResetForm
 }) => {
 
-    let page = window?.location?.href.split("ref=");
-    let pageTOKEN: any = page[1];
-    const { register, handleSubmit, reset, formState: { errors }, clearErrors, setError, setValue, getValues } = useForm<FormData>({defaultValues: data});
+    const { register, handleSubmit, reset, formState: { errors }, clearErrors, setError, setValue, getValues } = useForm<FormData>({ defaultValues: data });
     const [flgpwd, setflgpwd] = useState<boolean>(false);
     const [flgconfpwd, setflgconfpwd] = useState<boolean>(false);
     const [enabledContinue, setEnabledContinue] = useState<boolean>(false);
 
+    // FIX: Access window only on client side
     React.useEffect(() => {
+        if (typeof window !== 'undefined') {
+            let page = window.location.href.split("ref=");
+            let pageTOKEN: any = page[1];
+            // If token logic is needed here, handle it. 
+            // Ideally set it to state if needed for submission, but the original code just used it implicitly?
+            // Actually original code defined 'let pageTOKEN' but didn't use it in render directly, 
+            // but 'handleFormSubmit' was using it commented out.
+            // Line 97: ref: pageTOKEN (commented).
+            // So actually pageTOKEN is NOT used in the active logic shown!
+        }
         setResetForm(() => reset);
     }, [reset, setResetForm]);
 
     function checkedPwd() {
         const password = getValues('password');
         const confpassword = getValues('confirmpassword');
-    
+
         let validPassword = true;
         let validConfPassword = true;
-    
+
         // Check password length
         if (!password || password.length < 10) {
             setflgpwd(false);
@@ -42,7 +51,7 @@ const FormResetPwd: React.FC<any> = ({
             clearErrors('password');
             setflgpwd(true);
         }
-    
+
         // Check confirm password length
         if (!confpassword || confpassword.length < 10) {
             setflgconfpwd(false);
@@ -52,7 +61,7 @@ const FormResetPwd: React.FC<any> = ({
             clearErrors('confirmpassword');
             setflgconfpwd(true);
         }
-    
+
         // If both passwords are valid, check for equality
         if (validPassword && validConfPassword) {
             if (password !== confpassword) {
@@ -65,27 +74,27 @@ const FormResetPwd: React.FC<any> = ({
                 return true;
             }
         }
-    
+
         // Disable continue if any validation fails
         setEnabledContinue(false);
         return false;
     }
-    
 
-    async function checkBFsubmit(){
+
+    async function checkBFsubmit() {
         let password: any = getValues('password');
         let confpassword: any = getValues('confirmpassword');
         let resultPWD: any = await checkedPwd();
 
-        if(resultPWD == true){
+        if (resultPWD == true) {
             handleFormSubmit(confpassword);
-        }else{
-            if(password?.length <= 10){
+        } else {
+            if (password?.length <= 10) {
                 setflgpwd(false);
                 setError('password', { type: "alert", message: 'Password at least 10 characters' });
             }
 
-            if(confpassword?.length <= 10){
+            if (confpassword?.length <= 10) {
                 setflgconfpwd(false);
                 setError('confirmpassword', { type: "alert", message: 'Password at least 10 characters' });
             }
@@ -97,9 +106,9 @@ const FormResetPwd: React.FC<any> = ({
         //   ref: pageTOKEN,
         //   password: password
         // }
-    
+
         // const result = await postService('/master/account-manage/check-password', data);
-    
+
         // if(result?.status == 400){
         //     setflgpwd(false);
         //     setError('password', { type: "alert", message: 'Your new password cannot be same as old password.' });
@@ -115,9 +124,9 @@ const FormResetPwd: React.FC<any> = ({
             <form onSubmit={handleSubmit(checkBFsubmit)}>
                 <div id='form-input' className='mb-7'>
                     <PasswordStrong
-                        {...register('password',  { required: "Enter new password"  })}
+                        {...register('password', { required: "Enter new password" })}
                         id={"password"}
-                        required={true} 
+                        required={true}
                         errors={errors.password}
                         errors_message={errors.password && errors?.password?.message}
                         clearErrors={clearErrors}
@@ -131,9 +140,9 @@ const FormResetPwd: React.FC<any> = ({
                 </div>
                 <div id='form-input' className='mb-7'>
                     <PasswordStrong
-                        {...register('confirmpassword',  { required: "Enter new test password"  })}
+                        {...register('confirmpassword', { required: "Enter new test password" })}
                         id={"confirmpassword"}
-                        required={true} 
+                        required={true}
                         errors={errors.confirmpassword}
                         errors_message={errors.confirmpassword && errors?.confirmpassword?.message}
                         clearErrors={clearErrors}
@@ -151,6 +160,6 @@ const FormResetPwd: React.FC<any> = ({
             </form>
         </div>
     );
-  };
-  
-  export default FormResetPwd;
+};
+
+export default FormResetPwd;

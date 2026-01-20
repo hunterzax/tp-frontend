@@ -295,8 +295,8 @@ export function GeneralTable({
                           className={`${canSort ? table_sort_header_style : table_header_style} text-center relative z-50`}
                           colSpan={header.colSpan}
                           style={{
-                            textAlign: meta?.align ? meta?.align : 'left',
-                            backgroundColor: meta?.headerColor ? meta?.headerColor : headerColor
+                            textAlign: meta?.align || 'left',
+                            backgroundColor: meta?.headerColor || headerColor
                           }}
                           onClick={canSort ? header.column.getToggleSortingHandler() : undefined}
                         >
@@ -331,10 +331,10 @@ export function GeneralTable({
                           key={cell.id}
                           className="border px-4 py-2 text-[#464255] bg-white border-none h-[53px]"
                           style={{
-                            color: meta?.textColor ? meta?.textColor : '#464255',
-                            textAlign: meta?.align ? meta?.align : 'left',
-                            backgroundColor: meta?.cellColor ? meta?.cellColor : '#fff',
-                            fontWeight: meta?.textStyle ? meta?.textStyle : 'normal'
+                            color: meta?.textColor || '#464255',
+                            textAlign: meta?.align || 'left',
+                            backgroundColor: meta?.cellColor || '#fff',
+                            fontWeight: meta?.textStyle || 'normal'
                           }}
                         >
                           {flexRender(cell.column.columnDef.cell, cell.getContext())}

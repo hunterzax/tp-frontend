@@ -277,8 +277,8 @@ export default function AppTable({ data, columns, isLoading, isTableLoading, exp
                                                         const enableSorting = canSort || header?.column?.columnDef?.enableSorting == true;
                                                         const size = header.getSize() == 150 ? undefined : header.getSize() // 150 is default size of column
                                                         const meta = header?.column?.columnDef?.meta as any
-                                                        const width = getStyle?.width ? getStyle?.width : size ? size : meta?.width ? meta?.width : '100%'
-                                                        const align = getStyle?.align ? getStyle?.align : meta?.align ? meta?.align : 'left'
+                                                        const width = getStyle?.width || (size ? size : meta?.width || '100%')
+                                                        const align = getStyle?.align || meta?.align || 'left'
                                                         return (
                                                             <th
                                                                 key={header.id}
@@ -288,7 +288,7 @@ export default function AppTable({ data, columns, isLoading, isTableLoading, exp
                                                                 onClick={enableSorting ? header.column.getToggleSortingHandler() : undefined}
                                                                 style={{
                                                                     textAlign: align,
-                                                                    backgroundColor: getStyle?.headerColor ? getStyle?.headerColor : meta?.headerColor ? meta?.headerColor : '#1473A1',
+                                                                    backgroundColor: getStyle?.headerColor || meta?.headerColor || '#1473A1',
                                                                     justifyItems: (enableSorting || !['center', 'right', 'left', 'start', 'end'].includes(align)) ? undefined : align
                                                                 }}
                                                             >
@@ -321,10 +321,10 @@ export default function AppTable({ data, columns, isLoading, isTableLoading, exp
                                                         return (
                                                             <td key={cell.id} className="border px-4 py-2 text-[#464255] bg-white border-none h-[53px]"
                                                                 style={{
-                                                                    color: getStyle?.textColor ? getStyle?.textColor : meta?.textColor ? meta?.textColor : '#464255',
-                                                                    textAlign: getStyle?.align ? getStyle?.align : meta?.align ? meta?.align : 'left',
-                                                                    backgroundColor: getStyle?.cellColor ? getStyle?.cellColor : meta?.cellColor ? meta?.cellColor : '#fff',
-                                                                    fontWeight: getStyle?.textStyle ? getStyle?.textStyle : meta?.textStyle ? meta?.textStyle : 'normal'
+                                                                    color: getStyle?.textColor || meta?.textColor || '#464255',
+                                                                    textAlign: getStyle?.align || meta?.align || 'left',
+                                                                    backgroundColor: getStyle?.cellColor || meta?.cellColor || '#fff',
+                                                                    fontWeight: getStyle?.textStyle || meta?.textStyle || 'normal'
                                                                 }}
                                                             >
                                                                 {flexRender(cell?.column?.columnDef?.cell, cell?.getContext())}

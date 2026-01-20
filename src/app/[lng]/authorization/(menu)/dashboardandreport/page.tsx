@@ -13,7 +13,7 @@ interface ClientProps {
 
 const ClientPage: React.FC<ClientProps> = () => {
     const params = useParams();
-    const lng = params.lng as string;
+    const lng = params?.lng as string;
     const { t } = useTranslation(lng, "mainPage");
 
     // ############### Check Authen ###############
